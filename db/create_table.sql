@@ -38,7 +38,7 @@ CREATE TABLE pessoa ( -- cadatro da pessoa envolvida na ocorrência
   pespaisori INT,
   pesmunicipiodest CHAR(5),
   pespaisdest INT,
-  pesveiid INT, -- FK(veiculo)
+  pesveiid INT NULL, -- FK(veiculo)
   pesestadofisico SMALLINT,
   pescinto char(1),
   pescapacete CHAR(1),
@@ -60,7 +60,7 @@ CREATE TABLE pessoa ( -- cadatro da pessoa envolvida na ocorrência
   pestclcodigo INT,
   pesoenid INT
 );
-ALTER TABLE pessoa ADD FOREIGN KEY (pesveiid) REFERENCES veiculo(veiid);
+-- ALTER TABLE pessoa ADD FOREIGN KEY (pesveiid) REFERENCES veiculo(veiid);
 
 CREATE TABLE ocorrencia ( -- registro de ocorrência confirmada a partir das comunicações recebidas
   ocoid INT AUTO_INCREMENT PRIMARY KEY, 
