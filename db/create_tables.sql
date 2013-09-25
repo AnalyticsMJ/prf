@@ -177,15 +177,15 @@ CREATE TABLE unidadeoperacional ( -- Qualificação dos tipos das unidades opera
   unilatitude CHAR(15), 
   unilongitude CHAR(15)
 );
-ALTER TABLE unidadeoperacional ADD FOREIGN KEY (unittucodigo) REFERENCES tipounidadeoperacional(ttucodigo);
+-- ALTER TABLE unidadeoperacional ADD FOREIGN KEY (unittucodigo) REFERENCES tipounidadeoperacional(ttucodigo);
 
 CREATE TABLE ocorrenciaveiculo ( -- Cadastro da ocorrência referente ao veículo da pessoa envolvida
   ocvid INT AUTO_INCREMENT PRIMARY KEY, 
   ocvocoid INT, -- FK(ocorrencia)
   ocvveiid INT -- FK(veiculo)
 );
-ALTER TABLE ocorrenciaveiculo ADD FOREIGN KEY (ocvocoid) REFERENCES ocorrencia(ocoid);
-ALTER TABLE ocorrenciaveiculo ADD FOREIGN KEY (ocvveiid) REFERENCES veiculo(veiid);
+-- ALTER TABLE ocorrenciaveiculo ADD FOREIGN KEY (ocvocoid) REFERENCES ocorrencia(ocoid);
+-- ALTER TABLE ocorrenciaveiculo ADD FOREIGN KEY (ocvveiid) REFERENCES veiculo(veiid);
 
 CREATE TABLE ocorrenciapessoa ( -- Cadastro de pessoas envolvidas no acidente.
   opeid INT AUTO_INCREMENT PRIMARY KEY, 

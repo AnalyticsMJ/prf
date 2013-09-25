@@ -2,4 +2,4 @@
 
 PASSWORD=$1
 
-cat create_table.sql | mysql -u root --password=${PASSWORD} prf
+cat create_tables.sql | mysql -u root --password=${PASSWORD} prf
