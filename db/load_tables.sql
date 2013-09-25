@@ -72,5 +72,33 @@ SET
 ocoidorigem = nullif(@ocoidorigem,'(null)'),
 ocomunicipio = nullif(@ocomunicipio,'(null)');
 
-
-
+-- load ocorrenciaacidente
+LOAD DATA LOCAL INFILE '/Users/roliveir/projects/prf/temp/brbrasil_1_semestre_2007/ocorrenciaacidente_1_Semestre_2007.csv'
+INTO TABLE ocorrenciaacidente
+CHARACTER SET latin1
+FIELDS TERMINATED BY ';'
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(oacocoid,oacttacodigo,oactcacodigo,oacdano,@oacdanoterc,@oacdanoamb,
+ oaclatitude,oaclongitude,@oacdistab,@oacdistac,@oacdistbc,@oacmodelopista,
+ oacsentido1,oacsentido2,@oacqtdfaixa1,@oacqtdfaixa2,@oacacostamento1,
+ @oacacostamento2,@oaccanteiro,@oaclinhacentral,@oacorientpista,
+ @oacgirafundo,oacversaocroqui,@oacsitio)
+SET
+oacdistab = nullif(@oacdistab,'(null)'),
+oacdistac = nullif(@oacdistac,'(null)'),
+oacdistbc = nullif(@oacdistbc,'(null)'),
+oaclinhacentral = nullif(@oaclinhacentral,'(null)'),
+oacsitio = nullif(@oacsitio,'(null)'),
+oaccanteiro = nullif(@oaccanteiro,'(null)'),
+oacorientpista = nullif(@oacorientpista,'(null)'),
+oacgirafundo = nullif(@oacgirafundo,'(null)'),
+oacqtdfaixa1 = nullif(@oacqtdfaixa1,'(null)'),
+oacqtdfaixa2 = nullif(@oacqtdfaixa2,'(null)'),
+oacacostamento1 = nullif(@oacacostamento1,'(null)'),
+oacacostamento2 = nullif(@oacacostamento2,'(null)'),
+oacdanoterc = nullif(@oacdanoterc,'(null)'),
+oacdanoamb = nullif(@oacdanoamb,'(null)'),
+oacmodelopista = nullif(@oacmodelopista,'(null)')
+;

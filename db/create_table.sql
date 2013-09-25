@@ -224,5 +224,5 @@ CREATE TABLE ocorrenciaacidente ( -- Cadastro de ocorrência envolvendo veículo
   oacversaocroqui CHAR(1), 
   oacsitio INT
 );
-ALTER TABLE ocorrenciaacidente ADD FOREIGN KEY (oacocoid) REFERENCES ocorrencia(ocoid);
-ALTER TABLE ocorrenciaacidente ADD FOREIGN KEY (oacttacodigo) REFERENCES tipoacidente(ttacodigo);
+-- ALTER TABLE ocorrenciaacidente ADD FOREIGN KEY (oacocoid) REFERENCES ocorrencia(ocoid);
+-- ALTER TABLE ocorrenciaacidente ADD FOREIGN KEY (oacttacodigo) REFERENCES tipoacidente(ttacodigo);
