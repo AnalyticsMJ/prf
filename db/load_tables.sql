@@ -102,3 +102,49 @@ oacdanoterc = nullif(@oacdanoterc,'(null)'),
 oacdanoamb = nullif(@oacdanoamb,'(null)'),
 oacmodelopista = nullif(@oacmodelopista,'(null)')
 ;
+
+
+-- corveiculo nao existe
+
+-- load localbr
+LOAD DATA LOCAL INFILE '/Users/rcavalca/projects/prf/temp/localbr.csv'
+INTO TABLE localbr 
+FIELDS TERMINATED BY ';'
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
+
+-- marcadeveiculo nao existe
+
+-- load mucipio
+
+LOAD DATA LOCAL INFILE '/Users/rcavalca/projects/prf/temp/municipio.csv'
+INTO TABLE municipio 
+FIELDS TERMINATED BY ';'
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+;
+
+-- load ocorrenciaveiculo
+LOAD DATA LOCAL INFILE '/Users/rcavalca/projects/prf/temp/ocorrenciaveiculo.csv' 
+INTO TABLE ocorrenciaveiculo 
+FIELDS TERMINATED BY '|' 
+OPTIONALLY ENCLOSED BY '"' 
+LINES TERMINATED BY '\n' 
+IGNORE 1 LINES ;
+
+
+LOAD DATA LOCAL INFILE '/Users/rcavalca/projects/prf/temp/tipoAcidente.csv' 
+INTO TABLE tipoacidente 
+character set latin1
+FIELDS TERMINATED BY '|' 
+OPTIONALLY ENCLOSED BY '"' 
+LINES TERMINATED BY '\n' 
+IGNORE 1 LINES 
+(ocoid,ocolocal,ocostatus,@ocomunicipio,ocosentido,ocodataocorrencia,ocodataregistro,ocotipo,ococomid,@ocoidorigem,ocodatafim)
+SET
+ocoidorigem = nullif(@ocoidorigem,'(null)'),
+ocomunicipio = nullif(@ocomunicipio,'(null)');
+ 
+

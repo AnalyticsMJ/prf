@@ -100,9 +100,8 @@ CREATE TABLE tipoveiculo ( -- Identifica os tipos de veículos
 
 CREATE TABLE municipio ( -- Cadastro do município da ocorrência.
   tmucodigo CHAR(5) PRIMARY KEY,
-  tmuuf CHAR(2),
-  tmuatualiza CHAR(1)
-);
+  tmudenominacao VARCHAR(50),
+  tmuuf CHAR(2));
 
 CREATE TABLE localbr ( -- Armazena o local da BR onde aconteceu a ocorrência. 
   lbrid INT AUTO_INCREMENT PRIMARY KEY, 
