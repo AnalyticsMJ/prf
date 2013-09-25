@@ -243,25 +243,3 @@ INTO TABLE tipounidadeoperacional
 character set latin1
 FIELDS TERMINATED BY ';'   
 IGNORE 1 LINES ;
-
-
--- load veiculo
-LOAD DATA LOCAL INFILE '/Users/rcavalca/projects/prf/temp/veiculo.csv' 
-INTO TABLE veiculo 
-character set latin1
-FIELDS TERMINATED BY '|'   
-LINES TERMINATED BY '\r\n' 
-IGNORE 1 LINES 
-(veiid,veiano,@veitmvcodigo,@veiqtdocupantes,@veitevcodigo,@veitcvcodigo,@veitvvcodigo,veidescricao,veimunicipio,@veitcecodigo,veimunorigem,@veipaisorigem,veimundestino,@veipaisdestino,veitttcodigo,veitipoproprietario,@veiproprietario,@veioenid,@veisequencial,@dummy)
-SET
-veioenid = nullif(@veioenid,''),
-veiqtdocupantes = nullif(@veiqtdocupantes,''),
-veitmvcodigo = nullif(@veitmvcodigo,''),
-veitevcodigo = nullif(@veitevcodigo,''),
-veitvvcodigo = nullif(@veitvvcodigo,''),
-veitcecodigo = nullif(@veitcecodigo,''),
-veitcvcodigo = nullif(@veitcvcodigo,''),
-veipaisorigem = nullif(@veipaisorigem,''),
-veipaisdestino = nullif(@veipaisdestino,''),
-veisequencial = nullif(@veisequencial,''),
-veiproprietario = nullif(@veiproprietario,'');
