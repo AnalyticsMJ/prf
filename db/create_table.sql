@@ -186,9 +186,9 @@ CREATE TABLE ocorrenciapessoa ( -- Cadastro de pessoas envolvidas no acidente.
   opeanexo CHAR(1), 
   opecondalegadas CHAR(1)
 );
-ALTER TABLE ocorrenciapessoa ADD FOREIGN KEY (opeocoid) REFERENCES ocorrencia(ocoid);
-ALTER TABLE ocorrenciapessoa ADD FOREIGN KEY (opepesid) REFERENCES pessoa(pesid);
-ALTER TABLE ocorrenciapessoa ADD FOREIGN KEY (opettecodigo) REFERENCES tipoenvolvido(ttecodigo);
+-- ALTER TABLE ocorrenciapessoa ADD FOREIGN KEY (opeocoid) REFERENCES ocorrencia(ocoid);
+-- ALTER TABLE ocorrenciapessoa ADD FOREIGN KEY (opepesid) REFERENCES pessoa(pesid);
+-- ALTER TABLE ocorrenciapessoa ADD FOREIGN KEY (opettecodigo) REFERENCES tipoenvolvido(ttecodigo);
 
 CREATE TABLE ocorrenciaacidente ( -- Cadastro de ocorrência envolvendo veículos. 
   oacocoid INT PRIMARY KEY, -- FK(ocorrencia)

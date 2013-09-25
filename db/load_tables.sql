@@ -72,6 +72,26 @@ SET
 ocoidorigem = nullif(@ocoidorigem,'(null)'),
 ocomunicipio = nullif(@ocomunicipio,'(null)');
 
+
+-- load ocorrenciapessoa
+LOAD DATA LOCAL INFILE '/Users/roliveir/projects/prf/temp/brbrasil_1_semestre_2007/ocorrenciaPessoa_1_Semestre_2007.csv'
+INTO TABLE ocorrenciapessoa
+CHARACTER SET latin1
+FIELDS TERMINATED BY ';'
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(opeid,opeocoid,opepesid,@dummy,@opeportevalidade,
+ @opettecodigo,@dummy,@opeestrangeiro,@opeanexo,@opecondalegadas)
+SET
+opeportevalidade = nullif(@opeportevalidade,'(null)'),
+opecondalegadas = nullif(@opecondalegadas,'(null)'),
+opeestrangeiro = nullif(@opeestrangeiro,'(null)'),
+opettecodigo = nullif(@opettecodigo,'(null)'),
+opeanexo = nullif(@opeanexo,'(null)')
+;
+
+
 -- load ocorrenciaacidente
 LOAD DATA LOCAL INFILE '/Users/roliveir/projects/prf/temp/brbrasil_1_semestre_2007/ocorrenciaacidente_1_Semestre_2007.csv'
 INTO TABLE ocorrenciaacidente
