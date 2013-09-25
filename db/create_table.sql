@@ -1,4 +1,4 @@
-DROP DATABASE prf;
+DROP DATABASE IF EXISTS prf;
 CREATE DATABASE prf;
 USE prf;
 
@@ -38,9 +38,9 @@ CREATE TABLE pessoa ( -- cadatro da pessoa envolvida na ocorrência
   pespaisori INT,
   pesmunicipiodest CHAR(5),
   pespaisdest INT,
-  pesveiid INT NULL, -- FK(veiculo)
+  pesveiid INT, -- FK(veiculo)
   pesestadofisico SMALLINT,
-  pescinto char(1),
+  pescinto CHAR(1),
   pescapacete CHAR(1),
   peshabilitado CHAR(1),
   pessocorrido CHAR(1),
