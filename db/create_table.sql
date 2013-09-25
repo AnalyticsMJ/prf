@@ -12,6 +12,7 @@ CREATE TABLE veiculo ( -- cadastro dos dados do veículo
   veitvvcodigo INT,
   veimunicipio CHAR(5),
   veitcecodigo INT,
+  veidescricao varchar(60),
   veimunorigem CHAR(5),
   veipaisorigem INT,
   veimundestino CHAR(5),
@@ -80,12 +81,14 @@ CREATE TABLE ocorrencia ( -- registro de ocorrência confirmada a partir das com
 
 CREATE TABLE tipoenvolvido ( -- Tabela que qualifica os envolvidos em uma ocorrência de crime
   ttecodigo INT AUTO_INCREMENT PRIMARY KEY,
+  ttedescricao VARCHAR(30),
   tteatualiza CHAR(1),
   tteativo CHAR(1)	
 );
 
 CREATE TABLE tipoacidente ( -- Qualifica os tipos de acidente
   ttacodigo INT AUTO_INCREMENT PRIMARY KEY,
+  ttadescricao VARCHAR(50),
   ttaatualiza CHAR(1),
   ttarelacidente CHAR(1), 
   ttaativo CHAR(1)	
@@ -93,6 +96,7 @@ CREATE TABLE tipoacidente ( -- Qualifica os tipos de acidente
 
 CREATE TABLE tipoveiculo ( -- Identifica os tipos de veículos 
   tvvcodigo INT AUTO_INCREMENT PRIMARY KEY,
+  tvvdescricao varchar(30),  
   tvvatualiza CHAR(1),
   tvvrelacidente CHAR(1),
   tvvativo CHAR(1)		
@@ -121,36 +125,42 @@ CREATE TABLE uf ( -- Cadastro da UF onde foi feito a ocorrência.
 
 CREATE TABLE tipoareaespecial ( -- Identifica os tipo de área especiais que existem 
   taecodigo INT AUTO_INCREMENT PRIMARY KEY, 
+  taedescricao varchar(30),
   taeatualiza CHAR(1)
 );
 
 CREATE TABLE tipoapreensao ( -- Identifica os tipos de apreensão 
   ttpcodigo INT AUTO_INCREMENT PRIMARY KEY, 
+  ttpdescricao varchar(30),
   ttpatualiza CHAR(1)
 );
 
 CREATE TABLE tipodetencao ( -- Cadastro dos tipos possíveis de detenção
   ttdcodigo INT AUTO_INCREMENT PRIMARY KEY, 
+  ttddescricao varchar(30),  
   ttdatualiza CHAR(1),
   ttdrelacidente CHAR(1)
 );
 
 CREATE TABLE tiporeceptor ( -- Identifica os tipos de receptores em uma ocorrência encaminhada 
 	ttrcodigo INT AUTO_INCREMENT PRIMARY KEY,
-	ttratualiza CHAR(1), 
+	ttrdescricao varchar(50), 
+    ttratualiza CHAR(1), 
 	ttrdelegacia CHAR(1)
 );
 
 CREATE TABLE tipodocumento ( -- Cadastro de tipos de documentos
   ttocodigo INT AUTO_INCREMENT PRIMARY KEY,
+  ttodescricao varchar(50),  
   ttoatualiza CHAR(1), 
   ttorelapreensao CHAR(1),
   ttorelrecuperacao CHAR(1)
 );
 
 CREATE TABLE tipounidadeoperacional ( -- Qualificação dos tipos das unidades operacionais 
-	ttucodigo INT AUTO_INCREMENT PRIMARY KEY, 
-	ttuatualiza CHAR(1)
+  ttucodigo INT AUTO_INCREMENT PRIMARY KEY, 
+  ttudescricao varchar(50),  
+  ttuatualiza CHAR(1)
 );
 
 CREATE TABLE unidadeoperacional ( -- Qualificação dos tipos das unidades operacionais 
@@ -161,10 +171,11 @@ CREATE TABLE unidadeoperacional ( -- Qualificação dos tipos das unidades opera
   unittucodigo INT, -- FK(tipounidadeoperacional)
   uniunidaderesponsavel INT, 
   unidenominacao VARCHAR(80), 
-  unimunicipio CHAR(5), 
-  unilatitude CHAR(10), 
-  unilongitude CHAR(10), 
-  unihelicoptero CHAR(1)
+  uniendereco VARCHAR(80), 
+  unicep varchar(10), 
+  unimunicipio varchar(30), 
+  unilatitude CHAR(15), 
+  unilongitude CHAR(15)
 );
 ALTER TABLE unidadeoperacional ADD FOREIGN KEY (unittucodigo) REFERENCES tipounidadeoperacional(ttucodigo);
 
