@@ -78,17 +78,14 @@ IGNORE 1 LINES
 (oacocoid,oacttacodigo,oactcacodigo,oacdano,@oacdanoterc,@oacdanoamb,
  oaclatitude,oaclongitude,@oacdistab,@oacdistac,@oacdistbc,@oacmodelopista,
  oacsentido1,oacsentido2,@oacqtdfaixa1,@oacqtdfaixa2,@oacacostamento1,
- @oacacostamento2,@oaccanteiro,@oaclinhacentral,@oacorientpista,
- @oacgirafundo,oacversaocroqui,@oacsitio)
+ @oacacostamento2,@dummy,@dummy,@oacorientpista,
+ @dummy,oacversaocroqui,@oacsitio)
 SET
 oacdistab = nullif(@oacdistab,'(null)'),
 oacdistac = nullif(@oacdistac,'(null)'),
 oacdistbc = nullif(@oacdistbc,'(null)'),
-oaclinhacentral = nullif(@oaclinhacentral,'(null)'),
 oacsitio = nullif(@oacsitio,'(null)'),
-oaccanteiro = nullif(@oaccanteiro,'(null)'),
 oacorientpista = nullif(@oacorientpista,'(null)'),
-oacgirafundo = nullif(@oacgirafundo,'(null)'),
 oacqtdfaixa1 = nullif(@oacqtdfaixa1,'(null)'),
 oacqtdfaixa2 = nullif(@oacqtdfaixa2,'(null)'),
 oacacostamento1 = nullif(@oacacostamento1,'(null)'),
