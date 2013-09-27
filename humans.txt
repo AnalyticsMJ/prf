@@ -1,0 +1,11 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Rafael Oliveira -- Developer -- rafael@rafaeloliveira.org
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Normalize.css, KnockoutJS, RequireJS
