@@ -1,18 +1,19 @@
-define(['ko', 'underscore', 'app/views/state-view'], function (ko, _, stateView) {
-    return {
-        title: ko.observable("PRF"),
-        loaded: true,
-        states: ko.observableArray(),
-        
-		selectedStateView: ko.observable(),
-		
-        selectState: function(state) {
-            selectedStateView.updateWith(state);
-        },
-		
-		loadStates: function(states){
-			selectedStateView(states);
-		}
-		
-    };
+define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder'], function (ko, _, stateView, dataFinder) {
+    var self = this;
+	
+	self.title= ko.observable("PRF");
+	self.loaded= true;
+	self.states= ko.observableArray();
+	self.selectedStatistic=ko.observable(null);
+ 
+	self.stateClicked= function(state) {
+		var statistics = dataFinder.accidentsByState(state.abbreviation);
+	    self.selectedStatistic(statistics);
+	};
+
+	self.loadStates= function(states){
+		selectedStateView(states);
+	};
+			
+	return self;
 });

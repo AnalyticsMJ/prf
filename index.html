@@ -24,10 +24,20 @@
         <!-- Add your site or application content here -->
         <div class="preload" data-bind="visible: !loaded"><img src="img/loading.gif" /></div>
         <div id="content" data-bind="visible: loaded">
-        <h1 data-bind="text: title"></h1>
-		<ul data-bind="foreach: states">
-			<li data-bind="text:name"></li>
-		</ul>        
+		    <h1 data-bind="text: title"></h1>
+			<ul data-bind="foreach: states">
+				<li data-bind="text:name, click:$parent.stateClicked"></li>
+			</ul>
+			<div data-bind="visible: selectedStatistic">
+				<dl data-bind="with: selectedStatistic">
+					<dt>Rank</dt>
+					<dd data-bind="text:rank" ></dd>
+			
+					<dt>Acidentes por 100 mil habitantes</dt>
+					<dd data-bind="text:acidentes_por_100_mil"></dd>			
+				</dl>
+				
+			</div>        
         </div>
 
 

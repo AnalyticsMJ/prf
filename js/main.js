@@ -1,11 +1,11 @@
 require.config({
     baseUrl: "js",
     paths: {
-        "jquery": ["http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js",
+        "jquery": ["http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min",
             "vendor/jquery-1.10.2.min"],
-        "ko": ["http://cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min.js",
+        "ko": ["http://cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min",
             "vendor/knockout-2.3.0.min"],
-        "underscore": ['http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js',
+        "underscore": ['http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min',
             "vendor/underscore-1.5.2.min"]
     },
     shim: {
