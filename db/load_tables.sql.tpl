@@ -1,5 +1,46 @@
 USE prf;
 
+-- load pessoa
+LOAD DATA LOCAL INFILE '{%data_dir%}/tabelaPessoa.csv'
+INTO TABLE pessoa 
+FIELDS TERMINATED BY ';'
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(pesid,@dummy,pesnaturalidade,@pesnacionalidade,@pessexo,@pesteccodigo,@pestgicodigo,pesmunicipio,@pestopcodigo,pesmunicipioori,@pespaisori,
+ pesmunicipiodest,@pespaisdest,@pesveiid,@pesestadofisico,@pescinto,@pescapacete,@peshabilitado,pessocorrido,pesdormindo,@pesalcool,
+ @peskmpercorre,@peshorapercorre,@dummy,@dummy,@dummy,@pesdatahabil,@pesdatavalidade,@pesidade,@pesaltura,@pespeso,@dummy,
+ @dummy,@pessinal,@peslesao,@pestcccodigo,@pestctcodigo,@pestclcodigo,@pesoenid)
+SET
+pesnacionalidade = nullif(@pesnacionalidade,'(null)'),
+pessexo = nullif(@pessexo,'(null)'),
+pesteccodigo = nullif(@pesteccodigo,'(null)'),
+pestgicodigo = nullif(@pestgicodigo,'(null)'),
+pestopcodigo = nullif(@pestopcodigo,'(null)'),
+pespaisori = nullif(@pespaisori,'(null)'),
+pespaisdest = nullif(@pespaisdest,'(null)'),
+pesveiid = nullif(@pesveiid,'(null)'),
+pesestadofisico = nullif(@pesestadofisico,'(null)'),
+pescinto = nullif(@pescinto,'(null)'),
+pescapacete = nullif(@pescapacete,'(null)'),
+peshabilitado = nullif(@peshabilitado,'(null)'),
+pesalcool = nullif(@pesalcool,'(null)'),
+peshorapercorre= nullif(@peshorapercorre,'(null)'),
+peskmpercorre = nullif(@peskmpercorre,'(null)'),
+pesdatahabil = nullif(@pesdatahabil,'(null)'),
+pesdatavalidade = nullif(@pesdatavalidade,'(null)'),
+pesidade = nullif(@pesidade,'(null)'),
+pesaltura = nullif(@pesaltura,'(null)'),
+pespeso = nullif(@pespeso,'(null)'),
+pessinal = nullif(@pessinal,'(null)'),
+peslesao = nullif(@peslesao,'(null)'),
+pestcccodigo = nullif(@pestcccodigo,'(null)'),
+pestctcodigo = nullif(@pestctcodigo,'(null)'),
+pestclcodigo = nullif(@pestclcodigo,'(null)'),
+pesoenid = nullif(@pesoenid,'(null)');
+
+
+
 -- load veiculo
 LOAD DATA LOCAL INFILE '{%data_dir%}/veiculo.csv'
 INTO TABLE veiculo 
@@ -141,3 +182,12 @@ INTO TABLE tipounidadeoperacional
 character set latin1
 FIELDS TERMINATED BY ';'   
 IGNORE 1 LINES ;
+
+
+-- load tipounidadeoperacional
+LOAD DATA LOCAL INFILE '{%data_dir%}/uf_stat.csv' 
+INTO TABLE ufestatistica 
+character set latin1
+FIELDS TERMINATED BY ';'   
+IGNORE 1 LINES ;
+
