@@ -1,3 +1,4 @@
+
 DROP DATABASE IF EXISTS prf;
 CREATE DATABASE prf;
 USE prf;
@@ -61,7 +62,6 @@ CREATE TABLE pessoa ( -- cadatro da pessoa envolvida na ocorrência
   pestclcodigo INT,
   pesoenid INT
 );
--- ALTER TABLE pessoa ADD FOREIGN KEY (pesveiid) REFERENCES veiculo(veiid);
 
 CREATE TABLE ocorrencia ( -- registro de ocorrência confirmada a partir das comunicações recebidas
   ocoid INT AUTO_INCREMENT PRIMARY KEY, 
@@ -177,15 +177,13 @@ CREATE TABLE unidadeoperacional ( -- Qualificação dos tipos das unidades opera
   unilatitude CHAR(15), 
   unilongitude CHAR(15)
 );
--- ALTER TABLE unidadeoperacional ADD FOREIGN KEY (unittucodigo) REFERENCES tipounidadeoperacional(ttucodigo);
+
 
 CREATE TABLE ocorrenciaveiculo ( -- Cadastro da ocorrência referente ao veículo da pessoa envolvida
   ocvid INT AUTO_INCREMENT PRIMARY KEY, 
   ocvocoid INT, -- FK(ocorrencia)
   ocvveiid INT -- FK(veiculo)
 );
--- ALTER TABLE ocorrenciaveiculo ADD FOREIGN KEY (ocvocoid) REFERENCES ocorrencia(ocoid);
--- ALTER TABLE ocorrenciaveiculo ADD FOREIGN KEY (ocvveiid) REFERENCES veiculo(veiid);
 
 CREATE TABLE ocorrenciapessoa ( -- Cadastro de pessoas envolvidas no acidente.
   opeid INT AUTO_INCREMENT PRIMARY KEY, 
@@ -197,9 +195,6 @@ CREATE TABLE ocorrenciapessoa ( -- Cadastro de pessoas envolvidas no acidente.
   opeanexo CHAR(1), 
   opecondalegadas CHAR(1)
 );
--- ALTER TABLE ocorrenciapessoa ADD FOREIGN KEY (opeocoid) REFERENCES ocorrencia(ocoid);
--- ALTER TABLE ocorrenciapessoa ADD FOREIGN KEY (opepesid) REFERENCES pessoa(pesid);
--- ALTER TABLE ocorrenciapessoa ADD FOREIGN KEY (opettecodigo) REFERENCES tipoenvolvido(ttecodigo);
 
 CREATE TABLE ocorrenciaacidente ( -- Cadastro de ocorrência envolvendo veículos. 
   oacocoid INT PRIMARY KEY, -- FK(ocorrencia)
@@ -224,8 +219,6 @@ CREATE TABLE ocorrenciaacidente ( -- Cadastro de ocorrência envolvendo veículo
   oacversaocroqui CHAR(1), 
   oacsitio INT
 );
--- ALTER TABLE ocorrenciaacidente ADD FOREIGN KEY (oacocoid) REFERENCES ocorrencia(ocoid);
--- ALTER TABLE ocorrenciaacidente ADD FOREIGN KEY (oacttacodigo) REFERENCES tipoacidente(ttacodigo);
 
 
 CREATE TABLE ufestatistica (
@@ -235,3 +228,8 @@ CREATE TABLE ufestatistica (
 	frota INT
 );
 
+
+create table estadofisico (
+  esid int primary key,
+  esdescricao varchar(15)
+);

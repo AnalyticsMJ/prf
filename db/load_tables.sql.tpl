@@ -190,3 +190,12 @@ INTO TABLE ufestatistica
 FIELDS TERMINATED BY ';'   
 IGNORE 1 LINES ;
 
+
+
+-- load estadofisico
+LOAD DATA LOCAL INFILE '{%data_dir%}/estadofisico.csv' 
+INTO TABLE estadofisico
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\r\n'   
+IGNORE 1 LINES ;
+

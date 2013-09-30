@@ -1,0 +1,109 @@
+uf,gravidade,qtd_ocorrencia
+AC,Ileso,1031
+AC,"Lesões Graves",541
+AC,"Lesões Leves",807
+AC,Morto,107
+AL,Ileso,6081
+AL,"Lesões Graves",2366
+AL,"Lesões Leves",2835
+AL,Morto,728
+AM,Ileso,623
+AM,"Lesões Graves",178
+AM,"Lesões Leves",351
+AM,Morto,78
+AP,Ileso,378
+AP,"Lesões Graves",304
+AP,"Lesões Leves",360
+AP,Morto,61
+BA,Ileso,31485
+BA,"Lesões Graves",5604
+BA,"Lesões Leves",12147
+BA,Morto,3363
+CE,Ileso,10190
+CE,"Lesões Graves",3653
+CE,"Lesões Leves",4147
+CE,Morto,1093
+DF,Ileso,3553
+DF,"Lesões Graves",955
+DF,"Lesões Leves",2799
+DF,Morto,296
+ES,Ileso,27173
+ES,"Lesões Graves",5714
+ES,"Lesões Leves",8496
+ES,Morto,1259
+GO,Ileso,23025
+GO,"Lesões Graves",6742
+GO,"Lesões Leves",10742
+GO,Morto,2110
+MA,Ileso,7929
+MA,"Lesões Graves",2727
+MA,"Lesões Leves",3223
+MA,Morto,1393
+MG,Ileso,89794
+MG,"Lesões Graves",17178
+MG,"Lesões Leves",36914
+MG,Morto,5725
+MS,Ileso,9743
+MS,"Lesões Graves",2688
+MS,"Lesões Leves",4731
+MS,Morto,855
+MT,Ileso,12557
+MT,"Lesões Graves",2708
+MT,"Lesões Leves",4750
+MT,Morto,1122
+PA,Ileso,14435
+PA,"Lesões Graves",2580
+PA,"Lesões Leves",4522
+PA,Morto,900
+PB,Ileso,11891
+PB,"Lesões Graves",2954
+PB,"Lesões Leves",5592
+PB,Morto,972
+PE,Ileso,23105
+PE,"Lesões Graves",4770
+PE,"Lesões Leves",8695
+PE,Morto,2118
+PI,Ileso,7611
+PI,"Lesões Graves",2628
+PI,"Lesões Leves",3060
+PI,Morto,1026
+PR,Ileso,57230
+PR,"Lesões Graves",9634
+PR,"Lesões Leves",25690
+PR,Morto,2905
+RJ,Ileso,67452
+RJ,"Lesões Graves",5904
+RJ,"Lesões Leves",15123
+RJ,Morto,2676
+RN,Ileso,13153
+RN,"Lesões Graves",2501
+RN,"Lesões Leves",4475
+RN,Morto,899
+RO,Ileso,9202
+RO,"Lesões Graves",2575
+RO,"Lesões Leves",6017
+RO,Morto,577
+RR,Ileso,638
+RR,"Lesões Graves",268
+RR,"Lesões Leves",716
+RR,Morto,152
+RS,Ileso,51665
+RS,"Lesões Graves",6594
+RS,"Lesões Leves",16863
+RS,Morto,2112
+SC,Ileso,61118
+SC,"Lesões Graves",10609
+SC,"Lesões Leves",29948
+SC,Morto,2852
+SE,Ileso,4983
+SE,"Lesões Graves",867
+SE,"Lesões Leves",1969
+SE,Morto,481
+SP,Ileso,52643
+SP,"Lesões Graves",5380
+SP,"Lesões Leves",16177
+SP,Morto,2136
+TO,Ileso,2810
+TO,"Lesões Graves",1053
+TO,"Lesões Leves",1447
+TO,Morto,507
