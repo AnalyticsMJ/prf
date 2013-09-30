@@ -184,10 +184,9 @@ FIELDS TERMINATED BY ';'
 IGNORE 1 LINES ;
 
 
--- load tipounidadeoperacional
+-- load uf_estatistica
 LOAD DATA LOCAL INFILE '{%data_dir%}/uf_stat.csv' 
-INTO TABLE ufestatistica 
-character set latin1
+INTO TABLE ufestatistica
 FIELDS TERMINATED BY ';'   
 IGNORE 1 LINES ;
 
