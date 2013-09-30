@@ -1,11 +1,18 @@
-define(['ko', 'app/views/state-view'], function (ko, stateView) {
+define(['ko', 'underscore', 'app/views/state-view'], function (ko, _, stateView) {
     return {
         title: ko.observable("PRF"),
         loaded: true,
-        stateView: stateView,
-
+        states: ko.observableArray(),
+        
+		selectedStateView: ko.observable(),
+		
         selectState: function(state) {
-            stateView.updateWith(state);
-        }
+            selectedStateView.updateWith(state);
+        },
+		
+		loadStates: function(states){
+			selectedStateView(states);
+		}
+		
     };
 });

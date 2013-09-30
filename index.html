@@ -25,9 +25,9 @@
         <div class="preload" data-bind="visible: !loaded"><img src="img/loading.gif" /></div>
         <div id="content" data-bind="visible: loaded">
         <h1 data-bind="text: title"></h1>
-            <div id="state" data-bind="with: stateView">
-                <h2 data-bind="text: name"></h2>
-            </div>
+		<ul data-bind="foreach: states">
+			<li data-bind="text:name"></li>
+		</ul>        
         </div>
 
 

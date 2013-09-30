@@ -20,6 +20,6 @@ require(['ko', 'app/views/main-view', 'data/data-finder'], function(ko, mainView
     ko.applyBindings(mainView, document.getElementsByTagName('html')[0]);
 
     //TODO: remove this. change states by user actions
-    var state = dataFinder.findState('PE');
-    mainView.selectState(state);
+    var states = dataFinder.allStates();
+    mainView.states(states);
 });
