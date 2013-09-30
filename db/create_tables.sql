@@ -230,7 +230,7 @@ CREATE TABLE ocorrenciaacidente ( -- Cadastro de ocorrência envolvendo veículo
 
 CREATE TABLE ufestatistica (
 	uf CHAR(2) PRIMARY KEY,
-	descricao VARCHAR(15),
+	descricao VARCHAR(30),
 	populacao INT,
 	frota INT
 );

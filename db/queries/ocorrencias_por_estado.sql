@@ -1,21 +1,16 @@
 use prf;
--- localbr.lbrbr = nome da estrada
---
-select tmuuf ESTADO, 
-  case when hour(ocodataocorrencia) >= 0 and hour(ocodataocorrencia) <6 THEN 'MADRUGADA'
-   when hour(ocodataocorrencia) >= 6 and hour(ocodataocorrencia) <12 THEN 'DIA'
-   when hour(ocodataocorrencia) >= 12 and hour(ocodataocorrencia) <18 THEN 'TARDE'
-   ELSE 'NOITE'
-   end 
-   AS HORARIO
-,count(ocoid) 'QTD_OCORRENCIA'
- from ocorrencia
- left join ocorrenciaacidente on ocoid = oacocoid
- join municipio on tmucodigo = ocomunicipio
-  join localbr on lbrid = ocolocal
- group by tmuuf, horario
-order by 1,2,3
 
--- ocostatus = sempre S 
--- ocotipo = sempre 1
-;
+select @rownum := @rownum + 1 AS rank,
+  stat.*
+from (
+	select 
+	 tmuuf uf, count(distinct ocoid) 'qtd_ocorrencia', cast(count(distinct ocoid) / (populacao /100000) as UNSIGNED INTEGER) 'acidentes_por_100_mil'
+	 from ocorrencia
+	 left join ocorrenciaacidente on ocoid = oacocoid
+	 join municipio on tmucodigo = ocomunicipio
+	 join ufestatistica on uf = tmuuf 
+	 group by tmuuf 
+	ORDER BY 3 DESC
+) as stat
+
+ join (SELECT @rownum := 0) r
