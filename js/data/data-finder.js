@@ -1,4 +1,4 @@
-define(['data/states', 'data/acidentes-por-100-mil', 'underscore'], function(states, accidents, _) {
+define(['data/states', 'underscore'], function(states, _) {
     return {
         findState: function(abbreviation) {
             return _.find(states, function(e) {
@@ -8,11 +8,7 @@ define(['data/states', 'data/acidentes-por-100-mil', 'underscore'], function(sta
 		allStates: function(){
 			return states;
 		},
-		accidentsByState: function(abbreviation){
-			return _.find(accidents, function(accident){
-				return accident.uf === abbreviation;
-			})
-		}
+		
 		
     };
 });

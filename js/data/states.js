@@ -1,4 +1,4 @@
-define(['app/models/state'], function(State) {
+define(['app/models/state', 'data/accidents-by-100-thousand','data/accidents-by-severity', 'underscore'], function(State, by100Thousand, bySeverity,_) {
     var states = [];
     states.push(new State().withAbbreviation("AC").withName("Acre").withPopulation(707125));
     states.push(new State().withAbbreviation("AL").withName("Alagoas").withPopulation(3093994));
@@ -27,6 +27,15 @@ define(['app/models/state'], function(State) {
     states.push(new State().withAbbreviation("SP").withName("São Paulo").withPopulation(39924091));
     states.push(new State().withAbbreviation("SE").withName("Sergipe").withPopulation(2036277));
     states.push(new State().withAbbreviation("TO").withName("Tocantins").withPopulation(1373551));
+
+
+    _.each(states, function(state){
+    	state.by100Thousand = _.find(by100Thousand, function(stat){ return stat.uf === state.abbreviation});
+    	state.bySeverity = _.find(bySeverity, function(stat){ return stat.uf === state.abbreviation});		
+    });
+  
+
+
 
     return states;
 })

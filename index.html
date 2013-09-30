@@ -48,22 +48,25 @@
 	            </div>
 
 
-
 	            <div class="statesList" data-bind="visible: loaded">
 	    			<ul data-bind="foreach: states" class="nav nav-pills nav-stacked">
 	    				<li><a href="#" data-bind="text:name, click:$parent.stateClicked"></a></li>
 	    			</ul>
 	            </div>
-    			<div class="stateInfo" data-bind="visible: selectedStatistic">
-    				<dl data-bind="with: selectedStatistic">
-    					<dt>Rank</dt>
-    					<dd data-bind="text:rank" ></dd>
+    			<div class="stateInfo"data-bind="visible: selectedState">
+					<dl data-bind="with: selectedState">
+						<dt>Rank</dt>
+						<dd data-bind="text:by100Thousand.rank" ></dd>
 			
-    					<dt>Acidentes por 100 mil habitantes</dt>
-    					<dd data-bind="text:acidentes_por_100_mil"></dd>			
-    				</dl>  				
+						<dt>Acidentes por 100 mil habitantes</dt>
+						<dd data-bind="text:by100Thousand.acidentes_por_100_mil"></dd>			
+					
+						<dt>Gravidade</dt>
+						<dd data-bind="text:by100Thousand.acidentes_por_100_mil"></dd>			
+					
+					</dl>		
     			</div>        
-				
+			
 			</div>
 
             <!-- Insert scripts here -->
