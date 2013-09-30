@@ -34,7 +34,7 @@ define(['app/models/state', 'data/accidents-by-100-thousand','data/accidents-by-
     	state.bySeverity = _.find(bySeverity, function(stat){ return stat.uf === state.abbreviation});		
     });
   
-
+    states = _.sortBy(states, function(state){ return state.by100Thousand.rank;  })
 
 
     return states;
