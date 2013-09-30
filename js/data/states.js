@@ -30,8 +30,8 @@ define(['app/models/state', 'data/accidents-by-100-thousand','data/accidents-by-
 
 
     _.each(states, function(state){
+    	state.bySeverity = _.filter(bySeverity, function(stat){ return stat.uf === state.abbreviation});		
     	state.by100Thousand = _.find(by100Thousand, function(stat){ return stat.uf === state.abbreviation});
-    	state.bySeverity = _.find(bySeverity, function(stat){ return stat.uf === state.abbreviation});		
     });
   
     states = _.sortBy(states, function(state){ return state.by100Thousand.rank;  })

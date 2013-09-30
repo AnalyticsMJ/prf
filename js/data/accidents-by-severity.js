@@ -1,4 +1,5 @@
-[
+define(function() {
+	return[
 	{
 		'uf' : 'AC',
 		'gravidade' : 'Ileso',
@@ -540,3 +541,4 @@
 		'qtd_ocorrencia' : 507
 	}
 ]
+});
