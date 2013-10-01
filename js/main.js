@@ -1,7 +1,7 @@
 require.config({
     baseUrl: "js",
     paths: {
-        "jquery": ["http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min",
+        "jquery": ["http://code.jquery.com/jquery-1.10.2.min",
             "vendor/jquery-1.10.2.min"],
         "ko": ["http://cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min",
             "vendor/knockout-2.3.0.min"],
