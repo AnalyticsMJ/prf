@@ -1,67 +1,80 @@
-define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder', 'nv'], function (ko, _, stateView, dataFinder) {
-    var self = this;
-	
-	self.title = ko.observable("PRF");
-	self.loaded = true;
-	self.states = ko.observableArray();
-	self.selectedState = ko.observable(null);
- 
-	self.stateClicked = function(state) {		
-	    self.selectedState(state);
-		showSeverityChart(state.bySeverity);
-		showByHourChart(state.byHour);
-	};
-	
-	showSeverityChart = function(data){
-		
-		nv.addGraph(function() {    
-		    var chart = nv.models.pieChart()
-		        .x(function(d) { return d.gravidade; })
-		        .y(function(d) { return d.qtd_ocorrencia; })
-				.showLabels(true)
-				.showLegend(false)
-				.tooltipContent(function(key){return '<span class="tooltip">'+key+'</span>';});
-				
-		      d3.select("#severity")
-		          .datum([{key: "", values: data}])
-		          .transition().duration(1200) 
-		          .call(chart);
+define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder', 'goog!visualization,1,packages:[corechart]'], function(ko, _, stateView, dataFinder) {
+  var self = this;
 
-		    return chart;
-		});
-	}
-	
-	showByHourChart = function(data){
-		nv.addGraph(function() {  
-	      var chart = nv.models.lineChart()
-        .x(function(d) { return d.hora; })
-        .y(function(d) { return d.qtd_ocorrencia; });
-	    
-	      chart.xAxis
-	          .axisLabel('Hora')
-	          .tickFormat(d3.format(',r'));
-	    
-	      chart.yAxis
-	          .axisLabel('Quantidade')
-	          .tickFormat(d3.format('.02f'));
-	    
-	      d3.select('#hour')
-	        .datum([{key: "", values: data, color: '#2ca02c'}])
-	        .transition().duration(500)
-	          .call(chart);
+  self.title = ko.observable("PRF");
+  self.loaded = true;
+  self.states = ko.observableArray();
+  self.selectedState = ko.observable(null);
 
-	  nv.utils.windowResize(function() { d3.select('#hour').call(chart) });
-	    
-	      return chart;
-	    });
-	   
-		
-	}
-	
+  console.log('ha');
+  
+  self.stateClicked = function(state) { 
+    self.selectedState(state);
+    showSeverityChart(state.bySeverity); 
+    showByHourChart(state.byHour); 
+  };
+    
+    
+    showSeverityChart = function(stats) {
 
-	self.loadStates = function(states){
-		selectedStateView(states);
-	};
-			
-	return self;
-});
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Gravidade');
+        data.addColumn('number', 'Acidentes'); 
+        data.addRows(_.map(stats, function(d) {
+          return [d.gravidade, d.qtd_ocorrencia]
+        }));
+        var options = { 
+              width: '100%', height: '100%',
+              animation: { duration: 1000 },
+              backgroundColor: 'transparent',
+              chartArea:{width: '80%', height: '80%',},
+               legend: { position: 'none'}                 
+              };
+            
+         var chart = new google.visualization.PieChart(document.getElementById('severity')); 
+         chart.draw(data, options);
+    }
+
+
+       
+    showByHourChart = function(stats) {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Hora');
+      data.addColumn('number', 'Acidentes');
+      data.addColumn({type: 'string', role: 'tooltip'});
+      data.addRows(_.map(stats, function(d) {
+        return [d.hora, d.qtd_ocorrencia, d.hora+"h: "+d.qtd_ocorrencia+" acidentes"]
+      }));
+      var options = { 
+            width: '100%', height: '100%',
+            animation: { duration: 1000 },
+            backgroundColor: 'white',
+            chartArea:{width: '80%', height: '80%',},
+            curveType: 'function',
+            hAxis: { 
+                ticks: [0,6,12,18,23], 
+                gridlines: { count: 4, color: 'transparent'}
+            },
+            vAxis:{ textPosition :'none',
+                 gridlines: { color: 'transparent'}
+            },
+             legend: { position: 'none'}                 
+            };
+            
+        var chart = new google.visualization.LineChart(document.getElementById('hour'));
+  
+        chart.draw(data, options);    
+
+    }
+     
+    
+
+
+    self.loadStates = function(states) {
+      selectedStateView(states);
+    };
+
+    return self;
+  });
