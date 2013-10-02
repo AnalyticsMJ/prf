@@ -21,7 +21,17 @@
             <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 			
 			<style>
-			      body { background: #FFFFE2 }
+			      body 
+				  { 
+					  background-image: #FFFFE2; 
+				  }
+				  html { 
+				    background: url(img/background.jpg) no-repeat center center fixed; 
+				    -webkit-background-size: cover;
+				    -moz-background-size: cover;
+				    -o-background-size: cover;
+				    background-size: cover;
+				  }
 			</style>
 			
         </head>
@@ -34,20 +44,10 @@
 			<div class="fullPage">
             <div class="preload" data-bind="visible: !loaded"><img src="img/loading.gif" /></div>
 			<div class="main">
-	            <div class="navbar navbar-inverse navbar-fixed-top">
-	              <div class="container">
-	                <div class="navbar-header">
-	                  <a class="navbar-brand" href="#">Violência nas Estradas</a>
-	                </div>
-	                <div class="collapse navbar-collapse">
-	                  <ul class="nav navbar-nav">
-	                    <li class="active"><a href="#">Home</a></li>
-	                    <li><a href="#about">About</a></li>
-	                    <li><a href="#contact">Contact</a></li>
-	                  </ul>
-	                </div><!--/.nav-collapse -->
-	              </div>
-	            </div>
+				<div id="navigation">
+					<a href="#">Violência nas estradas</a>
+					<a href="#">Contato</a>
+				</div>
 
 
 	            <div class="statesList" data-bind="visible: loaded">
