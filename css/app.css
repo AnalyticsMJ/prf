@@ -45,18 +45,21 @@ body {
 	
 }
 
-.statesList a {
-	text-decoration:none;
-
-}
-
 .statesList ul { 
 	list-style:none;
 }
 .statesList li { 
 	border-top: 1px solid #eee;
 	width: 150px;
+	
 }
+
+.statesList a {
+	text-decoration:none;
+	color: #2B718c;
+}
+
+
 
 .stateInfo { 
 	font-weight:none;
