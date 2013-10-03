@@ -1,9 +1,8 @@
-body 
-{ 
+body { 
 	font-family: 'Poiret One', cursive;
-	background: #84c0d7; 
-	font-size: 20px;
-	color: white;
+	background: #FFFFFF; 
+	color: #2B718c;
+	height:600px;
 }
 
 .main {
@@ -13,7 +12,7 @@ body
 
 .title{
 
-	font-size:30px;	
+	font-size:40px;	
 	text-align:right;
 	margin-right: 30px;
 	margin-top: 10px;
@@ -31,14 +30,39 @@ body
 
 .statesList {
 	float:left;
-	width:200px;
+	width:230px;
+	height:580px;
+	line-height:1.9em;
+	border-left:0;
+	position:relative;
+
+	left:0px;
+	margin-left:-20px;
+	text-align:left;
+	font-size:15px;
+	font-family: 'Titillium Web', sans-serif;
+	overflow-y: scroll;
+	
+}
+
+.statesList a {
+	text-decoration:none;
+
+}
+
+.statesList ul { 
+	list-style:none;
+}
+.statesList li { 
+	border-top: 1px solid #eee;
+	width: 150px;
 }
 
 .stateInfo { 
+	font-weight:none;
 	margin-left: 340px;
-	margin-top: 80px;
+	margin-top: 0px;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
-	color: #FFFFFF;
 }

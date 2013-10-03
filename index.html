@@ -1,44 +1,35 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title data-bind="text: title"> Loading... </title>
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/app.css">
-
-		<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
-
-    <script src="js/vendor/jquery-1.10.2.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-
-</head>
-	<body>
-	    <!--[if lt IE 7]>
-	        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	    <![endif]-->
-
-	    <!-- Add your site or application content here -->
-		<div class="fullPage">
-			<div class="preload" data-bind="visible: !loaded"><img src="img/loading.gif" /></div>
-
+    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+    <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+    <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="description" content="">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title data-bind="text: title"> Loading... </title>
+            <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+            <link rel="stylesheet" href="css/app.css">
+			<link rel="stylesheet" href="css/nv.d3.css">
+			<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+			<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+			<link href='http://fonts.googleapis.com/css?family=Titillium+Web:200' rel='stylesheet' type='text/css'>
+			<script src = "js/vendor/jquery-1.10.2.min.js"></script>
+            <script src = "js/vendor/modernizr-2.6.2.min.js"></script>
+        </head>
+        <body>
+            <!--[if lt IE 7]>
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
 			<div class="title">Ocorrências nas Rodovias Federais</div>
 			<div class="main">
-				<div class="statesList" data-bind="visible: loaded">
-					<ul data-bind="foreach: states" class="nav nav-pills nav-stacked">
-						<li><a href="#" data-bind="text:name, click:$parent.stateClicked"></a></li>
-					</ul>
-				</div>
-				<div class="stateInfo"data-bind="visible: selectedState">
+	            <div class="statesList" data-bind="visible: loaded">
+	    			<ul data-bind="foreach: states" id="navigation">
+	    				<li><a href="#" data-bind="text:name, click:$parent.stateClicked"></a></li>
+	    			</ul>
+	            </div>
+    			<div class="stateInfo"data-bind="visible: selectedState">
 					<dl data-bind="with: selectedState">
 						<dt>Rank</dt>
 						<dd data-bind="text:by100Thousand.rank" ></dd>
