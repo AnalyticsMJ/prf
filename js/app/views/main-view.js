@@ -54,16 +54,19 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder', 'goog!vi
             chartArea:{width: '80%', height: '80%',},
             curveType: 'function',
             hAxis: { 
+                  baselineColor: 'transparent',
                 ticks: [0,6,12,18,23], 
                 gridlines: { count: 4, color: 'transparent'}
             },
-            vAxis:{ textPosition :'none',
+            vAxis:{ 
+               
+                textPosition :'none',
                  gridlines: { color: 'transparent'}
             },
              legend: { position: 'none'}                 
             };
             
-        var chart = new google.visualization.LineChart(document.getElementById('hour'));
+        var chart = new google.visualization.ColumnChart(document.getElementById('hour'));
   
         chart.draw(data, options);    
 
