@@ -22,17 +22,22 @@
             <!--[if lt IE 7]>
                 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
-			
-            <div class="preload" data-bind="visible: !loaded"><img src="img/loading.gif" /></div>
-			<div class="title" data-bind="visible: loaded">Ocorrências nas Rodovias Federais</div>
+			<div class="title">Ocorrências nas Rodovias Federais</div>
 			<div class="main">
 	            <div class="statesList" data-bind="visible: loaded">
 	    			<ul data-bind="foreach: states" id="navigation">
 	    				<li><a href="#" data-bind="text:name, click:$parent.stateClicked"></a></li>
 	    			</ul>
-	            </div>
-    			<div class="stateInfo"data-bind="visible: selectedState">
-					<dl data-bind="with: selectedState">
+	            </div>    
+          <div class="stateInfo"data-bind="visible: selectedState">
+           	<div id="porTipoDeVeiculo">
+                <div class="iconVeiculo"> <img src="img/motorcycle.png" width="80px" height="80px"/>  </div>
+                <div class="iconVeiculo">  <img src="img/car.png" width="80px" height="80px"/>  </div>
+                <div class="iconVeiculo">  <img src="img/bus.png" width="88px" height="50px" style="padding-top: 30px;"/>  </div>
+                <div class="iconVeiculo">  <img src="img/truck.png" width="88px" height="50px" style="padding-top: 30px;">  </div>
+               </div>
+			<div id="pie">
+            <dl data-bind="with: selectedState">
 						<dt>Rank</dt>
 						<dd data-bind="text:by100Thousand.rank" ></dd>
 
@@ -41,11 +46,14 @@
 
 						<dt>Gravidade</dt>
 						<dd><div id="severity"></div></dd>	
-
-						<dt>Ao longo do dia</dt>
-						<dd><div id="hour"></div></dd>				
-
-					</dl>		
+          </dl>
+        </div>
+         <div id="histograma">
+          <dl data-bind="with: selectedState">
+            <dt>Ao longo do dia</dt>
+            <dd><div id="hour"></div></dd>
+          </dl>
+        </div>
 				</div>        
 
 			</div>

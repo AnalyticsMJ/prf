@@ -45,21 +45,18 @@ body {
 	
 }
 
+.statesList a {
+	text-decoration:none;
+	color: #2B718c;
+}
+
 .statesList ul { 
 	list-style:none;
 }
 .statesList li { 
 	border-top: 1px solid #eee;
 	width: 150px;
-	
 }
-
-.statesList a {
-	text-decoration:none;
-	color: #2B718c;
-}
-
-
 
 .stateInfo { 
 	font-weight:none;
@@ -68,4 +65,27 @@ body {
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
+}
+
+#histograma {
+  width: 800px;
+  margin-left: 10px;
+  position:absolute;
+  top: 50%;
+}
+
+#pie {
+  width: 300px;
+  position: absolute;
+  right: -250%;
+}
+#porTipoDeVeiculo {
+  position: absolute;
+  left: 250px;
+  top: 0px;
+  width: 550px;
+}
+.iconVeiculo {
+  float:left;
+  margin-left:25px;
 }
