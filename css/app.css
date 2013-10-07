@@ -47,9 +47,8 @@ body {
 
 .statesList a {
 	text-decoration:none;
-	color: #2B718c;
+  color: #2B718c;
 }
-
 .statesList ul { 
 	list-style:none;
 }
@@ -82,7 +81,7 @@ body {
 #porTipoDeVeiculo {
   position: absolute;
   left: 250px;
-  top: 0px;
+  top: 55px;
   width: 550px;
 }
 .iconVeiculo {
