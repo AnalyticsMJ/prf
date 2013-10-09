@@ -28,7 +28,7 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder', 'goog!vi
               width: '100%', height: '100%',
               animation: { duration: 1000 },
               backgroundColor: 'transparent',
-              chartArea:{width: '80%', height: '80%',},
+              chartArea:{width: '90%', height: '90%',},
                legend: { position: 'none'}                 
               };
             
