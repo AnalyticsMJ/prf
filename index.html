@@ -52,17 +52,20 @@
 		        </div>
            </div>
 
-			<div id="pie">
+           <div id="pie">
             <dl data-bind="with: selectedState">
-						<dt>Rank</dt>
-						<dd data-bind="text:by100Thousand.rank" ></dd>
-
-						<dt>Acidentes por 100 mil habitantes</dt>
-						<dd data-bind="text:by100Thousand.acidentes_por_100_mil"></dd>			
-
-						<dt>Gravidade</dt>
-						<dd><div id="severity"></div></dd>	
-          </dl>
+             <div class="dadosPie"> 
+               <div class="titulo">Ranking </div>
+                <div class ="dado" data-bind="text:by100Thousand.rank" ></div>
+                <div class="titulo">Acidentes <span class="subTitulo"> (100 mil hab.)</span></div>
+                <div class="dado" data-bind="text:by100Thousand.acidentes_por_100_mil"></div>			
+             </div> <!-- fim dadosPie --> 
+          <div class="titulo"> Gravidade</div>
+          <div class="pieContainer">
+          <dd><div id="severity"></div></dd>	
+         </div>
+        </dl>
+        </div>
         </div>
          <div id="histograma">
           <dl data-bind="with: selectedState">
