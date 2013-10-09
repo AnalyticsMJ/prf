@@ -29,10 +29,14 @@
 	    				<li><a href="#" data-bind="text:name, click:$parent.stateClicked"></a></li>
 	    			</ul>
 	            </div>    
-          <div class="stateInfo"data-bind="visible: selectedState">
-            <div id="porTipoDeVeiculo">
+          <div class="stateInfo" data-bind="visible: selectedState">
 
-                <div class="iconVeiculo">  <img src="img/bicycle-h50.png" width="82px" height="50px" >  </div>
+            <div id="porTipoDeVeiculo" data-bind="with: selectedState">
+
+                <div class="iconVeiculo">  
+					<img src="img/bicycle-h50.png" width="82px" height="50px" >
+					<div data-bind="text:byVehicleType.qtd_ocorrencias_bicicleta"></div>
+				</div>
                 <div class="iconVeiculo">  <img src="img/motorcycle-h50.png" width="80px" height="50px" >  </div>
                 <div class="iconVeiculo">  <img src="img/car-h50.png" width="80px" height="50px"/>  </div>
                 <div class="iconVeiculo">  <img src="img/bus-h50.png" width="88px" height="50px"/>  </div>

@@ -1,4 +1,4 @@
-define([ 'underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'data/accidents-by-severity', 'data/accidents-by-hour'], function(_, State, by100Thousand, bySeverity, byHour) {
+define([ 'underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'data/accidents-by-severity', 'data/accidents-by-hour', 'data/accidents-by-vehicle-type'], function(_, State, by100Thousand, bySeverity, byHour, byVehicleType) {
     var states = [];
     states.push(new State().withAbbreviation("AC").withName("Acre").withPopulation(707125));
     states.push(new State().withAbbreviation("AL").withName("Alagoas").withPopulation(3093994));
@@ -33,7 +33,8 @@ define([ 'underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'da
     	state.bySeverity = _.filter(bySeverity, function(stat){ return stat.uf === state.abbreviation});		
     	state.by100Thousand = _.find(by100Thousand, function(stat){ return stat.uf === state.abbreviation});
     	state.byHour = _.filter(byHour, function(stat){ return stat.uf === state.abbreviation});
-		
+		state.byVehicleType = _.find(byVehicleType, function(stat){return stat.uf === state.abbreviation});
+		console.log(state.byVehicleType);
     });
   
     states = _.sortBy(states, function(state){ return state.by100Thousand.rank;  })

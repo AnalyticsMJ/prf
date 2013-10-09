@@ -3,6 +3,7 @@ define(function() {
         this.name = "";
         this.abbreviation = "";
         this.population = 0;
+		this.vehicleType = "";
 
         this.withName = function(name) {
             return (this.name = name || "", this);
@@ -15,5 +16,9 @@ define(function() {
         this.withAbbreviation = function(abbreviation) {
             return (this.abbreviation = abbreviation || "", this);
         };
+		
+		this.withVehicleType = function(vehicleType) {
+			return (this.vehicleType = vehicleType || "", this);
+		};
     };
 });
