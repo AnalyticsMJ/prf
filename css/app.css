@@ -88,3 +88,13 @@ body {
   float:left;
   margin-left:25px;
 }
+
+.dadoVeiculo {
+  color:#dd9143;
+  font-size: 22px;
+  width: 15px;
+  position: relative;
+  margin-left: 21px;
+  margin-top: 5px;
+  font-weight: 900;
+}
