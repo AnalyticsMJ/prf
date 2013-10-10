@@ -25,7 +25,7 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder', 'goog!vi
           return [d.gravidade, d.qtd_ocorrencia]
         }));
         var options = { 
-              colors: ['#3366CC','#109618','#FF9900','#DC3912'],
+              colors: ['#2B718C','#2DA258','#DF923E','#DF5A3E'],
               width: '100%', height: '100%',
               animation: { duration: 1000 },
               backgroundColor: 'transparent',
@@ -49,6 +49,7 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder', 'goog!vi
         return [d.hora, d.qtd_ocorrencia, d.hora+"h: "+d.qtd_ocorrencia+" acidentes"]
       }));
       var options = { 
+            colors: ['#DF5A3E'],
             width: '100%', height: '100%',
             animation: { duration: 1000 },
             backgroundColor: 'white',
