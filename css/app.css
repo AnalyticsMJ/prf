@@ -1,8 +1,9 @@
-body { 
-	font-family: 'Poiret One', cursive;
+html, body { 
+	font-family:  'Titillium Web', cursive;
 	background: #FFFFFF; 
 	color: #2B718c;
-	height:600px;
+	height:90%;
+  width:100%;
 }
 
 .main {
@@ -12,7 +13,7 @@ body {
 }
 
 .title{
-
+  font-family: 'Poiret One';
 	font-size:40px;	
 	text-align:right;
 	margin-right: 30px;
@@ -29,15 +30,19 @@ body {
     margin-left: -25px;
 }
 
+.tituloEstado {
+  font-size:19px;
+  color:#255368;
+  margin-left:17px;
+}
+
 .statesList {
 	float:left;
-	width:230px;
-	height:580px;
+	height:500px;
 	line-height:1.9em;
 	border-left:0;
 	position:relative;
 
-	left:0px;
 	margin-left:-20px;
 	text-align:left;
 	font-size:15px;
@@ -68,24 +73,45 @@ body {
 }
 
 #histograma {
-  width: 800px;
-  margin-left: 20%;
-  position:absolute;
-  top: 50%;
-  font-family: 'Source Code Pro', serif;
+display:inline-block;
+width: 50%;
+position:relative;
+top:-100px;}
+
+#histograma .tituloHistograma {
+  font-size:19px;
+  color:#255368;
+  text-align:center;
 }
 
+
 #pie {
-  width: 300px;
-  position: absolute;
-  right: 5%;
+  font-size:19px;
+  display:inline-block;
+  width: 30%;
+  position: relative;
+  top:-160px;
+}
+.pieContainer {
+margin-left:-6%;
 }
 #porTipoDeVeiculo {
-  position: absolute;
-  left: 250px;
-  top: 55px;
-  width: 550px;
+margin-left:250px;
+position:relative;
+top:12px;
+width:60%;
 }
+
+.tituloPorTipoDeVeiculo {
+  display:block;
+  text-align:center;
+  font-size: 19px;
+  color: #255368;
+  padding-bottom: 20px;
+  position:relative;
+  width:80%;
+}
+
 .iconVeiculo {
   float:left;
   margin-left:25px;
@@ -94,11 +120,10 @@ body {
 .dadoVeiculo {
   color:#dd9143;
   font-size: 22px;
-  width: 15px;
   position: relative;
-  margin-left: 21px;
   margin-top: 5px;
   font-weight: 900;
+  text-align:center;
 }
 
 .dadosPie {
@@ -108,16 +133,19 @@ border-width: 3px;
 background-color: rgb(243, 243, 243);
 padding: 12px;
 position:relative;
+width:80%;
+margin:auto;
 }
+
 .dadosPie .titulo {
   margin-right: 10px;
   clear:both;
   display:block;
   text-align: center;
-
+  color:#255368;
 }
 .dadosPie .dado {
-
+  font-size:22px;
   margin-right: 10px;
   clear:both;
   display:block;
@@ -127,3 +155,10 @@ position:relative;
 .dadosPie .subTitulo {
   font-size: 10px;
 }
+
+.tituloPie {
+  text-align:center;
+  color: #255368;
+  font-size: 19px;
+margin-top: 50px;}
+

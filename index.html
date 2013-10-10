@@ -15,7 +15,7 @@
 			<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 			<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 			<link href='http://fonts.googleapis.com/css?family=Titillium+Web:200' rel='stylesheet' type='text/css'>
-      <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
+      <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
       <script src = "js/vendor/jquery-1.10.2.min.js"></script>
             <script src = "js/vendor/modernizr-2.6.2.min.js"></script>
         </head>
@@ -25,14 +25,16 @@
             <![endif]-->
 			<div class="title">Ocorrências nas Rodovias Federais</div>
 			<div class="main">
-	            <div class="statesList" data-bind="visible: loaded">
+        <div class="tituloEstado" >Unidade Federativa</div>
+        <div class="statesList" data-bind="visible: loaded">
 	    			<ul data-bind="foreach: states" id="navigation">
 	    				<li><a href="#" data-bind="text:name, click:$parent.stateClicked"></a></li>
 	    			</ul>
-	            </div>    
-          <div class="stateInfo" data-bind="visible: selectedState">
-
-            <div id="porTipoDeVeiculo" data-bind="with: selectedState">
+	      </div>    
+        <div id="graficos">      
+              <div id="porTipoDeVeiculo" data-bind="visible: selectedState">
+            <div class="tituloPorTipoDeVeiculo"> Acidentes por tipo de Veiculo </div>
+            <div data-bind="with: selectedState">
 
                 <div class="iconVeiculo">  <img src="img/bicycle-h50.png" width="82px" height="50px" >
           			<div class="dadoVeiculo" data-bind="text:byVehicleType.qtd_ocorrencias_bicicleta"></div>
@@ -51,7 +53,12 @@
 		        </div>
 		        </div>
            </div>
-
+         <div id="histograma">
+          <dl data-bind="with: selectedState">
+            <div class='tituloHistograma'>Ocorrências Ao Longo Do Dia</div>
+            <dd><div id="hour"></div></dd>
+          </dl>
+        </div> <!-- End Histograma -->
            <div id="pie">
             <dl data-bind="with: selectedState">
              <div class="dadosPie"> 
@@ -60,22 +67,14 @@
                 <div class="titulo">Acidentes <span class="subTitulo"> (100 mil hab.)</span></div>
                 <div class="dado" data-bind="text:by100Thousand.acidentes_por_100_mil"></div>			
              </div> <!-- fim dadosPie --> 
-          <div class="titulo"> Gravidade</div>
+          <div class="tituloPie"> Gravidade</div>
           <div class="pieContainer">
           <dd><div id="severity"></div></dd>	
-         </div>
+        </div> <!--End pieContainer -->
         </dl>
-        </div>
-        </div>
-         <div id="histograma">
-          <dl data-bind="with: selectedState">
-            <dt>Ao longo do dia</dt>
-            <dd><div id="hour"></div></dd>
-          </dl>
-        </div>
-				</div>        
-
-			</div>
+        </div> <!--End Pie -->
+      </div> <!--End Graficos -->
+    </div> <!--End Main -->
 
 			<!-- Insert scripts here -->
 			<script src="js/plugins.js"></script>
