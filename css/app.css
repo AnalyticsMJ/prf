@@ -89,17 +89,11 @@ top:-100px;}
   font-size:19px;
   display:inline-block;
   width: 30%;
-  position: relative;
-  top:-160px;
 }
 .pieContainer {
 margin-left:-6%;
 }
 #porTipoDeVeiculo {
-margin-left:250px;
-position:relative;
-top:12px;
-width:60%;
 }
 
 .tituloPorTipoDeVeiculo {
