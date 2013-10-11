@@ -25,7 +25,8 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder', 'goog!vi
           return [d.gravidade, d.qtd_ocorrencia]
         }));
         var options = { 
-              colors: ['#2B718C','#2DA258','#DF923E','#DF5A3E'],
+              colors: ['#EFA190','#EF846E','#DF5A3E','#912A14'],
+              //colors: ['#FCAE91','#FB6A4A','#DE2D26','#A50F15'],
               width: '100%', height: '100%',
               animation: { duration: 1000 },
               backgroundColor: 'transparent',
