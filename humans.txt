@@ -4,6 +4,9 @@
 # TEAM
 
     Rafael Oliveira -- Developer -- rafael@rafaeloliveira.org
+    Gislene Pereira -- Developer -- gislene01@gmail.com
+    Johann Arispe -- Business Analyst/Developer 
+    Ricardo Cavalcanti -- Developer
 
 # TECHNOLOGY COLOPHON
 

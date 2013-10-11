@@ -8,6 +8,10 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder', 'goog!vi
 
   console.log('ha');
   
+  self.formatNumber = function(value) {
+      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  };
+
   self.stateClicked = function(state) { 
     self.selectedState(state);
     showSeverityChart(state.bySeverity); 

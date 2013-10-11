@@ -17,7 +17,8 @@
 			<link href='http://fonts.googleapis.com/css?family=Titillium+Web:200' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
       <script src = "js/vendor/jquery-1.10.2.min.js"></script>
-            <script src = "js/vendor/modernizr-2.6.2.min.js"></script>
+      <script src = "js/vendor/modernizr-2.6.2.min.js"></script>
+
         </head>
         <body>
             <!--[if lt IE 7]>
@@ -59,19 +60,19 @@
             <div class="tituloPorTipoDeVeiculo"> Acidentes por tipo de Veiculo </div>
             <div data-bind="with: selectedState">
               <div class="iconVeiculo">  <img src="img/bicycle-h50.png" width="49px" height="30px"  >
-            			<div class="dadoVeiculo" data-bind="text:byVehicleType.qtd_ocorrencias_bicicleta"></div>
+            			<div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_bicicleta)"></div>
   				    </div>
   		        <div class="iconVeiculo">  <img src="img/motorcycle-h50.png" width="48px" height="30px" > 
-  		          <div class="dadoVeiculo" data-bind="text:byVehicleType.qtd_ocorrencias_motocicleta"></div>
+  		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_motocicleta)"></div>
   		        </div>
   		        <div class="iconVeiculo">  <img src="img/car-h50.png" width="48px" height="30px"/> 
-  		          <div class="dadoVeiculo" data-bind="text:byVehicleType.qtd_ocorrencias_automovel"></div>
+  		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_automovel)"></div>
   		        </div>
   		        <div class="iconVeiculo">  <img src="img/bus-h50.png" width="53px" height="30px"/> 
-  		          <div class="dadoVeiculo" data-bind="text:byVehicleType.qtd_ocorrencias_onibus"></div>
+  		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_onibus)"></div>
   		        </div>
   		        <div class="iconVeiculo">  <img src="img/truck-h50.png" width="53px" height="30px"> 
-  		          <div class="dadoVeiculo" data-bind="text:byVehicleType.qtd_ocorrencias_caminhao"></div>
+  		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_caminhao)"></div>
   		        </div>
 		        </div>
            </div>
@@ -81,7 +82,7 @@
                <div class="titulo">Ranking </div>
                 <div class ="dado" data-bind="text:by100Thousand.rank" ></div>
                 <div class="titulo">Acidentes <span class="subTitulo"> (100 mil hab.)</span></div>
-                <div class="dado" data-bind="text:by100Thousand.acidentes_por_100_mil"></div>			
+                <div class="dado" data-bind="text: formatNumber(by100Thousand.acidentes_por_100_mil)"></div>			
              </div> <!-- fim dadosPie --> 
           <div class="tituloPie"> Gravidade</div>
           <div class="pieContainer">
