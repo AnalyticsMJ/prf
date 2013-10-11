@@ -22,16 +22,27 @@
         <body>
             <!--[if lt IE 7]>
                 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-            <![endif]-->
+                <![endif]-->
+    <div id="wrapper">           
+     <header id="header">
 			<div class="title">Ocorrências nas Rodovias Federais</div>
-			<div class="main">
-        <div class="tituloEstado" >Unidade Federativa</div>
+      </header> <!--header--> 
+      <section id="main">
+        <div id="container">
+          <div id="mapa">
+               Mapa 
+          </div> <!-- End mapa -->
+        </div> <!-- end container -->
+      <aside id="sideLeft">
+      <div class="tituloEstado" >Unidade Federativa</div>
         <div class="statesList" data-bind="visible: loaded">
 	    			<ul data-bind="foreach: states" id="navigation">
 	    				<li><a href="#" data-bind="text:name, click:$parent.stateClicked"></a></li>
 	    			</ul>
-	      </div>    
-        <div id="graficos">      
+          </div>    
+      </aside> <!--coluna da esquerda -->
+      <aside id="sideRight">
+      <div id="graficos">      
          <div id="histograma">
           <dl data-bind="with: selectedState">
             <div class='tituloHistograma'>Ocorrências Ao Longo Do Dia</div>
@@ -79,8 +90,9 @@
         </dl>
         </div> <!--End Pie -->
       </div> <!--End Graficos -->
-    </div> <!--End Main -->
-
+      </aside> <!-- coluna dereita -->
+    </section> <!--End Main -->
+  </div> <!-- End Wrapper -->
 			<!-- Insert scripts here -->
 			<script src="js/plugins.js"></script>
 			<script data-main="js/main" src="js/vendor/require-2.1.8.min.js"></script>
