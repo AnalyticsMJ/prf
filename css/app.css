@@ -1,6 +1,7 @@
 * {
   * margin:0;
   * padding:0;
+  * border:0;
 }
 html, body { 
 	font-family:  'Titillium Web', cursive;
@@ -8,6 +9,7 @@ html, body {
 	color: #2B718c;
 	height:90%;
   width:100%;
+  min-width:600px;
 }
 
 header, nav, section {
@@ -24,6 +26,9 @@ header, nav, section {
 /*---Header---*/
 #header {
   height: 60px;
+  clear:both;
+  float:left;
+  width:100%;
 }
 .title{
   font-family: 'Poiret One';
@@ -37,8 +42,10 @@ header, nav, section {
 #main {
 	position: relative;
   width: 100%;
-  height:1%;
-  padding: 0 0 100px;
+//  padding: 0 0 100px;
+  clear:both;
+  float:left;
+  overflow:hidden;
 }
 
 #main:after {
@@ -51,17 +58,39 @@ header, nav, section {
   width: 100%;
   float: left;
   overflow:hidden;
+  position:relative;
+
 }
 /*---Mapa--*/
 #mapa {
   padding: 35px 270px 0 270px;
 }
 
+.coluna {
+  float:left;
+  position:relative;
+}
+
+.col1 {
+  width:190px;
+//  left:102%;
+}
+
+.col2 {
+  width:135px;
+ // left:31%;
+}
+
+.col3 {
+  width:21%;
+//  left:85%;
+}
+
 /*---Coluna esquerda---*/
 #sideLeft {
   float: left;
-  width:250px;
-  margin-left: -100%;
+//  width:250px;
+//  margin-left: -100%;
   position: relative;
 }
 
@@ -110,9 +139,9 @@ header, nav, section {
 /*---Coluna direita---*/
 #sideRight {
   float:left;
-  margin-right: -3px;
-  width: 250px;
-  margin-left: -250px;
+//  margin-right: -3px;
+  width: 400px;
+//  margin-left: -250px;
   position:relative;
 }
 
@@ -126,12 +155,21 @@ header, nav, section {
     margin-left: -25px;
 }
 
+#graficos {
+border: rgb(243, 243, 243);
+border-style: solid;
+border-width: 3px;
+background-color: rgb(243, 243, 243);
+padding: 12px;
+position:relative;
+width:80%;
+margin:auto;
+}
+}
 
 
 #histograma {
-  display:inline-block;
-//width: 50%;
-//  position:relative;
+  margin:auto;
 }
 #histograma .tituloHistograma {
   font-size:19px;

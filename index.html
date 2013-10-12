@@ -28,13 +28,11 @@
      <header id="header">
 			<div class="title">Ocorrências nas Rodovias Federais</div>
       </header> <!--header--> 
-      <section id="main">
+      <section id="main" >
         <div id="container">
-          <div id="mapa">
-               Mapa 
-          </div> <!-- End mapa -->
-        </div> <!-- end container -->
-      <aside id="sideLeft">
+        
+          
+     <aside id="sideLeft" class="coluna col1">
       <div class="tituloEstado" >Unidade Federativa</div>
         <div class="statesList" data-bind="visible: loaded">
 	    			<ul data-bind="foreach: states" id="navigation">
@@ -42,7 +40,10 @@
 	    			</ul>
           </div>    
       </aside> <!--coluna da esquerda -->
-      <aside id="sideRight">
+      <div id="mapa" class="coluna col2">
+               Mapa 
+          </div> <!-- End mapa -->
+      <aside id="sideRight" class="coluna col3">
       <div id="graficos">      
          <div id="histograma">
           <dl data-bind="with: selectedState">
@@ -92,7 +93,10 @@
         </div> <!--End Pie -->
       </div> <!--End Graficos -->
       </aside> <!-- coluna dereita -->
-    </section> <!--End Main -->
+
+        
+        </div> <!-- end container -->
+          </section> <!--End Main -->
   </div> <!-- End Wrapper -->
 			<!-- Insert scripts here -->
 			<script src="js/plugins.js"></script>
