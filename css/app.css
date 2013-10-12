@@ -38,6 +38,12 @@ header, nav, section {
 	margin-top: 10px;
 }
 
+.nomeEstado {
+  text-align: right;
+  font-size: 25px;
+  margin-right: 31px;
+  margin-top: 5px;
+}
 /*---Area de conteudo---*/
 #main {
 	position: relative;
