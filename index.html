@@ -44,21 +44,22 @@
                Mapa 
           </div> <!-- End mapa -->
       <aside id="sideRight" class="coluna col3">
-      <div id="graficos">      
+      <dl>
+        <div id="graficos" data-bind="with: selectedState">
+          <section>
          <div id="histograma">
-          <dl data-bind="with: selectedState">
-            <div class='tituloHistograma'>Ocorrências Ao Longo Do Dia</div>
-            <dd><div id="hour"></div></dd>
-          </dl>
-        </div> <!-- End Histograma -->
-           <div id="pie">
-            <dl data-bind="with: selectedState">
-
+            <div class='tituloGraficos'>Ocorrências Ao Longo Do Dia</div>
+            <div id="hour"></div>
+          </div> 
+          </section> <!-- End Histograma -->
+        <section>
+        <div id="quadroDados">
           <!-- caja texto -->
-          <div class="dadosPie"> 
+          <section>
+          <div id="informationPorTipoDeVeiculo"> 
               
             <div id="porTipoDeVeiculo" data-bind="visible: selectedState">
-            <div class="tituloPorTipoDeVeiculo"> Acidentes por tipo de Veiculo </div>
+            <div class="tituloGraficos"> Acidentes por tipo de Veiculo </div>
             <div data-bind="with: selectedState">
               <div class="iconVeiculo">  <img src="img/bicycle-h50.png" width="49px" height="30px"  >
             			<div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_bicicleta)"></div>
@@ -76,22 +77,30 @@
   		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_caminhao)"></div>
   		        </div>
 		        </div>
-           </div>
+          </div>
+        </div>
+        </section> <!-- End informationPorTipoDeVeiculo --> 
 
-              
-              
+          <section> 
+          <div id="rankingInformation"> 
                <div class="titulo">Ranking </div>
                 <div class ="dado" data-bind="text:by100Thousand.rank" ></div>
                 <div class="titulo">Acidentes <span class="subTitulo"> (100 mil hab.)</span></div>
                 <div class="dado" data-bind="text: formatNumber(by100Thousand.acidentes_por_100_mil)"></div>			
-             </div> <!-- fim dadosPie --> 
-          <div class="tituloPie"> Gravidade</div>
+         </div>
+         </section> <!-- End rankingInformation -->
+         <section>
+         <div id="pie">
+          <div class="tituloGraficos"> Gravidade</div>
           <div class="pieContainer">
-          <dd><div id="severity"></div></dd>	
-        </div> <!--End pieContainer -->
-        </dl>
-        </div> <!--End Pie -->
+            <div id="severity"></div>	
+          </div> <!--End pieContainer -->
+         </div>
+         </section> <!--End pie-->
+      </div> 
+      </section> <!--End quadroDados -->
       </div> <!--End Graficos -->
+    </dl>
       </aside> <!-- coluna dereita -->
 
         
