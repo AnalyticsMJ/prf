@@ -4,7 +4,7 @@
   * border:0;
 }
 html, body { 
-	font-family:  'Titillium Web', cursive;
+	font-family:'Ubuntu', 'Titillium Web', cursive;
 	background: #FFFFFF; 
 	color: #2B718c;
 	height:90%;
@@ -31,11 +31,10 @@ header, nav, section {
   width:100%;
 }
 .title{
-  font-family: 'Poiret One';
+  font-family: 'Titillium Web','Poiret One';
 	font-size:40px;	
 	text-align:right;
 	margin-right: 30px;
-	margin-top: 10px;
 }
 
 .nomeEstado {
@@ -69,7 +68,7 @@ header, nav, section {
 }
 /*---Mapa--*/
 #mapa {
-  padding: 35px 270px 0 270px;
+  padding: 5px 250px 0 270px;
 }
 
 .coluna {
@@ -169,6 +168,7 @@ background-color: rgb(230, 230, 230);
 padding: 10px;
 position:relative;
 margin:auto;
+font-family:'Ubuntu';
 }
 
 #histograma {
@@ -240,10 +240,12 @@ margin:auto;
 #rankingInformation {
 //  float:left;
   width:100%;
-  margin-left:10px;
-  font-size:15px;
+  font-size:16px;
   text-align:center;
   color:#255368;
+  border-bottom: thin solid #BBC2C5;
+  height:60px; 
+  margin-bottom:8px;
 }
 
 #rankingInformation description {
