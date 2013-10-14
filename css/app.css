@@ -144,8 +144,8 @@ header, nav, section {
 
 /*---Coluna direita---*/
 #sideRight {
-  float:left;
-//  margin-right: -3px;
+  float:right;
+  margin-right: 25px;
   width: 400px;
 //  margin-left: -250px;
   position:relative;
@@ -165,7 +165,7 @@ header, nav, section {
 border: rgb(243, 243, 243);
 border-style: solid;
 border-width: 3px;
-background-color: rgb(243, 243, 243);
+background-color: rgb(230, 230, 230);
 padding: 10px;
 position:relative;
 margin:auto;
