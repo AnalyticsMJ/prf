@@ -199,3 +199,10 @@ FIELDS TERMINATED BY ';'
 LINES TERMINATED BY '\r\n'   
 IGNORE 1 LINES ;
 
+
+-- load rodovias_br
+LOAD DATA LOCAL INFILE '{%data_dir%}/rodovias_br.csv' 
+INTO TABLE rodovias
+character set latin1
+FIELDS TERMINATED BY ','   
+IGNORE 1 LINES ;

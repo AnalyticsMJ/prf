@@ -115,7 +115,9 @@ CREATE TABLE localbr ( -- Armazena o local da BR onde aconteceu a ocorrência.
   lbrlatitude CHAR(20), 
   lbrlongitude CHAR(20), 
   lbrpnvid INT, 
-  lbratualiza CHAR(1)
+  lbratualiza CHAR(1).
+  lbrkm_int int
+
 );
 
 CREATE TABLE uf ( -- Cadastro da UF onde foi feito a ocorrência. 
@@ -233,3 +235,20 @@ create table estadofisico (
   esid int primary key,
   esdescricao varchar(15)
 );
+
+CREATE TABLE rodovias (
+  SHAPE_LEN decimal(12,11),
+  KM_INICIAL decimal(6,1),
+  KM_FINAL decimal (6,1),
+  EXT_KM decimal(7,1),
+  SNV char(10),
+  UF char(2),
+  ROD_ADM varchar(8),
+  CODIGO_ROD char (6),
+  SUPERFICIE varchar(30),
+  CONCESSAO varchar(50),
+  FONTE varchar (30)
+
+);
+
+
