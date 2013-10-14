@@ -175,6 +175,7 @@ margin:auto;
   width:65%;
   margin:auto;
   height:270px;
+  clear:both;
 }
 
 #quadroDados {
@@ -237,9 +238,22 @@ margin:auto;
 }
 
 #rankingInformation {
-  float:left;
-  width:80px;
+//  float:left;
+  width:100%;
   margin-left:10px;
   font-size:15px;
   text-align:center;
+  color:#255368;
 }
+
+#rankingInformation description {
+  float:left;
+  width:120px;
+}
+#rankingInformation .titulo{
+  height:30px;
+ }
+#rankingInformation .subTitulo{
+  font-size:10px;
+} 
+

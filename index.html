@@ -49,6 +49,21 @@
       <aside id="sideRight" class="coluna col3">
       <dl data-bind="with: selectedState">
         <div id="graficos">
+         
+          <section> 
+          <div id="rankingInformation"> 
+            <dl>
+              <description>
+                <dt class="titulo">Ranking </dt>
+                <dt class ="dado" data-bind="text:by100Thousand.rank" ></dt>
+                </description> 
+                <description>
+                <dt class="titulo">Acidentes </dt> <span class="subTitulo"> (100 mil hab.)</span>	
+                <dt class="dado" data-bind="text: formatNumber(by100Thousand.acidentes_por_100_mil)"> </dt>            
+             </dl>     
+         </div>
+         </section> <!-- End rankingInformation -->
+
           <section>
          <div id="histograma">
             <div class='tituloGraficos'>Ocorrências Ao Longo Do Dia</div>
