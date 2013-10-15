@@ -46,74 +46,68 @@
       <div id="mapa" class="coluna col2">
                Mapa 
           </div> <!-- End mapa -->
+
       <aside id="sideRight" class="coluna col3">
       <div data-bind="with: selectedState">
         <div id="graficos">
-         
           <section> 
           <div id="rankingInformation"> 
               <description>
-              <div class="titulo">Ranking </div>
+                <div class="titulo">Ranking </div>
                 <div class ="dado" data-bind="text:by100Thousand.rank" ></div>
-                </description> 
-                <description>
+              </description> 
+              <description>
                 <div class="titulo">Acidentes </div> 
                 <div class="subTitulo"> (100 mil hab.)</div>	
                 <div class="dado" data-bind="text: formatNumber(by100Thousand.acidentes_por_100_mil)"> </div>            
-         </div>
+         	  </description>	
+			</div>
          </section> <!-- End rankingInformation -->
-          <section>
-         <div id="histograma">
+         <section>
+           <div id="histograma">
             <div class='tituloGraficos'>Ocorrências Ao Longo Do Dia</div>
             <div id="hour"></div>
-          </div> 
-          </section> <!-- End Histograma -->
-        <section>
-        <div id="quadroDados">
-          <!-- caja texto -->
-          <section>
+           </div> 
+         </section> <!-- End Histograma -->
+         <section>
           <div id="informationPorTipoDeVeiculo"> 
-              
             <div id="porTipoDeVeiculo" data-bind="visible: selectedState">
-            <div class="tituloGraficos"> Acidentes por tipo de Veiculo </div>
+            <div class="tituloGraficos"> Tipo de Veiculo </div>
             <div data-bind="with: selectedState">
               <div class="iconVeiculo">  <img src="img/bicycle-h50.png" width="49px" height="30px"  >
-            			<div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_bicicleta)"></div>
-  				    </div>
-  		        <div class="iconVeiculo">  <img src="img/motorcycle-h50.png" width="48px" height="30px" > 
+            	<div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_bicicleta)"></div>
+  			  </div>
+  		      <div class="iconVeiculo">  <img src="img/motorcycle-h50.png" width="48px" height="30px" > 
   		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_motocicleta)"></div>
-  		        </div>
-  		        <div class="iconVeiculo">  <img src="img/car-h50.png" width="48px" height="30px"/> 
+  		      </div>
+  		      <div class="iconVeiculo">  <img src="img/car-h50.png" width="48px" height="30px"/> 
   		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_automovel)"></div>
-  		        </div>
-  		        <div class="iconVeiculo">  <img src="img/bus-h50.png" width="53px" height="30px"/> 
+  		      </div>
+  		      <div class="iconVeiculo">  <img src="img/bus-h50.png" width="53px" height="30px"/> 
   		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_onibus)"></div>
-  		        </div>
-  		        <div class="iconVeiculo">  <img src="img/truck-h50.png" width="53px" height="30px"> 
+  		      </div>
+  		      <div class="iconVeiculo">  <img src="img/truck-h50.png" width="53px" height="30px"> 
   		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_caminhao)"></div>
-  		        </div>
-		        </div>
-          </div>
+  		      </div>
+		    </div>
         </div>
         </section> <!-- End informationPorTipoDeVeiculo --> 
-
-        <section>
+    <section>
          <div id="pie">
           <div class="tituloGraficos"> Gravidade</div>
           <div class="pieContainer">
             <div id="severity"></div>	
           </div> <!--End pieContainer -->
          </div>
-         </section> <!--End pie-->
-      </div> 
-      </section> <!--End quadroDados -->
-      </div> <!--End Graficos -->
+    </section> <!--End pie-->
+
+    </div> <!--End Graficos -->
     </div>
-      </aside> <!-- coluna dereita -->
+   </aside> <!-- coluna dereita -->
 
         
-        </div> <!-- end container -->
-          </section> <!--End Main -->
+  </div> <!-- end container -->
+  </section> <!--End Main -->
   </div> <!-- End Wrapper -->
 			<!-- Insert scripts here -->
 			<script src="js/plugins.js"></script>

@@ -173,9 +173,10 @@ font-family:'Ubuntu';
 
 #histograma {
   width:65%;
-  margin:auto;
+//  margin:auto;
   height:270px;
   clear:both;
+  float:right;
 }
 
 #quadroDados {
@@ -183,13 +184,21 @@ font-family:'Ubuntu';
   display:inline-block;
 }
 #pie {
-  float:right;
-  width:280px;
+//  float:right;
+  width:120px;
+  clear:both;
+//  position:relative;
+//  left:210px;
+//  top:-60px;
+//  height:200px;
+
 }
 .pieContainer {
+  width:100px;
+  height:100px;
 }
 #porTipoDeVeiculo {
-  float:left;
+//  float:left;
 }
 
 .tituloGraficos {
@@ -214,9 +223,11 @@ font-family:'Ubuntu';
 }
 
 #informationPorTipoDeVeiculo {
-  width: 90%;
-  margin: auto;
+  width:35%;
+  height:310px;
+  float:left;
 }
+
 
 #informationPorTipoDeVeiculo .titulo {
   clear:both;
