@@ -8,15 +8,15 @@
         "categoria":"categoria",
         "km_inicial": "KM_INICIAL",
         "km_fim": "KM_FIM"    
-      },
+      }, 
       "filter":{"UF": "{%uf%}"},
       "simplify": 5
     },
     "estado":  {
       "src": "divisao_politica/brasil.shp",
+       "charset": "latin-1",
       "attributes": { 
-        "uf":"UF", 
-        "estado": "ESTADO"
+        "uf":"UF"
         },
         "class": "estado",
         "filter": ["UF","is", "{%uf%}"],
@@ -24,9 +24,9 @@
     },
     "vizinhos":  {
       "src": "divisao_politica/brasil.shp",
+      "charset": "latin-1",
       "attributes": { 
-        "uf":"UF", 
-        "estado": "ESTADO"
+        "uf":"UF"
         },
       "filter": ["UF","is not", "{%uf%}"],
       "class": "vizinho",

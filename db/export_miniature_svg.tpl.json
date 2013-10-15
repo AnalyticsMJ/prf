@@ -8,7 +8,7 @@
         },
         "class": "estado",
         "filter": ["UF","is", "{%uf%}"],
-      "simplify": 1    
+      "simplify": 2    
     },
     "vizinhos":  {
       "src": "divisao_politica/brasil.shp",
@@ -18,20 +18,18 @@
         },
       "filter": ["UF","is not", "{%uf%}"],
       "class": "vizinho",
-      "simplify": 1
+      "simplify": 2
     }
 
   },
   "bounds":{
-    "mode": "polygons",
-    "data": {
-        "layer": "vizinhos"
-    }, 
-      "padding": 0.05
+    "mode": "bbox",
+    "data": [-78, -35, -31,6], 
+    "padding": 0.05
   },
   "export": {
    "width": 200,
-    "round": 1
+   "round": 1
   }
   
 }
