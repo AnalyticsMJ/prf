@@ -1,0 +1,47 @@
+
+#rodovias{
+	stroke-width: 3px;
+}
+
+#rodovias[categoria=5]{
+	stroke: #A50F15; 
+}
+
+#rodovias[categoria=4]{
+	stroke: #DE2D26; 
+}
+
+#rodovias[categoria=3]{
+	stroke: #FB6A4A; 
+}
+
+#rodovias[categoria=2]{
+	stroke: #FC9272; 
+}
+#rodovias[categoria=1]{
+	stroke: #FCBBA1; 
+}
+#rodovias[categoria=0]{
+	stroke: #FEE5D9; 
+}
+
+.estado, .vizinho{
+ 	stroke-width: 4px; 
+}
+
+.vizinho{
+  fill: #aaa;
+}
+#vizinhos-label{
+   font-size: 24px;
+}
+
+/*
+categoria
+CASE WHEN  "acid_local" >1000 THEN 5 
+WHEN  "acid_local" >500 THEN 4 
+WHEN  "acid_local" >200 THEN 3
+WHEN  "acid_local" >100 THEN 2
+WHEN  "acid_local" >50 THEN 1
+ELSE 0 END
+*/
