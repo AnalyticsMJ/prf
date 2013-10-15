@@ -177,7 +177,7 @@ font-family:'Ubuntu';
   height: 230px;
   position: relative;
   left: 130px;
-  top: -323px;
+  top: -360px;
 }
 
 #quadroDados {
@@ -187,14 +187,15 @@ font-family:'Ubuntu';
 #pie {
   width:120px;
   position: relative;
-  top: -315px;
+  top: -355px;
   right:-160px;;
   height:190px;
 }
 .pieContainer {
   width:150px;
 }
-#porTipoDeVeiculo {
+#porTipoDeVeiculo img {
+  margin-top:20px;
 }
 
 .tituloGraficos {
@@ -202,7 +203,6 @@ font-family:'Ubuntu';
   color: #255368;
   display:block;
   text-align:center;
-  padding-bottom: 10px;
 }
 .iconVeiculo {
   float:left;
@@ -218,8 +218,8 @@ font-family:'Ubuntu';
 }
 
 #informationPorTipoDeVeiculo {
-  width:30%;
-  height:323px;
+  width:33%;
+  height:360px;
   position:relative;
 }
 
