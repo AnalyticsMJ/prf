@@ -211,10 +211,9 @@ font-family:'Ubuntu';
 }
 
 .dadoVeiculo {
-  color:#dd9143;
+  color:#DF5A3E;
   font-size: 15px;
   position: relative;
-  margin-top: 5px;
   font-weight: 900;
   text-align:center;
 }
