@@ -1,0 +1,21 @@
+.estado, .vizinho{
+ 	stroke-width: 1px; 
+}
+
+.vizinho{
+  fill: #E6E6E6;
+} 
+.estado{
+	fill:#dd9143;
+}
+
+
+/*
+categoria
+CASE WHEN  "acid_local" >1000 THEN 5 
+WHEN  "acid_local" >500 THEN 4 
+WHEN  "acid_local" >200 THEN 3
+WHEN  "acid_local" >100 THEN 2
+WHEN  "acid_local" >50 THEN 1
+ELSE 0 END
+*/

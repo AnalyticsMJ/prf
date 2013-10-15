@@ -1,6 +1,6 @@
 
 #rodovias{
-	stroke-width: 3px;
+	stroke-width: 5px;
 }
 
 #rodovias[categoria=5]{
@@ -26,15 +26,13 @@
 }
 
 .estado, .vizinho{
- 	stroke-width: 4px; 
+ 	stroke-width: 1px; 
 }
 
 .vizinho{
-  fill: #aaa;
+  fill: #E6E6E6;
 }
-#vizinhos-label{
-   font-size: 24px;
-}
+
 
 /*
 categoria

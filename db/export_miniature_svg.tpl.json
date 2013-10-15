@@ -1,17 +1,5 @@
 {
   "layers": {
-    "rodovias":{
-      "src": "rodovias/rodovias.shp",
-      "attributes":{
-        "qtd_acidentes": "acid_local",
-        "rodovia": "CODIGO_ROD",
-        "categoria":"categoria",
-        "km_inicial": "KM_INICIAL",
-        "km_fim": "KM_FIM"    
-      },
-      "filter":{"UF": "{%uf%}"},
-      "simplify": 5
-    },
     "estado":  {
       "src": "divisao_politica/brasil.shp",
       "attributes": { 
@@ -20,7 +8,7 @@
         },
         "class": "estado",
         "filter": ["UF","is", "{%uf%}"],
-      "simplify": 5    
+      "simplify": 1    
     },
     "vizinhos":  {
       "src": "divisao_politica/brasil.shp",
@@ -30,19 +18,19 @@
         },
       "filter": ["UF","is not", "{%uf%}"],
       "class": "vizinho",
-      "simplify": 5 
+      "simplify": 1
     }
 
   },
   "bounds":{
     "mode": "polygons",
     "data": {
-        "layer": "estado"
+        "layer": "vizinhos"
     }, 
       "padding": 0.05
   },
   "export": {
-   "width": 650,
+   "width": 200,
     "round": 1
   }
   

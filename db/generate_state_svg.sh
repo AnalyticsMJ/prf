@@ -8,15 +8,21 @@ DATA_DIR="../data"
 
 OUTPUT_DIR="../temp"
 
+mkdir "${OUTPUT_DIR}/config"
+
 for UF in $ESTADOS; do
 	sed "-e s/{%uf%}/${UF}/g;" export_svg.tpl.json > "${OUTPUT_DIR}/config/${UF}.json"
+	sed "-e s/{%uf%}/${UF}/g;" export_miniature_svg.tpl.json > "${OUTPUT_DIR}/config/thumb-${UF}.json"
 done
 
 cd $DATA_DIR
 
+mkdir "${OUTPUT_DIR}/output"
 for UF in $ESTADOS; do
-  echo "Gerando svg para ${UF}"
+  	echo "Gerando svg para ${UF}..."
 	kartograph "${OUTPUT_DIR}/config/${UF}.json" -o "${OUTPUT_DIR}/output/${UF}.svg" -s style.css
+	kartograph "${OUTPUT_DIR}/config/thumb-${UF}.json" -o "${OUTPUT_DIR}/output/thumb-${UF}.svg" -s thumb-style.css
+	
 done
 
 cd $CURRENT_DIR
