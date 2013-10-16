@@ -1,0 +1,24 @@
+#mapa {
+	background: #fff url(/img/noise.png);
+	border-radius: 5px;
+}
+
+svg path { 
+	stroke-linejoin: round
+}
+
+svg .vizinhos {
+	fill: #E6E6E6;
+	stroke: #000;
+	stroke-width: 1.5px;
+}
+
+svg .estado {
+	fill: #ccc;
+	stroke: #2B718C;
+	stroke-width: 1.8px;
+}
+
+svg .rodovias {
+	stroke-width: 1.5px;
+}
