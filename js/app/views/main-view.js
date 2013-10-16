@@ -1,4 +1,4 @@
-define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder', 'goog!visualization,1,packages:[corechart]'], function(ko, _, stateView, dataFinder) {
+define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartograph', 'goog!visualization,1,packages:[corechart]'], function(ko, _, stateView, dataFinder, $K) {
   var self = this;
 
   self.title = ko.observable("PRF");
@@ -16,12 +16,22 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder', 'goog!vi
     self.selectedState(state);
     showSeverityChart(state.bySeverity); 
     showByHourChart(state.byHour); 
+    
+    var map = $K.map('#mapa');
+    
+    map.loadMap('img/estados/'+state.abbreviation +'.svg', function() {
+      // do something with your map, add layers etc.
+      console.log("mapa carregado");
+      map.addLayer('rodovias');
+      map.addLayer('estado');
+      map.addLayer('vizinhos');
+      
+    });
+
   };
     
     
     showSeverityChart = function(stats) {
-
-
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Gravidade');
         data.addColumn('number', 'Acidentes'); 

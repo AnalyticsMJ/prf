@@ -13,12 +13,18 @@ require.config({
         async: 'vendor/async',
         goog: 'vendor/goog',
         propertyParser: 'vendor/propertyParser',
+        raphael: 'vendor/raphael-min',
+        kartograph: 'vendor/kartograph.min'
 
     },
     shim: {
         underscore: {
             exports: '_'
         },
+        kartograph: {
+            deps: ['jquery', 'raphael'],
+            exports: '$K'
+        }
     },
     waitSeconds: 120
 });

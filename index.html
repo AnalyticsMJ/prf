@@ -11,7 +11,6 @@
             <title data-bind="text: title"> Loading... </title>
             <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
             <link rel="stylesheet" href="css/app.css">
-			<link rel="stylesheet" href="css/nv.d3.css">
 			<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 			<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 			<link href='http://fonts.googleapis.com/css?family=Titillium+Web:200' rel='stylesheet' type='text/css'>
@@ -43,9 +42,12 @@
 	    			</ul>
           </div>    
       </aside> <!--coluna da esquerda -->
-      <div id="mapa" class="coluna col2">
-               Mapa 
-          </div> <!-- End mapa -->
+      <div class="coluna col2">      
+        <h3>Mapa</h3>
+        <div id="mapa">
+                  
+        </div> <!-- End mapa -->
+      </div>
 
       <aside id="sideRight" class="coluna col3">
       <div data-bind="with: selectedState">
