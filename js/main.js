@@ -31,7 +31,6 @@ require.config({
     waitSeconds: 120
 });
 
-
 require(['ko', 'app/views/main-view', 'data/data-finder'], function(ko, mainView, dataFinder) {
     ko.applyBindings(mainView, document.getElementsByTagName('html')[0]);
     

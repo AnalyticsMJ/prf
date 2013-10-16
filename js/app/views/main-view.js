@@ -21,26 +21,43 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartogra
 
     var map = $K.map('#mapa',600,500);
      
+    map.loadCSS('css/map.css', function() {
+        
+      map.loadMap('img/estados/'+state.abbreviation +'.svg', function() {
 
-    map.loadMap('img/estados/'+state.abbreviation +'.svg', function() {
+
+        map.addLayer('vizinhos', {
+            styles: {
+                      stroke: '##F3F3F3',
+                      fill: '#E6E6E6',
+                      'stroke-width': 2,
+                      'stroke-linejoin': 'round'
+                  }
+          });
+        map.addLayer('estado', {
+            styles: {
+                      stroke: '#ada',
+                      fill: '#cc4',
+                      'stroke-width': 4,
+                      'stroke-linejoin': 'round'
+                  }
+          });
+        map.addLayer('rodovias');
+        
+        var colorscale = new chroma.scale('Reds').domain([0,1,2,3,4,5]);
+
+        map.getLayer('rodovias').style('stroke', function(data) {
+            return colorscale(data.categoria);
+        });
 
 
-      map.addLayer('rodovias');
 
-      var colorscale = new chroma.scale('Reds').domain([0,1,2,3,4,5]);
 
-      map.getLayer('rodovias').style('stroke', function(data) {
-          return colorscale(data.categoria);
+        map.addLayer('estado');
+        map.addLayer('vizinhos');
+        
       });
-
-
-
-
-      map.addLayer('estado');
-      map.addLayer('vizinhos');
-      
     });
-
   };
     
     
