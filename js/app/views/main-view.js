@@ -1,4 +1,4 @@
-define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartograph', 'goog!visualization,1,packages:[corechart]'], function(ko, _, stateView, dataFinder, $K) {
+define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartograph', 'goog!visualization,1,packages:[corechart]', 'chroma'], function(ko, _, stateView, dataFinder, $K) {
   var self = this;
 
   self.title = ko.observable("PRF");
@@ -17,12 +17,25 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartogra
     showSeverityChart(state.bySeverity); 
     showByHourChart(state.byHour); 
     
-    var map = $K.map('#mapa');
-    
+    $('#mapa').empty();
+
+    var map = $K.map('#mapa',600,500);
+     
+
     map.loadMap('img/estados/'+state.abbreviation +'.svg', function() {
-      // do something with your map, add layers etc.
-      console.log("mapa carregado");
+
+
       map.addLayer('rodovias');
+
+      var colorscale = new chroma.scale('Reds').domain([0,1,2,3,4,5]);
+
+      map.getLayer('rodovias').style('stroke', function(data) {
+          return colorscale(data.categoria);
+      });
+
+
+
+
       map.addLayer('estado');
       map.addLayer('vizinhos');
       

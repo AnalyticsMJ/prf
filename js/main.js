@@ -14,7 +14,9 @@ require.config({
         goog: 'vendor/goog',
         propertyParser: 'vendor/propertyParser',
         raphael: 'vendor/raphael-min',
-        kartograph: 'vendor/kartograph.min'
+        kartograph: 'vendor/kartograph.min',
+        chroma: 'vendor/chroma.min'
+
 
     },
     shim: {
@@ -22,7 +24,7 @@ require.config({
             exports: '_'
         },
         kartograph: {
-            deps: ['jquery', 'raphael'],
+            deps: ['jquery', 'raphael','chroma'],
             exports: '$K'
         }
     },

@@ -69,6 +69,9 @@ header, nav, section {
 /*---Mapa--*/
 #mapa {
   padding: 5px 250px 0 270px;
+  height: 500px;
+  display:block;
+  position:relative;
 }
 
 .coluna {
