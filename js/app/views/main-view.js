@@ -77,7 +77,7 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartogra
     var map = $K.map('#mapa',600,500);
     // initialize qtip tooltip class
     $.fn.qtip.defaults.style.classes = 'ui-tooltip-bootstrap';
-
+    
     return function (state) {
       map.loadCSS('css/map.css', function() {
         var mapPath = 'img/estados/'+ state.abbreviation +'.svg';
@@ -86,8 +86,8 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartogra
           map.addLayer('estado');
           map.addLayer('rodovias',{
               tooltips: function(d) {
-                var title = 'Quantidade acidentes',
-                  details = d['qtd-acidentes'].toString() + ' (' + d.rodovia + ')';
+                var title = d.rodovia + ' (km' + d['km-inicial'] + '-km' + d['km-final'] + ')',
+                  details = d['qtd-acidentes'].toString() + ' acidentes';
                 return [title, details];
               }
             });

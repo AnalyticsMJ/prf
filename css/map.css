@@ -4,7 +4,8 @@
 }
 
 svg path { 
-	stroke-linejoin: round
+ 	stroke-linejoin: round;
+	stroke-linecap: round;
 }
 
 svg .vizinhos {
@@ -20,5 +21,6 @@ svg .estado {
 }
 
 svg .rodovias {
-	stroke-width: 1.5px;
+	stroke-width: 3px;
+	cursor: pointer;
 }
