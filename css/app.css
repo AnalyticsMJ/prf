@@ -129,6 +129,10 @@ header, nav, section {
 .statesList a:hover, .statesList a.selected {
   color: #DF5A3E;
 }
+.statesList a.selected {
+  cursor: default;
+  font-weight: bold;
+}
 .statesList ul { 
 	list-style:none;
 }
