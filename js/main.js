@@ -28,7 +28,7 @@ require.config({
             exports: '$K'
         }
     },
-    waitSeconds: 120
+    waitSeconds: 5
 });
 
 require(['ko', 'app/views/main-view', 'data/data-finder'], function(ko, mainView, dataFinder) {
@@ -36,5 +36,4 @@ require(['ko', 'app/views/main-view', 'data/data-finder'], function(ko, mainView
     
     var states = dataFinder.allStates();
     mainView.states(states);
-
 });

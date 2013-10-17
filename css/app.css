@@ -152,6 +152,7 @@ header, nav, section {
   margin-right: 25px;
   width: 400px;
   position:relative;
+  display: none;
 }
 
 .preload {

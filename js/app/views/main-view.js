@@ -4,23 +4,24 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartogra
   self.title = ko.observable("PRF");
   self.loaded = true;
   self.states = ko.observableArray();
-  self.selectedState = ko.observable(null);
+  self.selectedState = ko.observable();
 
   self.formatNumber = function(value) {
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   };
 
   self.stateClicked = function(state) { 
+    $('#mapa').empty();
     self.selectedState(state);
     showSeverityChart(state.bySeverity); 
     showByHourChart(state.byHour); 
-    $('.mapContainer > h3').show();
-    $('#mapa').empty();
+    $('.mapContainer > h3').fadeIn(500);
+    $('#sideRight').fadeIn(1000);
 
     var map = $K.map('#mapa',600,500);
      
     map.loadCSS('css/map.css', function() {
-        
+      
       map.loadMap('img/estados/'+state.abbreviation +'.svg', function() {
 
         map.addLayer('vizinhos');
@@ -54,8 +55,8 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartogra
             animation: { duration: 1000 },
             backgroundColor: 'transparent',
             chartArea:{width: '90%', height: '90%',},
-             legend: { position: 'none'}                 
-            };
+            legend: { position: 'none'}                 
+          };
           
        var chart = new google.visualization.PieChart(document.getElementById('severity')); 
        chart.draw(data, options);
@@ -87,13 +88,12 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartogra
               textPosition :'none',
                gridlines: { color: 'transparent'}
           },
-           legend: { position: 'none'}                 
-          };
+          legend: { position: 'none'}                 
+        };
           
       var chart = new google.visualization.ColumnChart(document.getElementById('hour'));
 
-      chart.draw(data, options);    
-
+      chart.draw(data, options);
   }
 
   return self;
