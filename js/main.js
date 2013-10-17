@@ -36,4 +36,5 @@ require(['ko', 'app/views/main-view', 'data/data-finder'], function(ko, mainView
     
     var states = dataFinder.allStates();
     mainView.states(states);
+    mainView.stateClicked(states[0]);
 });
