@@ -64,7 +64,6 @@ header, nav, section {
   float: left;
   overflow:hidden;
   position:relative;
-
 }
 /*---Mapa--*/
 #mapa {
@@ -85,7 +84,7 @@ header, nav, section {
 }
 
 .col2 {
-  width:135px;
+  text-align: center;
  // left:31%;
 }
 
@@ -126,6 +125,9 @@ header, nav, section {
 .statesList a {
 	text-decoration:none;
   color: #2B718c;
+}
+.statesList a:hover {
+  color: #DF5A3E;
 }
 .statesList ul { 
 	list-style:none;
@@ -270,4 +272,11 @@ font-family:'Ubuntu';
 
 #rankingInformation .dado{
   color:#DF5A3E;
+}
+
+.mapContainer>h3 {
+  -webkit-margin-before: 0;
+  -mz-margin-before: 0;
+  margin-before: 0;
+  display: none;
 }

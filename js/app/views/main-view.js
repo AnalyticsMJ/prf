@@ -14,7 +14,7 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartogra
     self.selectedState(state);
     showSeverityChart(state.bySeverity); 
     showByHourChart(state.byHour); 
-    
+    $('.mapContainer > h3').show();
     $('#mapa').empty();
 
     var map = $K.map('#mapa',600,500);
