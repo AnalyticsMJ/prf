@@ -1,4 +1,4 @@
-define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartograph', 'goog!visualization,1,packages:[corechart]', 'chroma'], function(ko, _, stateView, dataFinder, $K) {
+define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartograph', 'qtip', 'goog!visualization,1,packages:[corechart]', 'chroma'], function(ko, _, stateView, dataFinder, $K, qtip) {
   var self = this;
 
   self.title = ko.observable("PRF");
@@ -75,20 +75,28 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartogra
 
   var showMapOf = (function () {
     var map = $K.map('#mapa',600,500);
-    
+    // initialize qtip tooltip class
+    $.fn.qtip.defaults.style.classes = 'ui-tooltip-bootstrap';
+
     return function (state) {
       map.loadCSS('css/map.css', function() {
         var mapPath = 'img/estados/'+ state.abbreviation +'.svg';
         map.loadMap(mapPath, function() {
           map.addLayer('vizinhos');
           map.addLayer('estado');
-          map.addLayer('rodovias');
+          map.addLayer('rodovias',{
+              tooltips: function(d) {
+                var title = 'Quantidade acidentes',
+                  details = d['qtd-acidentes'].toString() + ' (' + d.rodovia + ')';
+                return [title, details];
+              }
+            });
           
           var colorscale = new chroma.scale('Reds').domain([0,1,2,3,4,5]);
 
           map.getLayer('rodovias').style('stroke', function(data) {
-            return colorscale(data.categoria);
-          });
+              return colorscale(data.categoria);
+            });
         });
       });
     }; 

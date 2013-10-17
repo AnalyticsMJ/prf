@@ -1,13 +1,13 @@
 require.config({
     baseUrl: "js",
     paths: {
-        jquery: ["http://code.jquery.com/jquery-1.10.2.min",
+        jquery: ["//code.jquery.com/jquery-1.10.2.min",
             "vendor/jquery-1.10.2.min"
         ],
-        ko: ["http://cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min",
+        ko: ["//cdnjs.cloudflare.com/ajax/libs/knockout/2.3.0/knockout-min",
             "vendor/knockout-2.3.0.min"
         ],
-        underscore: ['http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min',
+        underscore: ['//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min',
             "vendor/underscore-1.5.2.min"
         ],
         async: 'vendor/async',
@@ -15,9 +15,11 @@ require.config({
         propertyParser: 'vendor/propertyParser',
         raphael: 'vendor/raphael-min',
         kartograph: 'vendor/kartograph.min',
-        chroma: 'vendor/chroma.min'
-
-
+        chroma: 'vendor/chroma.min',
+        imagesloaded: ['//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.min',
+            'vendor/imagesloaded.min'],
+        qtip: ['//cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/basic/jquery.qtip.min',
+            'vendor/qtip.min']
     },
     shim: {
         underscore: {
@@ -28,7 +30,7 @@ require.config({
             exports: '$K'
         }
     },
-    waitSeconds: 5
+    waitSeconds: 10
 });
 
 require(['ko', 'app/views/main-view', 'data/data-finder', 'jquery'], function(ko, mainView, dataFinder, $) {
