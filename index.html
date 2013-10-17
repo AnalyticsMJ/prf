@@ -3,14 +3,13 @@
     <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
     <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
     <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-        <head>
-            <meta charset="utf-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="description" content="">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title data-bind="text: title"> Loading... </title>
-            <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-            <link rel="stylesheet" href="css/app.css">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title data-bind="text: title"> Loading... </title>
+      <link rel="stylesheet" href="css/app.css">
 			<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
 			<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 			<link href='http://fonts.googleapis.com/css?family=Titillium+Web:200' rel='stylesheet' type='text/css'>
@@ -18,109 +17,106 @@
       <script src = "js/vendor/jquery-1.10.2.min.js"></script>
       <script src = "js/vendor/modernizr-2.6.2.min.js"></script>
 
-        </head>
-        <body>
-            <!--[if lt IE 7]>
-                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-                <![endif]-->
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
     <div id="wrapper">           
-     <header id="header">
-			<div class="title">Ocorrências nas Rodovias Federais</div>
-      <div data-bind="with: selectedState">
-        <div class="nomeEstado" data-bind="text:name"></div>
-      </div>
+      <header id="header">
+  			<div class="title">Ocorrências nas Rodovias Federais</div>
+        <div data-bind="with: selectedState">
+          <div class="nomeEstado" data-bind="text:name"></div>
+        </div>
       </header> <!--header--> 
       <section id="main" >
         <div id="container">
-        
           
-     <aside id="sideLeft" class="coluna col1">
-      <div class="tituloEstado" >Unidade Federativa</div>
-        <div class="statesList" data-bind="visible: loaded">
-	    			<ul data-bind="foreach: states" id="navigation">
-	    				<li><a href="#" data-bind="text:name, click:$parent.stateClicked"></a></li>
-	    			</ul>
-          </div>    
-      </aside> <!--coluna da esquerda -->
-      <div class="coluna col2">      
-        <h3>Mapa</h3>
-        <div id="mapa">
-                  
-        </div> <!-- End mapa -->
-      </div>
-
-      <aside id="sideRight" class="coluna col3">
-      <div data-bind="with: selectedState">
-        <div id="graficos">
-          <section> 
-          <div id="rankingInformation"> 
-              <description>
-                <div class="titulo">Ranking </div>
-                <div class ="dado" data-bind="text:by100Thousand.rank" ></div>
-              </description> 
-              <description>
-                <div class="titulo">Acidentes </div> 
-                <div class="subTitulo"> (100 mil hab.)</div>	
-                <div class="dado" data-bind="text: formatNumber(by100Thousand.acidentes_por_100_mil)"> </div>            
-         	  </description>	
-			</div>
-         </section> <!-- End rankingInformation -->
-         <section>
-          <div id="informationPorTipoDeVeiculo"> 
-            <div id="porTipoDeVeiculo" data-bind="visible: selectedState">
-            <div class="tituloGraficos"> Tipo de Veiculo </div>
+          <aside id="sideLeft" class="coluna col1">
+            <div class="tituloEstado" >Unidade Federativa</div>
+            <div class="statesList" data-bind="visible: loaded">
+        			<ul data-bind="foreach: states" id="navigation">
+        				<li><a href="#" data-bind="text:name, click:$parent.stateClicked"></a></li>
+        			</ul>
+            </div>    
+          </aside> <!--coluna da esquerda -->
+          <div class="coluna col2">      
+            <h3>Mapa</h3>
+            <div id="mapa">
+            </div> <!-- End mapa -->
+          </div>
+          <aside id="sideRight" class="coluna col3">
             <div data-bind="with: selectedState">
-              <div class="iconVeiculo">  <img src="img/bicycle-w100.png" width="50px" height="29px"  >
-            	<div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_bicicleta)"></div>
-  			  </div>
-  		      <div class="iconVeiculo">  <img src="img/motorcycle-w100.png" width="50px" height="29px" > 
-  		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_motocicleta)"></div>
-  		      </div>
-  		      <div class="iconVeiculo">  <img src="img/car-w100.png" width="50px" height="17px"/> 
-  		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_automovel)"></div>
-  		      </div>
-  		      <div class="iconVeiculo">  <img src="img/bus-w100.png" width="50px" height="17px"/> 
-  		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_onibus)"></div>
-  		      </div>
-  		      <div class="iconVeiculo">  <img src="img/truck-w100.png" width="50px" height="21px"> 
-  		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_caminhao)"></div>
-  		      </div>
-		    </div>
-        </div>
-        </section> <!-- End informationPorTipoDeVeiculo --> 
-        <section>
-           <div id="histograma">
-            <div class='tituloGraficos'>Ocorrências Ao Longo Do Dia</div>
-            <div id="hour"></div>
-           </div> 
-         </section> <!-- End Histograma -->
+              <div id="graficos">
+                <section> 
+                  <div id="rankingInformation"> 
+                    <description>
+                      <div class="titulo">Ranking </div>
+                      <div class ="dado" data-bind="text:by100Thousand.rank" ></div>
+                    </description> 
+                    <description>
+                      <div class="titulo">Acidentes </div> 
+                      <div class="subTitulo"> (100 mil hab.)</div>	
+                      <div class="dado" data-bind="text: formatNumber(by100Thousand.acidentes_por_100_mil)"> </div>       
+                 	  </description>	
+                  </div>
+                </section> <!-- End rankingInformation -->
+                <section>
+                  <div id="informationPorTipoDeVeiculo"> 
+                    <div id="porTipoDeVeiculo" data-bind="visible: selectedState">
+                      <div class="tituloGraficos"> Tipo de Veiculo </div>
+                      <div data-bind="with: selectedState">
+                        <div class="iconVeiculo">  <img src="img/bicycle-w100.png" width="50px" height="29px"  ></div>
+                      	<div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_bicicleta)"></div>
+            			    </div>
+            		      <div class="iconVeiculo">  <img src="img/motorcycle-w100.png" width="50px" height="29px" > 
+            		        <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_motocicleta)"></div>
+            		      </div>
+            		      <div class="iconVeiculo">  <img src="img/car-w100.png" width="50px" height="17px"/> 
+            		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_automovel)"></div>
+            		      </div>
+            		      <div class="iconVeiculo">  <img src="img/bus-w100.png" width="50px" height="17px"/> 
+            		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_onibus)"></div>
+            		      </div>
+            		      <div class="iconVeiculo">  <img src="img/truck-w100.png" width="50px" height="21px"> 
+            		          <div class="dadoVeiculo" data-bind="text: formatNumber(byVehicleType.qtd_ocorrencias_caminhao)"></div>
+            		      </div>
+          		      </div>
+                  </div>
+                </section> <!-- End informationPorTipoDeVeiculo --> 
+                <section>
+                  <div id="histograma">
+                    <div class='tituloGraficos'>Ocorrências Ao Longo Do Dia</div>
+                    <div id="hour"></div>
+                  </div> 
+                </section> <!-- End Histograma -->
+                <section>
+                  <div id="pie">
+                    <div class="tituloGraficos"> Gravidade</div>
+                    <div class="pieContainer">
+                      <div id="severity"></div>	
+                    </div> <!--End pieContainer -->
+                  </div>
+                </section> <!--End pie-->
+              </div> <!--End Graficos -->
+            </div>
+          </aside> <!-- coluna dereita -->
+        </div> <!-- end container -->
+      </section> <!--End Main -->
+    </div> <!-- End Wrapper -->
+		
+    <!-- Scripts -->
+		<script src="js/plugins.js"></script>
+		<script data-main="js/main" src="js/vendor/require-2.1.8.min.js"></script>
 
-        <section>
-         <div id="pie">
-          <div class="tituloGraficos"> Gravidade</div>
-          <div class="pieContainer">
-            <div id="severity"></div>	
-          </div> <!--End pieContainer -->
-         </div>
-    </section> <!--End pie-->
-    </div> <!--End Graficos -->
-    </div>
-   </aside> <!-- coluna dereita -->
-  </div> <!-- end container -->
-  </section> <!--End Main -->
-  </div> <!-- End Wrapper -->
-			<!-- Insert scripts here -->
-			<script src="js/plugins.js"></script>
-			<script data-main="js/main" src="js/vendor/require-2.1.8.min.js"></script>
-
-			<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-			<script>
-			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-				function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-				e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-				e.src='//www.google-analytics.com/analytics.js';
-				r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-				ga('create','UA-XXXXX-X');ga('send','pageview');
-				</script>
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<script>
+		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-XXXXX-X');ga('send','pageview');
+		</script>
 	</body>
 </html>
