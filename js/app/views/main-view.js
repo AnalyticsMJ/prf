@@ -5,44 +5,22 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartogra
   self.loaded = true;
   self.states = ko.observableArray();
   self.selectedState = ko.observable();
-
+  
   self.formatNumber = function(value) {
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   };
 
   self.stateClicked = function(state) { 
     $('#mapa').empty();
-    self.selectedState(state);
-    showSeverityChart(state.bySeverity); 
-    showByHourChart(state.byHour); 
     $('.mapContainer > h3').fadeIn(500);
     $('#sideRight').fadeIn(1000);
-
-    var map = $K.map('#mapa',600,500);
-     
-    map.loadCSS('css/map.css', function() {
-      
-      map.loadMap('img/estados/'+state.abbreviation +'.svg', function() {
-
-        map.addLayer('vizinhos');
-        map.addLayer('estado');
-        map.addLayer('rodovias');
-        
-        var colorscale = new chroma.scale('Reds').domain([0,1,2,3,4,5]);
-
-        map.getLayer('rodovias').style('stroke', function(data) {
-            return colorscale(data.categoria);
-        });
-
-      });
-    });
-  };
-    
-  self.loadStates = function(states) {
-    selectedStateView(states);
+    self.selectedState(state);
+    showSeverityChart(state.bySeverity);
+    showByHourChart(state.byHour);
+    showMapOf(state);
   };
 
-  showSeverityChart = function(stats) {
+  var showSeverityChart = function(stats) {
       var data = new google.visualization.DataTable();
       data.addColumn('string', 'Gravidade');
       data.addColumn('number', 'Acidentes'); 
@@ -60,10 +38,9 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartogra
           
        var chart = new google.visualization.PieChart(document.getElementById('severity')); 
        chart.draw(data, options);
-  }
+  };
      
-  showByHourChart = function(stats) {
-
+  var showByHourChart = function(stats) {
     var data = new google.visualization.DataTable();
     data.addColumn('number', 'Hora');
     data.addColumn('number', 'Acidentes');
@@ -94,7 +71,28 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartogra
       var chart = new google.visualization.ColumnChart(document.getElementById('hour'));
 
       chart.draw(data, options);
-  }
+  };
+
+  var showMapOf = (function () {
+    var map = $K.map('#mapa',600,500);
+    
+    return function (state) {
+      map.loadCSS('css/map.css', function() {
+        var mapPath = 'img/estados/'+ state.abbreviation +'.svg';
+        map.loadMap(mapPath, function() {
+          map.addLayer('vizinhos');
+          map.addLayer('estado');
+          map.addLayer('rodovias');
+          
+          var colorscale = new chroma.scale('Reds').domain([0,1,2,3,4,5]);
+
+          map.getLayer('rodovias').style('stroke', function(data) {
+            return colorscale(data.categoria);
+          });
+        });
+      });
+    }; 
+  })();
 
   return self;
 });
