@@ -1,4 +1,4 @@
-define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartograph', 'qtip', 'goog!visualization,1,packages:[corechart]', 'chroma'], function(ko, _, stateView, dataFinder, $K, qtip) {
+define(['ko', 'underscore', 'kartograph', 'qtip', 'goog!visualization,1,packages:[corechart]', 'chroma'], function(ko, _, $K, qtip) {
   var self = this;
 
   self.title = ko.observable("PRF");
@@ -72,7 +72,6 @@ define(['ko', 'underscore', 'app/views/state-view', 'data/data-finder','kartogra
 
       chart.draw(data, options);
   };
-
   var showMapOf = (function () {
     var map = $K.map('#mapa',600,500);
     // initialize qtip tooltip class
