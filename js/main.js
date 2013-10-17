@@ -31,10 +31,15 @@ require.config({
     waitSeconds: 5
 });
 
-require(['ko', 'app/views/main-view', 'data/data-finder'], function(ko, mainView, dataFinder) {
+require(['ko', 'app/views/main-view', 'data/data-finder', 'jquery'], function(ko, mainView, dataFinder, $) {
     ko.applyBindings(mainView, document.getElementsByTagName('html')[0]);
     
     var states = dataFinder.allStates();
     mainView.states(states);
     mainView.stateClicked(states[0]);
+    var stateListElements = $('.statesList li');
+    stateListElements.on('click', 'a', function () {
+        stateListElements.find('.selected').removeClass('selected');
+        $(this).addClass('selected');
+    });
 });

@@ -126,7 +126,7 @@ header, nav, section {
 	text-decoration:none;
   color: #2B718c;
 }
-.statesList a:hover {
+.statesList a:hover, .statesList a.selected {
   color: #DF5A3E;
 }
 .statesList ul { 
