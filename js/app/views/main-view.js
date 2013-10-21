@@ -12,6 +12,10 @@ define(['ko', 'app/views/map-render', 'app/views/chart-render'], function(ko, Ma
       return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   };
 
+  self.formatPercentage = function(value) {
+      return Math.round(value * 100).toString() + '%';
+  };
+
   self.stateClicked = function(state) { 
     $('#mapa').empty();
     $('.mapContainer > h3').fadeIn(500);
