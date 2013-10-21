@@ -25,7 +25,7 @@ header, nav, section {
 }
 /*---Header---*/
 #header {
-  height: 90px;
+  height: 80px;
   clear:both;
   float:left;
   width:100%;
@@ -41,7 +41,6 @@ header, nav, section {
   text-align: right;
   font-size: 23px;
   margin-right: 31px;
-  margin-top: 5px;
 }
 /*---Area de conteudo---*/
 #main {
@@ -105,6 +104,12 @@ header, nav, section {
   font-size:19px;
   color:#255368;
   margin-left:17px;
+}
+
+.subtituloEstado {
+  font-size: 10px;
+  margin-left: 17px;
+  color:#DF5A3E;
 }
 
 .statesList {

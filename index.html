@@ -33,7 +33,9 @@
       <section id="main" >
         <div id="container">
           <aside id="sideLeft" class="coluna col1">
-            <div class="tituloEstado" >Estado</div>
+          <div class="tituloEstado" >Estado</div>
+          <div class="subtituloEstado">Ordenados por Ranking</div>
+
             <div class="statesList" data-bind="visible: loaded">
         			<ul data-bind="foreach: states" id="navigation">
         				<li><a href="#" data-bind="text:name, click:$parent.stateClicked"></a></li>
