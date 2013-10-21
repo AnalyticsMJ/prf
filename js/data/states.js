@@ -34,18 +34,16 @@ define([ 'underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'da
     	state.by100Thousand = _.find(by100Thousand, function(stat){ return stat.uf === state.abbreviation});
     	state.byHour = _.filter(byHour, function(stat){ return stat.uf === state.abbreviation});
 		state.byVehicleType = _.find(byVehicleType, function(stat){
-            var bikeOccurs = stat['qtd_ocorrencias_bicicleta'],
-                motorbikeOccurs = stat['qtd_ocorrencias_motocicleta'],
-                carOccurs = stat['qtd_ocorrencias_automovel'],
-                truckOccurs = stat['qtd_ocorrencias_caminhao'], 
-                busOccurs = stat['qtd_ocorrencias_onibus'],
-                totalOccurs = bikeOccurs + motorbikeOccurs + carOccurs + truckOccurs + busOccurs;
-                
-            stat['qtd_ocorrencias_bicicleta_percent'] = bikeOccurs/totalOccurs;
-            stat['qtd_ocorrencias_motocicleta_percent'] = motorbikeOccurs/totalOccurs;
-            stat['qtd_ocorrencias_automovel_percent'] = carOccurs/totalOccurs;
-            stat['qtd_ocorrencias_caminhao_percent'] = truckOccurs/totalOccurs;
-            stat['qtd_ocorrencias_onibus_percent'] = busOccurs/totalOccurs;
+            var accidentsByVehicleType, totalOccurs = 0;
+            for(accidentsByVehicleType in stat) {
+                if(accidentsByVehicleType === 'uf') continue;
+                totalOccurs += stat[accidentsByVehicleType];
+            }
+
+            for(accidentsByVehicleType in stat) {
+                if(accidentsByVehicleType === 'uf') continue;
+                stat[accidentsByVehicleType + '_percent'] = stat[accidentsByVehicleType] / totalOccurs;
+            }
 
             return stat.uf === state.abbreviation;
         });
