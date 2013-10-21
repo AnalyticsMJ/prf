@@ -47,51 +47,63 @@
             </div> <!-- End mapa -->
           </div>
           <aside id="sideRight" class="coluna col3">
-            <div data-bind="with: selectedState">
-              <div id="graficos">
-                <section> 
-                  <div id="rankingInformation"> 
-                    <description>
-                      <div class="titulo">Ranking </div>
-                      <div class ="dado" data-bind="text:by100Thousand.rank" ></div>
-                    </description> 
-                    <description>
-                      <div class="titulo">Acidentes </div> 
-                      <div class="subTitulo"> (100 mil hab.)</div>	
-                      <div class="dado" data-bind="text: formatNumber(by100Thousand.acidentes_por_100_mil)"> </div>       
-                 	  </description>	
-                  </div>
-                </section> <!-- End rankingInformation -->
-                <section>
-                  <div id="informationPorTipoDeVeiculo"> 
-                    <div id="porTipoDeVeiculo" data-bind="visible: selectedState">
-                      <div class="tituloGraficos"> Tipo de Veiculo </div>
-                      <ul data-bind="foreach: vehicleTypes">
-                        <li>
-                          <div class="iconVeiculo">  <img data-bind="attr: { src: iconsByVehicleType[type].icon }" width="50px" />
-                            <div class="dadoVeiculo" data-bind="text: formatPercentage(percentage)"></div>
-                          </div>
-                        </li>
-                      </ul>
-          		      </div>
-                  </div>
-                </section> <!-- End informationPorTipoDeVeiculo --> 
-                <section>
-                  <div id="histograma">
-                    <div class='tituloGraficos'>Ocorrências Ao Longo Do Dia</div>
-                    <div id="hour"></div>
-                  </div> 
-                </section> <!-- End Histograma -->
-                <section>
-                  <div id="pie">
-                    <div class="tituloGraficos"> Gravidade</div>
-                    <div class="pieContainer">
-                      <div id="severity"></div>	
-                    </div> <!--End pieContainer -->
-                  </div>
-                </section> <!--End pie-->
-              </div> <!--End Graficos -->
-            </div>
+            <div data-bind="with: selectedState" id="graficos">
+              <section id="rankingInformation"> 
+                <description>
+                  <div class="titulo">Ranking </div>
+                  <div class ="dado" data-bind="text:by100Thousand.rank" ></div>
+                </description> 
+                <description>
+                  <div class="titulo">Acidentes </div> 
+                  <div class="subTitulo"> (100 mil hab.)</div>	
+                  <div class="dado" data-bind="text: formatNumber(by100Thousand.acidentes_por_100_mil)"> </div>       
+             	  </description>	
+              </section> <!-- End rankingInformation -->
+              <section id="informationPorTipoDeVeiculo">
+                <div id="porTipoDeVeiculo" data-bind="visible: selectedState">
+                  <div class="tituloGraficos"> Tipo de Veiculo </div>
+                  <ul data-bind="foreach: vehicleTypes">
+                    <li>
+                      <div class="iconVeiculo">  <img data-bind="attr: { src: iconsByVehicleType[type].icon }" width="50px" />
+                        <div class="dadoVeiculo" data-bind="text: formatPercentage(percentage)"></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section> <!-- End informationPorTipoDeVeiculo --> 
+              <section id="histograma">
+                <div class='tituloGraficos'>Ocorrências Ao Longo Do Dia</div>
+                <div id="hour"></div>
+              </section> <!-- End Histograma -->
+              <section id="pie">
+                <div class="tituloGraficos"> Gravidade</div>
+                <div class="pieContainer">
+                  <div id="severity"></div>	
+                </div>
+              </section> <!--End pie-->
+              <nav>
+                <ul>
+                  <li>
+                    <a href="#">2007</a>
+                  </li>
+                  <li>
+                    <a href="#">2008</a>
+                  </li>
+                  <li>
+                    <a href="#">2009</a>
+                  </li>
+                  <li>
+                    <a href="#">2010</a>
+                  </li>
+                  <li>
+                    <a href="#">2011</a>
+                  </li>
+                  <li>
+                    <a href="#">2012</a>
+                  </li>
+                </ul>
+              </nav>
+            </div> <!--End Graficos -->
           </aside> <!-- coluna dereita -->
         </div> <!-- end container -->
       </section> <!--End Main -->
