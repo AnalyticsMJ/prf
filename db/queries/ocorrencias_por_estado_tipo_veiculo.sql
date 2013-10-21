@@ -1,25 +1,29 @@
 select 
-	stat.uf
-	,sum(stat.oco_bicicleta) qtd_ocorrencias_bicicleta
-	,sum(stat.oco_motocicleta) qtd_ocorrencias_motocicleta 
-	,sum(stat.oco_automovel) qtd_ocorrencias_automovel 
-	,sum(stat.oco_caminhao) qtd_ocorrencias_caminhao 
-	,sum(stat.oco_onibus) qtd_ocorrencias_onibus 
+	cast(stat.uf as char(2)) uf
+	,stat.ano
+	, 100 * sum(stat.oco_bicicleta)   / sum(total) qtd_ocorrencias_bicicleta
+	, 100 * sum(stat.oco_motocicleta) / sum(total) qtd_ocorrencias_motocicleta 
+	, 100 * sum(stat.oco_automovel)   / sum(total) qtd_ocorrencias_automovel 
+	, 100 * sum(stat.oco_caminhao)    / sum(total) qtd_ocorrencias_caminhao 
+	, 100 * sum(stat.oco_onibus)      / sum(total) qtd_ocorrencias_onibus 
+	
 from (
 	select 
-		tmuuf uf
+		ocouf uf
+		, year(ocodataocorrencia) ano
 		, case when tvvcodigo = 1 then count(1) end as 'oco_bicicleta'
 		, case when tvvcodigo in (3,4) then count(1) end as 'oco_motocicleta'
 		, case when tvvcodigo in (7,16,17,23) then count(1) end as 'oco_automovel'
 		, case when tvvcodigo in (13,18,25) then count(1) end as 'oco_caminhao'
 		, case when tvvcodigo in (8,9) then count(1) end as 'oco_onibus'
+		, count(1) total
 	from ocorrenciaveiculo
 	join ocorrencia on ocoid = ocvocoid
 	join veiculo on veiid = ocvveiid
 	join tipoveiculo on tvvcodigo = veitvvcodigo
-	join municipio on tmucodigo = ocomunicipio
 	where tvvcodigo in (1,3,4,7,16,17,23,13,18,25,8,9)
-	group by tmuuf, tvvcodigo
+      and year(ocodataocorrencia) > 2006
+	group by ocouf, year(ocodataocorrencia), tvvcodigo
 ) as stat
-group by uf
+group by uf, ano
 
