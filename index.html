@@ -64,21 +64,33 @@
                   <div id="informationPorTipoDeVeiculo"> 
                     <div id="porTipoDeVeiculo" data-bind="visible: selectedState">
                       <div class="tituloGraficos"> Tipo de Veiculo </div>
-                      <div class="iconVeiculo">  <img src="img/bicycle-w100.png" width="50px" height="29px"  >
-                      	<div class="dadoVeiculo" data-bind="text: formatPercentage(byVehicleType.qtd_ocorrencias_bicicleta_percent)"></div>
-            			    </div>
-            		      <div class="iconVeiculo">  <img src="img/motorcycle-w100.png" width="50px" height="29px" > 
-            		        <div class="dadoVeiculo" data-bind="text: formatPercentage(byVehicleType.qtd_ocorrencias_motocicleta_percent)"></div>
-            		      </div>
-            		      <div class="iconVeiculo">  <img src="img/car-w100.png" width="50px" height="17px"/> 
-            		          <div class="dadoVeiculo" data-bind="text: formatPercentage(byVehicleType.qtd_ocorrencias_automovel_percent)"></div>
-            		      </div>
-            		      <div class="iconVeiculo">  <img src="img/bus-w100.png" width="50px" height="17px"/> 
-            		          <div class="dadoVeiculo" data-bind="text: formatPercentage(byVehicleType.qtd_ocorrencias_onibus_percent)"></div>
-            		      </div>
-            		      <div class="iconVeiculo">  <img src="img/truck-w100.png" width="50px" height="21px"> 
-            		          <div class="dadoVeiculo" data-bind="text: formatPercentage(byVehicleType.qtd_ocorrencias_caminhao_percent)"></div>
-            		      </div>
+                      <ul>
+                        <li>
+                          <div class="iconVeiculo">  <img src="img/bicycle-w100.png" width="50px">
+                            <div class="dadoVeiculo" data-bind="text: formatPercentage(byVehicleType.qtd_ocorrencias_bicicleta_percent)"></div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="iconVeiculo">  <img src="img/motorcycle-w100.png" width="50px"> 
+                            <div class="dadoVeiculo" data-bind="text: formatPercentage(byVehicleType.qtd_ocorrencias_motocicleta_percent)"></div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="iconVeiculo">  <img src="img/car-w100.png" width="50px"> 
+                              <div class="dadoVeiculo" data-bind="text: formatPercentage(byVehicleType.qtd_ocorrencias_automovel_percent)"></div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="iconVeiculo">  <img src="img/bus-w100.png" width="50px"> 
+                            <div class="dadoVeiculo" data-bind="text: formatPercentage(byVehicleType.qtd_ocorrencias_onibus_percent)"></div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="iconVeiculo">  <img src="img/truck-w100.png" width="50px"> 
+                            <div class="dadoVeiculo" data-bind="text: formatPercentage(byVehicleType.qtd_ocorrencias_caminhao_percent)"></div>
+                          </div>
+                        </li>
+                      </ul>
           		      </div>
                   </div>
                 </section> <!-- End informationPorTipoDeVeiculo --> 

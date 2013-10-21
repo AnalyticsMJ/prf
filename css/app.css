@@ -203,8 +203,17 @@ font-family:'Ubuntu';
 .pieContainer {
   width:150px;
 }
+
 #porTipoDeVeiculo img {
   margin-top:20px;
+}
+
+#porTipoDeVeiculo ul {
+  margin: 0;
+}
+
+#porTipoDeVeiculo li {
+  list-style: none;
 }
 
 .tituloGraficos {
@@ -215,7 +224,6 @@ font-family:'Ubuntu';
 }
 .iconVeiculo {
   float:left;
-  margin-left:25px;
 }
 
 .dadoVeiculo {
