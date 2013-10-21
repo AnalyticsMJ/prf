@@ -69,8 +69,8 @@
                       <div class="tituloGraficos"> Tipo de Veiculo </div>
                       <ul data-bind="foreach: vehicleTypes">
                         <li>
-                          <div class="iconVeiculo">  <img data-bind="attr: { src: icon }" width="50px" />
-                            <div class="dadoVeiculo" data-bind="text: formatPercentage($parent.byVehicleType[quantityPercentage])"></div>
+                          <div class="iconVeiculo">  <img data-bind="attr: { src: getVehicleTypeIcon(type) }" width="50px" />
+                            <div class="dadoVeiculo" data-bind="text: formatPercentage(percentage)"></div>
                           </div>
                         </li>
                       </ul>

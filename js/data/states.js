@@ -1,4 +1,4 @@
-define([ 'underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'data/accidents-by-severity', 'data/accidents-by-hour', 'data/accidents-by-vehicle-type'], function(_, State, by100Thousand, bySeverity, byHour, byVehicleType) {
+define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'data/accidents-by-severity', 'data/accidents-by-hour', 'data/accidents-by-vehicle-type'], function(_, State, by100Thousand, bySeverity, byHour, byVehicleType) {
     var states = [];
     states.push(new State().withAbbreviation("AC").withName("Acre").withPopulation(707125));
     states.push(new State().withAbbreviation("AL").withName("Alagoas").withPopulation(3093994));
@@ -35,9 +35,8 @@ define([ 'underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'da
     	state.byHour = _.filter(byHour, byStateAbbreviation(state));
 		state.byVehicleType = _.find(byVehicleType, byStateAbbreviation(state));
         
-        var accidentsByVehicleTypeInState = state.byVehicleType, totalOccurs;
-        totalOccurs = totalOccursFrom(accidentsByVehicleTypeInState)
-        generatePercentagesFor(accidentsByVehicleTypeInState, totalOccurs);
+        var totalOccurs = totalOccursFrom(state.byVehicleType)
+        generatePercentagesFor(state, totalOccurs);
     });
   
     states = _.sortBy(states, function(state){ return state.by100Thousand.rank; })
@@ -58,9 +57,13 @@ define([ 'underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'da
     }
 
     function generatePercentagesFor(state, totalOccurs) {
-        for(var accidentsByVehicleType in state) {
+        state.vehicleTypes = [];
+        for(var accidentsByVehicleType in state.byVehicleType) {
             if(accidentsByVehicleType === 'uf') continue;
-            state[accidentsByVehicleType + '_percent'] = state[accidentsByVehicleType] / totalOccurs;
+            state.vehicleTypes.push({
+                percentage: state.byVehicleType[accidentsByVehicleType] / totalOccurs,
+                type: accidentsByVehicleType
+            });
         }
     }
 })
