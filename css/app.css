@@ -136,7 +136,7 @@ header, nav, section {
 }
 .statesList a.selected {
   cursor: default;
-  font-weight: bold;
+  //font-weight: bold;
 }
 .statesList ul { 
 	list-style:none;
@@ -326,6 +326,9 @@ width: 97%;
 border-top: solid;
 border-width: 0.1em;
 padding-top: 4px;
+position:fixed;
+bottom:0;
+height: 25px;
 }
 
 footer a {
