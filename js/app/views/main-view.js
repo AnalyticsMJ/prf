@@ -26,13 +26,17 @@ define(['ko', 'app/views/map-render', 'app/views/chart-render'], function(ko, Ma
     mapRender.showMapOf(state, 2010);
   };
 
-  self.vehicleTypes = [
-    { icon: 'img/bicycle-w100.png', quantityPercentage: 'qtd_ocorrencias_bicicleta_percent' },
-    { icon: 'img/motorcycle-w100.png', quantityPercentage: 'qtd_ocorrencias_motocicleta_percent' },
-    { icon: 'img/car-w100.png', quantityPercentage: 'qtd_ocorrencias_automovel_percent' },
-    { icon: 'img/bus-w100.png', quantityPercentage: 'qtd_ocorrencias_onibus_percent' },
-    { icon: 'img/truck-w100.png', quantityPercentage: 'qtd_ocorrencias_caminhao_percent' }
-  ];
+  var iconsByVehicleType = {
+    qtd_ocorrencias_bicicleta: { icon: 'img/bicycle-w100.png' },
+    qtd_ocorrencias_motocicleta: { icon: 'img/motorcycle-w100.png' },
+    qtd_ocorrencias_automovel: { icon: 'img/car-w100.png' },
+    qtd_ocorrencias_onibus: { icon: 'img/bus-w100.png' },
+    qtd_ocorrencias_caminhao: { icon: 'img/truck-w100.png' }
+  }
+
+  self.getVehicleTypeIcon = function (vehicleType) {
+    return 'img/bicycle-w100.png'; //iconsByVehicleType[vehicleType].icon;
+  } ;
 
   return self;
 });
