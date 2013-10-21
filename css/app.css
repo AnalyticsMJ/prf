@@ -284,3 +284,19 @@ font-family:'Ubuntu';
   margin-before: 0;
   display: none;
 }
+
+footer {
+font-size: 11px;
+float: left;
+margin-left: 19px;
+margin-top: 10px;
+width: 97%;
+border-top: solid;
+border-width: 0.1em;
+padding-top: 4px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #DF5A3E;
+}
