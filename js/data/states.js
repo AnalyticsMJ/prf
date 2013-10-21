@@ -33,24 +33,30 @@ define([ 'underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'da
     	state.bySeverity = _.filter(bySeverity, function(stat){ return stat.uf === state.abbreviation});		
     	state.by100Thousand = _.find(by100Thousand, function(stat){ return stat.uf === state.abbreviation});
     	state.byHour = _.filter(byHour, function(stat){ return stat.uf === state.abbreviation});
-		state.byVehicleType = _.find(byVehicleType, function(stat){
-            var accidentsByVehicleType, totalOccurs = 0;
-            for(accidentsByVehicleType in stat) {
-                if(accidentsByVehicleType === 'uf') continue;
-                totalOccurs += stat[accidentsByVehicleType];
-            }
-
-            for(accidentsByVehicleType in stat) {
-                if(accidentsByVehicleType === 'uf') continue;
-                stat[accidentsByVehicleType + '_percent'] = stat[accidentsByVehicleType] / totalOccurs;
-            }
-
-            return stat.uf === state.abbreviation;
-        });
+		state.byVehicleType = _.find(byVehicleType, function(stat){ return stat.uf === state.abbreviation; });
+        
+        var accidentsByVehicleTypeInState = state.byVehicleType, totalOccurs;
+        totalOccurs = totalOccursFrom(accidentsByVehicleTypeInState)
+        generatePercentagesFor(accidentsByVehicleTypeInState, totalOccurs);
     });
   
-    states = _.sortBy(states, function(state){ return state.by100Thousand.rank;  })
-
+    states = _.sortBy(states, function(state){ return state.by100Thousand.rank; })
 
     return states;
+
+    function totalOccursFrom(state) {
+        var totalOccurs = 0;
+        for(var accidentsByVehicleType in state) {
+            if(accidentsByVehicleType === 'uf') continue;
+            totalOccurs += state[accidentsByVehicleType];
+        }
+        return totalOccurs;
+    }
+
+    function generatePercentagesFor(state, totalOccurs) {
+        for(var accidentsByVehicleType in state) {
+            if(accidentsByVehicleType === 'uf') continue;
+            state[accidentsByVehicleType + '_percent'] = state[accidentsByVehicleType] / totalOccurs;
+        }
+    }
 })
