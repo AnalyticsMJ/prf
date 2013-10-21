@@ -15,10 +15,18 @@
 --       and lbruf = uf
 --  set this.snv = rodovias.snv
 
-;
-select snv, count(1) qtd
-from localbr
-join ocorrencia on ocolocal = lbrid
-where snv is not null
-group by snv
-limit 1000000
+	select snv
+		,max(case when ano = 2007 then qtd end ) qtd_2007
+		,max(case when ano = 2008 then qtd end ) qtd_2008
+		,max(case when ano = 2009 then qtd end ) qtd_2009
+		,max(case when ano = 2010 then qtd end ) qtd_2010
+		,max(case when ano = 2011 then qtd end ) qtd_2011
+		,max(case when ano = 2012 then qtd end ) qtd_2012
+	from
+		(select snv, year(ocodataocorrencia) ano, count(1) qtd
+		from localbr
+		join ocorrencia on ocolocal = lbrid
+		where snv is not null and year(ocodataocorrencia) > 2006
+		group by snv, year(ocodataocorrencia) ) stat
+	group by snv
+	limit 100000

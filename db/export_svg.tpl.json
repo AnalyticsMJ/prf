@@ -5,7 +5,12 @@
       "attributes":{
         "qtd_acidentes": "acid_local",
         "rodovia": "CODIGO_ROD",
-        "categoria":"categoria",
+        "acidentes_qtd_2007":"qtd_2007",
+        "acidentes_qtd_2008":"qtd_2008",
+        "acidentes_qtd_2009":"qtd_2009",
+        "acidentes_qtd_2010":"qtd_2010",
+        "acidentes_qtd_2011":"qtd_2011",
+        "acidentes_qtd_2012":"qtd_2012",
         "km_inicial": "KM_INICIAL",
         "km_final": "KM_FINAL"    
       }, 
@@ -32,7 +37,20 @@
       "filter": ["UF","is not", "{%uf%}"],
       "class": "vizinho",
       "simplify": 5 
+    },
+    "paises":  {
+      "src": "world/TM_WORLD_BORDERS-0.3.shp",
+      "charset": "latin-1",
+      "crop-to":"estado",
+      "attributes": { 
+        "iso":"ISO3",
+        "nome":"NAME"
+        },
+      "filter": ["ISO3","is not", "BRA"],
+      "class": "vizinho",
+      "simplify": 5 
     }
+
 
   },
   "bounds":{
