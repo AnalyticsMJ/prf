@@ -1,4 +1,4 @@
-define(['underscore', 'goog!visualization,1,packages:[corechart]'], function(_) {
+define(['goog!visualization,1,packages:[corechart]'], function() {
   return function (argument) {
     this.showSeverityChart = function(stats) {
       var data = new google.visualization.DataTable();

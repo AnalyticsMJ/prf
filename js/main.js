@@ -16,8 +16,9 @@ require.config({
         raphael: 'vendor/raphael-min',
         kartograph: 'vendor/kartograph.min',
         chroma: 'vendor/chroma.min',
-        imagesloaded: ['//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.0.4/jquery.imagesloaded.min',
-            'vendor/imagesloaded.min'],
+        eventie: 'vendor/eventie',
+        eventEmitter: 'vendor/eventEmitter',
+        imagesloaded: 'vendor/imagesloaded.min',
         qtip: ['//cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/basic/jquery.qtip.min',
             'vendor/qtip.min']
     },

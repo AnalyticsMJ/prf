@@ -1,4 +1,4 @@
-define(['underscore', 'kartograph', 'qtip', 'chroma'], function(ko, $K, qtip) {
+define(['kartograph', 'qtip', 'chroma'], function($K, qtip) {
     return function () {
       var map = $K.map('#mapa', 600, 500);
       // initialize qtip tooltip class
