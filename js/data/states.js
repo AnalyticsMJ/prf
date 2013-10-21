@@ -30,10 +30,10 @@ define([ 'underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'da
 
 
     _.each(states, function(state){
-    	state.bySeverity = _.filter(bySeverity, function(stat){ return stat.uf === state.abbreviation});		
-    	state.by100Thousand = _.find(by100Thousand, function(stat){ return stat.uf === state.abbreviation});
-    	state.byHour = _.filter(byHour, function(stat){ return stat.uf === state.abbreviation});
-		state.byVehicleType = _.find(byVehicleType, function(stat){ return stat.uf === state.abbreviation; });
+    	state.bySeverity = _.filter(bySeverity, byStateAbbreviation(state));		
+    	state.by100Thousand = _.find(by100Thousand, byStateAbbreviation(state));
+    	state.byHour = _.filter(byHour, byStateAbbreviation(state));
+		state.byVehicleType = _.find(byVehicleType, byStateAbbreviation(state));
         
         var accidentsByVehicleTypeInState = state.byVehicleType, totalOccurs;
         totalOccurs = totalOccursFrom(accidentsByVehicleTypeInState)
@@ -43,6 +43,10 @@ define([ 'underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'da
     states = _.sortBy(states, function(state){ return state.by100Thousand.rank; })
 
     return states;
+
+    function byStateAbbreviation(state){
+        return function(stateDate) { return stateDate.uf === state.abbreviation; };
+    };
 
     function totalOccursFrom(state) {
         var totalOccurs = 0;
