@@ -25,21 +25,21 @@ header, nav, section {
 }
 /*---Header---*/
 #header {
-  height: 100px;
+  height: 90px;
   clear:both;
   float:left;
   width:100%;
 }
 .title{
   font-family: 'Titillium Web','Poiret One';
-	font-size:40px;	
+	font-size:35px;	
 	text-align:right;
 	margin-right: 30px;
 }
 
 .nomeEstado {
   text-align: right;
-  font-size: 25px;
+  font-size: 23px;
   margin-right: 31px;
   margin-top: 5px;
 }
@@ -109,7 +109,7 @@ header, nav, section {
 
 .statesList {
 	float:left;
-	height:500px;
+	height:475px;
 	line-height:1.9em;
 	border-left:0;
 	position:relative;
@@ -176,9 +176,9 @@ border-width: 3px;
 background-color: rgb(230, 230, 230);
 padding: 10px;
 position:relative;
-margin:auto;
-font-family:'Ubuntu';
-  height:500px;
+  margin:auto;
+  font-family:'Ubuntu';
+  height:475px;
 }
 
 #histograma {
@@ -196,12 +196,12 @@ font-family:'Ubuntu';
 #pie {
   width:120px;
   position: relative;
-  top: -355px;
+  top: -370px;
   right:-160px;;
-  height:190px;
+  height:170px;
 }
 .pieContainer {
-  width:150px;
+  width:140px;
 }
 #porTipoDeVeiculo img {
   margin-top:20px;
