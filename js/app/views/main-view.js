@@ -1,5 +1,5 @@
-define(['ko', 'underscore', 'kartograph', 'qtip', 'goog!visualization,1,packages:[corechart]', 'chroma'], function(ko, _, $K, qtip) {
-  var self = this;
+define(['ko', 'underscore', 'kartograph', 'qtip', 'app/views/map-render', 'goog!visualization,1,packages:[corechart]'], function(ko, _, $K, qtip, MapRender) {
+  var self = this, mapRender = new MapRender();
 
   self.title = ko.observable("PRF");
   self.loaded = true;
@@ -17,7 +17,7 @@ define(['ko', 'underscore', 'kartograph', 'qtip', 'goog!visualization,1,packages
     self.selectedState(state);
     showSeverityChart(state.bySeverity);
     showByHourChart(state.byHour);
-    showMapOf(state);
+    mapRender.showMapOf(state);
   };
 
   var showSeverityChart = function(stats) {
@@ -72,34 +72,6 @@ define(['ko', 'underscore', 'kartograph', 'qtip', 'goog!visualization,1,packages
 
       chart.draw(data, options);
   };
-  var showMapOf = (function () {
-    var map = $K.map('#mapa',600,500);
-    // initialize qtip tooltip class
-    $.fn.qtip.defaults.style.classes = 'ui-tooltip-bootstrap';
-    
-    return function (state) {
-      map.loadCSS('css/map.css', function() {
-        var mapPath = 'img/estados/'+ state.abbreviation +'.svg';
-        map.loadMap(mapPath, function() {
-          map.addLayer('vizinhos');
-          map.addLayer('estado');
-          map.addLayer('rodovias',{
-              tooltips: function(d) {
-                var title = d.rodovia + ' (km' + d['km-inicial'] + '-km' + d['km-final'] + ')',
-                  details = d['qtd-acidentes'].toString() + ' acidentes';
-                return [title, details];
-              }
-            });
-          
-          var colorscale = new chroma.scale('Reds').domain([0,1,2,3,4,5]);
-
-          map.getLayer('rodovias').style('stroke', function(data) {
-              return colorscale(data.categoria);
-            });
-        });
-      });
-    }; 
-  })();
-
+  
   return self;
 });
