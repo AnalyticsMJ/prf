@@ -35,7 +35,7 @@ define(['ko', 'app/views/map-render', 'app/views/chart-render'], function(ko, Ma
   }
 
   self.getVehicleTypeIcon = function (vehicleType) {
-    return 'img/bicycle-w100.png'; //iconsByVehicleType[vehicleType].icon;
+    return iconsByVehicleType[vehicleType].icon;
   } ;
 
   return self;
