@@ -23,8 +23,16 @@ define(['ko', 'app/views/map-render', 'app/views/chart-render'], function(ko, Ma
     self.selectedState(state);
     chartRender.showSeverityChart(state.bySeverity);
     chartRender.showByHourChart(state.byHour);
-    mapRender.showMapOf(state);
+    mapRender.showMapOf(state, 2010);
   };
+
+  self.vehicleTypes = [
+    { icon: 'img/bicycle-w100.png', quantityPercentage: 'qtd_ocorrencias_bicicleta_percent' },
+    { icon: 'img/motorcycle-w100.png', quantityPercentage: 'qtd_ocorrencias_motocicleta_percent' },
+    { icon: 'img/car-w100.png', quantityPercentage: 'qtd_ocorrencias_automovel_percent' },
+    { icon: 'img/bus-w100.png', quantityPercentage: 'qtd_ocorrencias_onibus_percent' },
+    { icon: 'img/truck-w100.png', quantityPercentage: 'qtd_ocorrencias_caminhao_percent' }
+  ];
 
   return self;
 });

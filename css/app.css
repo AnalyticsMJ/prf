@@ -203,8 +203,17 @@ position:relative;
 .pieContainer {
   width:140px;
 }
+
 #porTipoDeVeiculo img {
   margin-top:20px;
+}
+
+#porTipoDeVeiculo ul {
+  margin: 0;
+}
+
+#porTipoDeVeiculo li {
+  list-style: none;
 }
 
 .tituloGraficos {
@@ -215,7 +224,6 @@ position:relative;
 }
 .iconVeiculo {
   float:left;
-  margin-left:25px;
 }
 
 .dadoVeiculo {
