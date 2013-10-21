@@ -32,7 +32,7 @@
       <section id="main" >
         <div id="container">
           <aside id="sideLeft" class="coluna col1">
-            <div class="tituloEstado" >Unidade Federativa</div>
+            <div class="tituloEstado" >Estado</div>
             <div class="statesList" data-bind="visible: loaded">
         			<ul data-bind="foreach: states" id="navigation">
         				<li><a href="#" data-bind="text:name, click:$parent.stateClicked"></a></li>
@@ -40,7 +40,7 @@
             </div>    
           </aside> <!--coluna da esquerda -->
           <div class="coluna col2 mapContainer">      
-            <h3>Mapa</h3>
+            
             <div id="mapa">
             </div> <!-- End mapa -->
           </div>
@@ -101,6 +101,10 @@
           </aside> <!-- coluna dereita -->
         </div> <!-- end container -->
       </section> <!--End Main -->
+      <footer>
+ <p>Um projeto de para o <a href="http://www.w3c.br/Home/ConcursoAplicativos">2o Concurso de Aplicativos para Dados Abertos do Ministério da Justiça</a> utilizando dados disponibilizados pelo Polícia Rodoviária Federal através do <a href="http://dados.gov.br">Portal Brasileiro de Dados Abertos</a>.</p>
+<p><a href="https://github.com/AnalyticsMJ/prf">Código no GitHub</a></p> 
+      </footer>
     </div> <!-- End Wrapper -->
 		
     <!-- Scripts -->
