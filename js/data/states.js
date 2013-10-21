@@ -65,5 +65,8 @@ define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'dat
                 type: accidentsByVehicleType
             });
         }
+        state.vehicleTypes.sort(function(a, b) {
+            return b.percentage - a.percentage;
+        });
     }
 })
