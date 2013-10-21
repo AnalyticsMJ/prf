@@ -26,5 +26,13 @@ define(['ko', 'app/views/map-render', 'app/views/chart-render'], function(ko, Ma
     mapRender.showMapOf(state);
   };
 
+  self.vehicleTypes = [
+    { icon: 'img/bicycle-w100.png', quantityPercentage: 'qtd_ocorrencias_bicicleta_percent' },
+    { icon: 'img/motorcycle-w100.png', quantityPercentage: 'qtd_ocorrencias_motocicleta_percent' },
+    { icon: 'img/car-w100.png', quantityPercentage: 'qtd_ocorrencias_automovel_percent' },
+    { icon: 'img/bus-w100.png', quantityPercentage: 'qtd_ocorrencias_onibus_percent' },
+    { icon: 'img/truck-w100.png', quantityPercentage: 'qtd_ocorrencias_caminhao_percent' }
+  ];
+
   return self;
 });
