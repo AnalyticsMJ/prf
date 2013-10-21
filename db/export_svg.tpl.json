@@ -7,8 +7,9 @@
         "rodovia": "CODIGO_ROD",
         "categoria":"categoria",
         "km_inicial": "KM_INICIAL",
-        "km_fim": "KM_FIM"    
+        "km_final": "KM_FINAL"    
       }, 
+      "crop-to":"estado",
       "filter":{"UF": "{%uf%}"},
       "simplify": 5
     },
