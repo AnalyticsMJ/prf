@@ -198,7 +198,7 @@ header, nav, section {
   border-style: solid;
   border-width: 3px;
   background-color: rgb(230, 230, 230);
-  padding: 10px;
+  padding: 8px;
   position:relative;
   margin:auto;
   font-family:'Ubuntu';
@@ -206,11 +206,11 @@ header, nav, section {
 }
 
 #histograma {
-  width: 65%;
+  width: 70%;
   height: 230px;
   position: relative;
   left: 130px;
-  top: -360px;
+  top: -370px;
 }
 
 #quadroDados {
@@ -218,9 +218,9 @@ header, nav, section {
   display:inline-block;
 }
 #pie {
-  width:120px;
+  width:150px;
   position: relative;
-  top: -370px;
+  top: -395px;
   right:-160px;;
   height:170px;
 }
@@ -261,7 +261,7 @@ header, nav, section {
 }
 
 .tituloGraficos {
-  font-size:17px;
+  font-size:15px;
   color: #255368;
   display:block;
   text-align:center;
@@ -304,14 +304,13 @@ header, nav, section {
 }
 
 #rankingInformation {
-//  float:left;
   width:100%;
-  font-size:16px;
+  font-size:15px;
   text-align:center;
   color:#255368;
   border-bottom: thin solid #BBC2C5;
-  height:60px; 
-  margin-bottom:8px;
+  height:50px; 
+  margin-bottom:5px;
 }
 
 #rankingInformation description {
@@ -346,7 +345,6 @@ width: 97%;
 border-top: solid;
 border-width: 0.1em;
 padding-top: 4px;
-position:fixed;
 bottom:0;
 height: 25px;
 }

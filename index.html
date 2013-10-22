@@ -15,7 +15,7 @@
       <link href='http://fonts.googleapis.com/css?family=Titillium+Web:200' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
       <link href='http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/basic/jquery.qtip.min.css' rel='stylesheet' type='text/css'>
-      <script src = "js/vendor/jquery-1.10.2.min.js"></script>
+      <script src = "js/vendor/jquery-1.10.2.min.j"></script>
       <script src = "js/vendor/modernizr-2.6.2.min.js"></script>
   </head>
   <body>
@@ -72,15 +72,17 @@
                 </div>
               </section> <!-- End informationPorTipoDeVeiculo --> 
               <section id="histograma">
-                <div class='tituloGraficos'>Ocorrências Ao Longo Do Dia</div>
+                <div class='tituloGraficos' style="position:relative; top:10px;">Ocorrências Ao Longo Do Dia</div>
                 <div id="hour"></div>
               </section> <!-- End Histograma -->
               <section id="pie">
-                <div class="tituloGraficos"> Gravidade</div>
+                <div class="tituloGraficos" style="position:relative; top:15px;"> Gravidade</div>
                 <div class="pieContainer">
                   <div id="severity"></div>	
                 </div>
-              </section> <!--End pie-->
+                </section> <!--End pie-->
+                <section id="yearsSelector">
+                <div>
               <nav>
                 <ul>
                   <li>
@@ -108,7 +110,9 @@
                     <input id="ano-2012" type="radio" name="ano" value="2012" data-bind="checked: selectedYear">
                   </li>
                 </ul>
-              </nav>
+                </nav>
+              </div>
+                </section> <!--End yearSelector-->
             </div> <!--End Graficos -->
           </aside> <!-- coluna dereita -->
         </div> <!-- end container -->
