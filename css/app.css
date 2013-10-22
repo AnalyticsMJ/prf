@@ -202,15 +202,15 @@ header, nav, section {
   position:relative;
   margin:auto;
   font-family:'Ubuntu';
-  height:510px;
+  height:485px;
 }
 
 #histograma {
   width: 70%;
   height: 230px;
-  position: relative;
+  position: absolute;
   left: 130px;
-  top: -370px;
+  top: 54px;
 }
 
 #quadroDados {
@@ -219,19 +219,12 @@ header, nav, section {
 }
 #pie {
   width:150px;
-  position: relative;
-  top: -395px;
-  right:-160px;;
-  height:170px;
+  position:absolute;
+  top: 255px;
+  left:200px;
 }
 .pieContainer {
   width:140px;
-}
-#graficos nav {
-  bottom: 0;
-  position: absolute;
-  width: 28em;
-  padding: 0;
 }
 #graficos nav ul {
   padding: 0;
@@ -327,6 +320,13 @@ header, nav, section {
 
 #rankingInformation .dado{
   color:#DF5A3E;
+}
+
+#yearsSelector {
+  position: absolute;
+  float: left;
+  margin-top: 15px;
+
 }
 
 .mapContainer>h3 {
