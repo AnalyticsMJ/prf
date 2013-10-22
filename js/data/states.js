@@ -1,4 +1,4 @@
-define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'data/accidents-by-severity.json', 'data/accidents-by-hour.json', 'data/accidents-by-vehicle-type'], function(_, State, by100Thousand, bySeverity, byHour, byVehicleType) {
+define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand.json', 'data/accidents-by-severity.json', 'data/accidents-by-hour.json', 'data/accidents-by-vehicle-type'], function(_, State, by100Thousand, bySeverity, byHour, byVehicleType) {
     var states = [];
     states.push(new State().withAbbreviation("AC").withName("Acre").withPopulation(707125));
     states.push(new State().withAbbreviation("AL").withName("Alagoas").withPopulation(3093994));
@@ -32,23 +32,27 @@ define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'dat
     _.each(states, function(state){
     	state.bySeverity = _.chain(bySeverity)
             .filter(byStateAbbreviation(state))		
-        	.groupBy(function(data){return data.ano;})
+        	.groupBy('ano')
             .value();
 
-        state.by100Thousand = _.find(by100Thousand, byStateAbbreviation(state));
-    	
         state.byHour = _.chain(byHour)
             .filter(byStateAbbreviation(state))
-            .groupBy(function(data){return data.ano;})
+            .groupBy('ano')
             .value();
 
+
+        state.by100Thousand = _.chain(by100Thousand)
+            .filter(byStateAbbreviation(state))
+            .indexBy('ano')
+            .value();
+        
 		state.byVehicleType = _.find(byVehicleType, byStateAbbreviation(state));
         
         var totalOccurs = totalOccursFrom(state.byVehicleType)
         generatePercentagesFor(state, totalOccurs);
     });
   
-    states = _.sortBy(states, function(state){ return state.by100Thousand.rank; })
+    states = _.sortBy(states, function(state){ return state.by100Thousand[2012].rank; })
 
     return states;
 
