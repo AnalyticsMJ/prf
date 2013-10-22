@@ -382,14 +382,14 @@ footer a {
           top: -4px;
           left: 4px;position
 
-          background: #1d2e38;
+          background: #DF5A3E;
           background: -moz-linear-gradient(left, #DF5A3E 0%, #DF5A3E 50%, #DF5A3E 100%);
-          background: -webkit-gradient(linear, left top, right top, color-stop(0%,#1d2e38), color-stop(50%,#2b4254), color-stop(100%,#2b4254));
+          background: -webkit-gradient(linear, left top, right top, color-stop(0%,#DF5A3E), color-stop(50%,#DF5A3E), color-stop(100%,#DF5A3E));
           background: -webkit-linear-gradient(left, #DF5A3E 0%,#DF5A3E 50%,#DF5A3E 100%);
           background: -o-linear-gradient(left, #DF5A3E 0%,1d2e38#DF5A3E 50%,#DF5A3E 100%);
           background: -ms-linear-gradient(left, #1d2e3838 0%,#DF5A3E 50%,#DF5A3E 100%);
           background: linear-gradient(left, #1d2e38382e38 0%,#DF5A3E 50%,#DF5A3E 100%);
-          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d2e38', endColorstr='#2b4254',GradientType=1 );
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DF5A3E', endColorstr='#DF5A3E',GradientType=1 );
 
           -webkit-border-radius: 40px;
           -moz-border-radius: 40px;
