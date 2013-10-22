@@ -1,4 +1,5 @@
-[
+define(function() {
+	return [
 	{
 		'uf' : 'AC',
 		'ano' : 2007,
@@ -971,4 +972,5 @@
 		'rank' : 14,
 		'acidentes_por_100_mil' : 78
 	}
-]
+];
+});
