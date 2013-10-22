@@ -1,4 +1,5 @@
-[
+define(function() {
+	return[
 	{
 		'uf' : 'AC',
 		'ano' : 2007,
@@ -4535,4 +4536,5 @@
 		'gravidade' : 'Morto',
 		'qtd_ocorrencia' : 89
 	}
-]
+];
+});
