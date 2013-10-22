@@ -1,4 +1,4 @@
-define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand.json', 'data/accidents-by-severity.json', 'data/accidents-by-hour.json', 'data/accidents-by-vehicle-type'], function(_, State, by100Thousand, bySeverity, byHour, byVehicleType) {
+define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand.json', 'data/accidents-by-severity.json', 'data/accidents-by-hour.json', 'data/accidents-by-vehicle-type.json'], function(_, State, by100Thousand, bySeverity, byHour, byVehicleType) {
     var states = [];
     states.push(new State().withAbbreviation("AC").withName("Acre").withPopulation(707125));
     states.push(new State().withAbbreviation("AL").withName("Alagoas").withPopulation(3093994));
@@ -46,10 +46,12 @@ define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand.json',
             .indexBy('ano')
             .value();
         
-		state.byVehicleType = _.find(byVehicleType, byStateAbbreviation(state));
-        
-        var totalOccurs = totalOccursFrom(state.byVehicleType)
-        generatePercentagesFor(state, totalOccurs);
+		state.byVehicleType = _.chain(byVehicleType)
+            .filter(byStateAbbreviation(state))
+            .indexBy('ano').value();
+
+        _.each(state.byVehicleType, generatePercentagesFor);
+            
     });
   
     states = _.sortBy(states, function(state){ return state.by100Thousand[2012].rank; })
@@ -60,25 +62,18 @@ define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand.json',
         return function(stateDate) { return stateDate.uf === state.abbreviation; };
     };
 
-    function totalOccursFrom(state) {
-        var totalOccurs = 0;
-        for(var accidentsByVehicleType in state) {
-            if(accidentsByVehicleType === 'uf') continue;
-            totalOccurs += state[accidentsByVehicleType];
-        }
-        return totalOccurs;
-    }
+    function generatePercentagesFor(data) {
+        data.vehicleTypes = [];
 
-    function generatePercentagesFor(state, totalOccurs) {
-        state.vehicleTypes = [];
-        for(var accidentsByVehicleType in state.byVehicleType) {
-            if(accidentsByVehicleType === 'uf') continue;
-            state.vehicleTypes.push({
-                percentage: state.byVehicleType[accidentsByVehicleType] / totalOccurs,
+        for(var accidentsByVehicleType in data) {
+            if(accidentsByVehicleType.indexOf('qtd_ocorrencias')!==0) continue;
+            data.vehicleTypes.push({
+                percentage: data[accidentsByVehicleType],
                 type: accidentsByVehicleType
             });
         }
-        state.vehicleTypes.sort(function(a, b) {
+        
+        data.vehicleTypes.sort(function(a, b) {
             return b.percentage - a.percentage;
         });
     }

@@ -15,7 +15,6 @@
       <link href='http://fonts.googleapis.com/css?family=Titillium+Web:200' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
       <link href='http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.1.1/basic/jquery.qtip.min.css' rel='stylesheet' type='text/css'>
-      <script src = "js/vendor/jquery-1.10.2.min.j"></script>
       <script src = "js/vendor/modernizr-2.6.2.min.js"></script>
   </head>
   <body>
@@ -62,13 +61,15 @@
               <section id="informationPorTipoDeVeiculo">
                 <div id="porTipoDeVeiculo" data-bind="visible: selectedState">
                   <div class="tituloGraficos"> Tipo de Veiculo </div>
-                  <ul data-bind="foreach: vehicleTypes">
-                    <li>
-                      <div class="iconVeiculo">  <img data-bind="attr: { src: iconsByVehicleType[type].icon }" width="50px" />
-                        <div class="dadoVeiculo" data-bind="text: formatPercentage(percentage)"></div>
-                      </div>
-                    </li>
-                  </ul>
+                  <div data-bind="with: currentByVehicleType">               
+                    <ul data-bind="foreach: vehicleTypes">
+                      <li>
+                        <div class="iconVeiculo">  <img data-bind="attr: { src: iconsByVehicleType[type].icon }" width="50px" />
+                          <div class="dadoVeiculo" data-bind="text: formatPercentage(percentage)"></div>
+                        </div>
+                      </li>
+                    </ul> 
+                  </div>
                 </div>
               </section> <!-- End informationPorTipoDeVeiculo --> 
               <section id="histograma">
