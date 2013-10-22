@@ -1,4 +1,4 @@
-define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'data/accidents-by-severity', 'data/accidents-by-hour', 'data/accidents-by-vehicle-type'], function(_, State, by100Thousand, bySeverity, byHour, byVehicleType) {
+define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'data/accidents-by-severity', 'data/accidents-by-hour.json', 'data/accidents-by-vehicle-type'], function(_, State, by100Thousand, bySeverity, byHour, byVehicleType) {
     var states = [];
     states.push(new State().withAbbreviation("AC").withName("Acre").withPopulation(707125));
     states.push(new State().withAbbreviation("AL").withName("Alagoas").withPopulation(3093994));
@@ -32,7 +32,10 @@ define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand', 'dat
     _.each(states, function(state){
     	state.bySeverity = _.filter(bySeverity, byStateAbbreviation(state));		
     	state.by100Thousand = _.find(by100Thousand, byStateAbbreviation(state));
-    	state.byHour = _.filter(byHour, byStateAbbreviation(state));
+    	state.byHour = _.chain(byHour)
+            .filter(byStateAbbreviation(state))
+            .groupBy(function(data){return data.ano;})
+            .value();
 		state.byVehicleType = _.find(byVehicleType, byStateAbbreviation(state));
         
         var totalOccurs = totalOccursFrom(state.byVehicleType)

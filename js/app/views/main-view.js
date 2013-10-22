@@ -22,7 +22,7 @@ define(['ko', 'app/views/map-render', 'app/views/chart-render'], function(ko, Ma
     $('#sideRight').fadeIn(1000);
     self.selectedState(state);
     chartRender.showSeverityChart(state.bySeverity);
-    chartRender.showByHourChart(state.byHour);
+    chartRender.showByHourChart(state.byHour['2010']);
     mapRender.showMapOf(state, 2010);
   };
 
