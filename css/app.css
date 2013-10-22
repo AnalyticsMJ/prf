@@ -332,6 +332,10 @@ header, nav, section {
   cursor: pointer;
 }
 
+.yearDataList input:checked+label {
+  color: #DF5A3E;
+}
+
 .yearDataList input {
   display: none;
 }
