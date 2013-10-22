@@ -5,11 +5,19 @@ define(['kartograph', 'qtip', 'chroma'], function($K, qtip) {
       $.fn.qtip.defaults.style.classes = 'ui-tooltip-bootstrap';
       
       this.showMapOf = function (state, year) {
+        $('#mapa').empty();
         map.loadCSS('css/map.css', function() {
           var mapPath = 'img/estados/'+ state.abbreviation +'.svg';
-          map.loadMap(mapPath, function() {renderingOfMap(year); });
+          map.loadMap(mapPath, function() {
+            renderingOfMap(year); 
+          });
         });
       };
+
+      this.changeYear = function(year){
+        map.getLayer('rodovias').remove();
+        addRodovias(year);
+      }
 
       function getQuantity(data, year){
         var qtd = data['qtd-acidentes-'+year] || 0;
@@ -20,6 +28,10 @@ define(['kartograph', 'qtip', 'chroma'], function($K, qtip) {
       function renderingOfMap(year) {
         map.addLayer('vizinhos');
         map.addLayer('estado');
+        addRodovias(year);
+      }
+
+      function addRodovias(year){
         map.addLayer('rodovias',{
           tooltips: function(d) {
             var title = d.rodovia + ' (km' + d['km-inicial'] + ' - km' + d['km-final'] + ')',
@@ -33,6 +45,8 @@ define(['kartograph', 'qtip', 'chroma'], function($K, qtip) {
         map.getLayer('rodovias').style('stroke', function(data) {
           return colorscale(getQuantity(data, year));
         });
+        map.fadeIn();
+
       }
     };
 });

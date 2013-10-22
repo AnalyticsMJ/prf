@@ -326,7 +326,18 @@ header, nav, section {
   position: absolute;
   float: left;
   margin-top: 15px;
+}
 
+.yearDataList label {
+  cursor: pointer;
+}
+
+.yearDataList input:checked+label {
+  color: #DF5A3E;
+}
+
+.yearDataList input {
+  display: none;
 }
 
 .mapContainer>h3 {
