@@ -33,15 +33,13 @@
           <aside id="sideLeft" class="coluna col1">
           <div class="tituloEstado" >Estado</div>
           <div class="subtituloEstado">Ordenados por Ranking</div>
-
             <div class="statesList customSB" data-bind="visible: loaded">
         			<ul data-bind="foreach: states" id="navigation">
         				<li><a href="#" data-bind="text:name, click:$parent.stateClicked"></a></li>
         			</ul>
             </div>    
           </aside> <!--coluna da esquerda -->
-          <div class="coluna col2 mapContainer">      
-            
+          <div class="coluna col2 mapContainer">
             <div id="mapa">
             </div> <!-- End mapa -->
           </div>
@@ -56,7 +54,12 @@
                   <div class="titulo">Acidentes </div> 
                   <div class="subTitulo"> (100 mil hab.)</div>	
                   <div class="dado" data-bind="text: currentAcidentsByThousand"> </div>       
-             	  </description>	
+             	  </description>
+                <description>
+                  <div>
+                    <span data-bind="text: selectedYear"></span>
+                  </div>
+                </description>	
               </section> <!-- End rankingInformation -->
               <section id="informationPorTipoDeVeiculo">
                 <div id="porTipoDeVeiculo" data-bind="visible: selectedState">
