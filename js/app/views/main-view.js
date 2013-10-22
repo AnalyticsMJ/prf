@@ -37,21 +37,21 @@ define(['ko', 'app/views/map-render', 'app/views/chart-render'], function(ko, Ma
   };
 
   var stateOrYearClicked = function(state, year){
-    $('#mapa').empty();
     $('.mapContainer > h3').fadeIn(500);
     $('#sideRight').fadeIn(1000);
     self.selectedState(state);
     chartRender.showSeverityChart(state.bySeverity[year]);
-    chartRender.showByHourChart(state.byHour[year]);
-    mapRender.showMapOf(state, year);
+    chartRender.showByHourChart(state.byHour[year]);   
   };
 
   self.stateClicked = function(state) {
     stateOrYearClicked(state, selectedYear());
+    mapRender.showMapOf(state, selectedYear());
   };
 
   self.yearChanged = function(year) {
     stateOrYearClicked(selectedState(), year);
+    mapRender.changeYear(year);
   };
 
 
