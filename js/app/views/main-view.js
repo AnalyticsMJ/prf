@@ -8,6 +8,13 @@ define(['ko', 'app/views/map-render', 'app/views/chart-render'], function(ko, Ma
   self.states = ko.observableArray();
   self.selectedState = ko.observable();
   self.selectedYear = ko.observable(2012);
+  
+  self.currentByVehicleType = ko.computed(function(){
+    if(!self.selectedState()) return ''
+    return self.selectedState().byVehicleType[self.selectedYear()];
+  });
+
+
   self.currentRank = ko.computed(function(){
     if(!self.selectedState()) return ''
     return self.selectedState().by100Thousand[self.selectedYear()].rank;
@@ -26,7 +33,7 @@ define(['ko', 'app/views/map-render', 'app/views/chart-render'], function(ko, Ma
   };
 
   self.formatPercentage = function(value) {
-      return Math.round(value * 100).toString() + '%';
+      return value + '%';
   };
 
   var stateOrYearClicked = function(state, year){
