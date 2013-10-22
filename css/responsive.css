@@ -1,0 +1,19 @@
+@media only screen  //tamanho iphone
+and (min-device-width : 320px) 
+and (max-device-width : 568px)
+and (orientation: portrait)
+{
+  #header {
+    height: 40px;  
+}
+}
+
+@media only screen  //tamanho iphone
+and (min-device-width : 320px) 
+and (max-device-width : 480px)
+and (orientation: portrait)
+{  #header {
+    height: 40px;
+    background:black;  
+}
+}
