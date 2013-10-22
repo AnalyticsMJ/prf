@@ -51,12 +51,12 @@
               <section id="rankingInformation"> 
                 <description>
                   <div class="titulo">Ranking </div>
-                  <div class ="dado" data-bind="text:by100Thousand.rank" ></div>
+                  <div class ="dado" data-bind="text:currentRank" ></div>
                 </description> 
                 <description>
                   <div class="titulo">Acidentes </div> 
                   <div class="subTitulo"> (100 mil hab.)</div>	
-                  <div class="dado" data-bind="text: formatNumber(by100Thousand.acidentes_por_100_mil)"> </div>       
+                  <div class="dado" data-bind="text: currentAcidentsByThousand"> </div>       
              	  </description>	
               </section> <!-- End rankingInformation -->
               <section id="informationPorTipoDeVeiculo">

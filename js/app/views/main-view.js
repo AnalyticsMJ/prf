@@ -8,6 +8,14 @@ define(['ko', 'app/views/map-render', 'app/views/chart-render'], function(ko, Ma
   self.states = ko.observableArray();
   self.selectedState = ko.observable();
   self.selectedYear = ko.observable(2012);
+  self.currentRank = ko.computed(function(){
+    if(!self.selectedState()) return ''
+    return self.selectedState().by100Thousand[self.selectedYear()].rank;
+  });
+  self.currentAcidentsByThousand = ko.computed(function(){
+  if(!self.selectedState()) return ''
+    return formatNumber(self.selectedState().by100Thousand[self.selectedYear()].acidentes_por_100_mil);
+  });
 
   self.selectedYear.subscribe(function(newYear){
      self.yearChanged(newYear);
