@@ -35,7 +35,7 @@
           <div class="subtituloEstado">Ordenados por Ranking</div>
             <div class="statesList customSB" data-bind="visible: loaded">
         			<ul data-bind="foreach: states" id="navigation">
-        				<li><a href="#" data-bind="text:name, click:$parent.stateClicked"></a></li>
+        				<li><a href="#" data-bind="text:name, click:stateClicked"></a></li>
         			</ul>
             </div>    
           </aside> <!--coluna da esquerda -->
@@ -116,9 +116,7 @@
                 </ul>
                 </nav>
                 <div id="slider">
-                  <input class="bar" type="range" id="idrangeinput" value="2012" min="2007" max="2012" onchange="rangevalue.value=value"/>
-                  <span class="highlight"></span>
-                  <output id="rangevalue">2012</output>
+                  <input class="bar" type="range" id="idrangeinput" data-bind="value: selectedYear" min="2007" max="2012">
                 </div>
 
               </div>
