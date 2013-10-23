@@ -25,15 +25,16 @@ header, nav, section {
 .title{
   font-family: 'Titillium Web','Poiret One';
   font-size:35px; 
-  text-align:right;
+  text-align:left;
   margin-right: 30px;
+  padding-left: 15px;;
 }
 
 .nomeEstado {
-  text-align: right;
-  font-size: 23px;
-  margin-right: 31px;
+  float:right;
+  color: #DF5A3E;
 }
+
 /*---Area de conteudo---*/
 #main {
   width: 100%;
@@ -101,7 +102,6 @@ header, nav, section {
 }
 .statesList a.selected {
   cursor: default;
-  //font-weight: bold;
 }
 .statesList ul { 
   list-style:none;
