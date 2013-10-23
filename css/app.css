@@ -169,7 +169,7 @@ header, nav, section {
 #histograma {
   width: 68%;
   height: 195px;
-  margin-left: 125px;
+  margin-left: 33%;
 }
 
 #quadroDados {
@@ -181,7 +181,7 @@ header, nav, section {
 }
 #pie {
   width: 68%;
-  margin-left: 125px;
+  margin-left: 33%;
 }
 .pieContainer {
   margin: 0 auto;
