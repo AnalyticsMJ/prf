@@ -26,7 +26,6 @@ define(['kartograph', 'qtip', 'chroma'], function($K, qtip) {
       }
 
       function renderingOfMap(year) {
-        map.addLayer('vizinhos');
         map.addLayer('estado');
         addRodovias(year);
       }

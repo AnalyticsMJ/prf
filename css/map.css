@@ -1,17 +1,10 @@
 #mapa {
-	background: #fff;
 	border-radius: 5px;
 }
 
 svg path { 
  	stroke-linejoin: round;
 	stroke-linecap: round;
-}
-
-svg .vizinhos {
-	fill: #E6E6E6;
-	stroke: #000;
-	stroke-width: 1.5px;
 }
 
 svg .estado {
