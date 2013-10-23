@@ -6,10 +6,13 @@
 
 html, body { 
   font-family:'Ubuntu', 'Titillium Web', cursive;
+  font-size: 100%;
   background: #FFFFFF; 
   color: #2B718c;
 }
-
+ul {
+  padding: 0;
+}
 header, nav, section {
   display:block;
  }
@@ -22,17 +25,25 @@ header, nav, section {
   height: 80px;
   width:100%;
 }
+
 .title{
   font-family: 'Titillium Web','Poiret One';
-  font-size:35px; 
   text-align:left;
+  font-size:2.1875em; 
   margin-right: 30px;
   padding-left: 15px;;
 }
 
 .nomeEstado {
+/*TODO master*/
   float:right;
   color: #DF5A3E;
+/* TODO end master*/
+/*TODO mine*/
+  text-align: right;
+  font-size: 1.4375em;
+  margin-right: 31px;
+/*TODO end mine*/
 }
 
 /*---Area de conteudo---*/
@@ -58,39 +69,28 @@ header, nav, section {
   float:left;
 }
 
-.col1 {
-  width:190px;
-}
-
-.col3 {
-  width:21%;
-}
-
 .tituloEstado {
   font-size:19px;
   color:#255368;
-  margin-left:17px;
 }
 
 .subtituloEstado {
   font-size: 10px;
-  margin-left: 17px;
   color:#DF5A3E;
 }
 
+#sideLeft {
+  width: 10em;
+}
+
 .statesList {
-  float:left;
   height:475px;
   line-height:1.9em;
   border-left:0;
-  position:relative;
-
-  margin-left:-20px;
   text-align:left;
   font-size:15px;
   font-family: 'Titillium Web', sans-serif;
   overflow-y: scroll;
-  
 }
 
 .statesList a {
@@ -108,7 +108,6 @@ header, nav, section {
 }
 .statesList li { 
   border-top: 1px solid #eee;
-  width: 150px;
 }
 
 .stateInfo { 
@@ -141,10 +140,7 @@ header, nav, section {
 
 /*---Coluna direita---*/
 #sideRight {
-  float:right;
-  margin-right: 25px;
-  width: 400px;
-  position:relative;
+  width: 33%;
   display: none;
 }
 
@@ -172,7 +168,7 @@ header, nav, section {
 
 #histograma {
   width: 68%;
-  height: 205px;
+  height: 195px;
   margin-left: 125px;
 }
 
@@ -216,12 +212,15 @@ header, nav, section {
 #graficos nav li a {
   text-decoration: none;
 }
+
 #porTipoDeVeiculo img {
-  margin-top:20px;
+  display: block;
+  margin: 20px auto 0;
 }
 
 #porTipoDeVeiculo ul {
   margin: 0;
+  padding: 0;
 }
 
 #porTipoDeVeiculo li {
@@ -233,9 +232,6 @@ header, nav, section {
   color: #255368;
   display:block;
   text-align:center;
-}
-.iconVeiculo {
-  float:left;
 }
 
 .dadoVeiculo {

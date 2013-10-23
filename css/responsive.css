@@ -1,19 +1,11 @@
-@media only screen  //tamanho iphone
-and (min-device-width : 320px) 
-and (max-device-width : 568px)
-and (orientation: portrait)
+@media screen and (min-width : 641px) and (max-width : 1024px)
 {
-  #header {
-    height: 40px;  
-}
-}
-
-@media only screen  //tamanho iphone
-and (min-device-width : 320px) 
-and (max-device-width : 480px)
-and (orientation: portrait)
-{  #header {
-    height: 40px;
-    background:black;  
-}
+  .mapContainer {
+    min-width: 65%;
+  }
+  #sideRight {
+    clear: both;
+    width: 100%;
+    margin-top: 20px;
+  }
 }
