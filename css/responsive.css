@@ -1,13 +1,13 @@
-@media screen and (min-width : 641px) and (max-width : 1024px)
+@media screen and (min-width : 641px) and (max-width : 1110px)
 {
   .mapContainer {
     min-width: 65%;
   }
-  
+
   #sideRight {
     clear: both;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 1%; 
   }
 }
 @media screen and (max-width : 640px) {

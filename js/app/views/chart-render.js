@@ -1,4 +1,4 @@
-define(['goog!visualization,1,packages:[corechart]'], function() {
+define(['underscore', 'goog!visualization,1,packages:[corechart]'], function(_) {
   return function (argument) {
     this.showSeverityChart = function(stats) {
       var data = new google.visualization.DataTable();
@@ -16,8 +16,11 @@ define(['goog!visualization,1,packages:[corechart]'], function() {
             legend: { position: 'none'}                 
           };
           
-       var chart = new google.visualization.PieChart(document.getElementById('severity')); 
-       chart.draw(data, options);
+      var chart = new google.visualization.PieChart(document.getElementById('severity')); 
+      chart.draw(data, options);
+      $(window).resize(_.debounce(function() {
+        chart.draw(data, options);
+      }, 500));
     };
      
     this.showByHourChart = function(stats) {
@@ -51,6 +54,10 @@ define(['goog!visualization,1,packages:[corechart]'], function() {
         var chart = new google.visualization.ColumnChart(document.getElementById('hour'));
 
         chart.draw(data, options);
+
+        $(window).resize(_.debounce(function() {
+          chart.draw(data, options);
+        }, 500));
     };
   }
 });
