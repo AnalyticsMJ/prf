@@ -45,10 +45,10 @@ require(['ko', 'app/views/main-view', 'data/data-finder', 'jquery'], function(ko
 
         var presentPageSelecting = function(state) {
             var stateListElements = $('.statesList li');
-            stateListElements.on('click', 'a', function () {
+            stateListElements.on('click', 'a', _.debounce(function () {
                 stateListElements.find('.selected').removeClass('selected');
                 $(this).addClass('selected');
-            });
+            }, 800));
             stateListElements.find('a').first().click();
             mainView.stateClicked(state);
         };
