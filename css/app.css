@@ -35,15 +35,8 @@ header, nav, section {
 }
 
 .nomeEstado {
-/*TODO master*/
   float:right;
   color: #DF5A3E;
-/* TODO end master*/
-/*TODO mine*/
-  text-align: right;
-  font-size: 1.4375em;
-  margin-right: 31px;
-/*TODO end mine*/
 }
 
 /*---Area de conteudo---*/
@@ -142,6 +135,8 @@ header, nav, section {
 #sideRight {
   width: 33%;
   display: none;
+  float: right;
+  margin-right: 25px;
 }
 
 .preload {
