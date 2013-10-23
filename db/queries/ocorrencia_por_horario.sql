@@ -6,5 +6,6 @@ select
  from ocorrencia 
  where ocouf is not null and year(ocodataocorrencia) > 2006
  group by ocouf, year(ocodataocorrencia), hour(ocodataocorrencia)
- ORDER BY 1, 2
+ ORDER BY 1, 2, 3
+limit 100000
 
