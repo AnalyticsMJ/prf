@@ -3,9 +3,19 @@
   .mapContainer {
     min-width: 65%;
   }
+  
   #sideRight {
     clear: both;
     width: 100%;
     margin-top: 20px;
+  }
+}
+@media screen and (max-width : 640px) {
+  #sideRight {
+    width: 65%;
+  }
+
+  .mapContainer{
+    display: none;
   }
 }
