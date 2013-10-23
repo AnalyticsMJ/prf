@@ -76,67 +76,63 @@
                 </div>
               </section> <!-- End informationPorTipoDeVeiculo --> 
               <section id="histograma">
-                <div class='tituloGraficos' style="position:relative; top:10px;">Ocorrências Ao Longo Do Dia</div>
+                <div class='tituloGraficos'>Ocorrências Ao Longo Do Dia</div>
                 <div id="hour"></div>
               </section> <!-- End Histograma -->
               <section id="pie">
-                <div class="tituloGraficos" style="position:relative; top:15px;"> Gravidade</div>
+                <div class="tituloGraficos"> Gravidade</div>
                 <div class="pieContainer">
                   <div id="severity"></div>	
                 </div>
                 </section> <!--End pie-->
                 <section id="yearsSelector">
-                <div>
-              <nav class="yearDataList">
-                <ul>
-                  <li>
-                    <input id="ano-2007" type="radio" name="ano" value="2007" data-bind="checked: selectedYear">
-                    <label for="ano-2007">2007</label>        
-                  </li>
-                  <li>
-                    <input id="ano-2008" type="radio" name="ano" value="2008" data-bind="checked: selectedYear">
-                    <label for="ano-2008">2008</label>        
-                  </li>
-                  <li>
-                    <input id="ano-2009" type="radio" name="ano" value="2009" data-bind="checked: selectedYear">
-                    <label for="ano-2009">2009</label>        
-                  </li>
-                  <li>
-                    <input id="ano-2010" type="radio" name="ano" value="2010" data-bind="checked: selectedYear">
-                    <label for="ano-2010">2010</label>        
-                  </li>
-                  <li>
-                    <input id="ano-2011" type="radio" name="ano" value="2011" data-bind="checked: selectedYear">
-                    <label for="ano-2011">2011</label>        
-                  </li>
-                  <li>
-                    <input id="ano-2012" type="radio" name="ano" value="2012" data-bind="checked: selectedYear">
-                    <label for="ano-2012">2012</label>        
-                  </li>
-                </ul>
-                </nav>
-                <div id="slider">
-                  <input class="bar" type="range" id="idrangeinput" data-bind="value: selectedYear" min="2007" max="2012">
-                </div>
-
-              </div>
+                  <nav class="yearDataList">
+                    <ul>
+                      <li>
+                        <input id="ano-2007" type="radio" name="ano" value="2007" data-bind="checked: selectedYear">
+                        <label for="ano-2007">2007</label>        
+                      </li>
+                      <li>
+                        <input id="ano-2008" type="radio" name="ano" value="2008" data-bind="checked: selectedYear">
+                        <label for="ano-2008">2008</label>        
+                      </li>
+                      <li>
+                        <input id="ano-2009" type="radio" name="ano" value="2009" data-bind="checked: selectedYear">
+                        <label for="ano-2009">2009</label>        
+                      </li>
+                      <li>
+                        <input id="ano-2010" type="radio" name="ano" value="2010" data-bind="checked: selectedYear">
+                        <label for="ano-2010">2010</label>        
+                      </li>
+                      <li>
+                        <input id="ano-2011" type="radio" name="ano" value="2011" data-bind="checked: selectedYear">
+                        <label for="ano-2011">2011</label>        
+                      </li>
+                      <li>
+                        <input id="ano-2012" type="radio" name="ano" value="2012" data-bind="checked: selectedYear">
+                        <label for="ano-2012">2012</label>        
+                      </li>
+                    </ul>
+                  </nav>
+                  <div id="slider">
+                    <input class="bar" type="range" id="idrangeinput" data-bind="value: selectedYear" min="2007" max="2012">
+                  </div>
                 </section> <!--End yearSelector-->
             </div> <!--End Graficos -->
           </aside> <!-- coluna dereita -->
         </div> <!-- end container -->
       </section> <!--End Main -->
- <footer>
- <div style="float:left;">Um projeto para o <a
-     href="http://www.w3c.br/Home/ConcursoAplicativos">2o Concurso de
-     Aplicativos para Dados Abertos do Ministério da Justiça</a>
-   utilizando dados disponibilizados pelo Polícia Rodoviária Federal
-   através do <a href="http://dados.gov.br">Portal Brasileiro de Dados
-     Abertos</a>.
- </div>
-
- <div style="float:right"><a href="https://github.com/AnalyticsMJ/prf">Código no
-        GitHub</a></div> 
-</footer>
+      <footer>
+        <p>Um projeto para o <a href="http://www.w3c.br/Home/ConcursoAplicativos">2o Concurso de
+           Aplicativos para Dados Abertos do Ministério da Justiça</a>
+         utilizando dados disponibilizados pelo Polícia Rodoviária Federal
+         através do <a href="http://dados.gov.br">Portal Brasileiro de Dados Abertos</a>.
+        </p>
+        <div style="float:right">
+          <a href="https://github.com/AnalyticsMJ/prf">Código no
+          GitHub</a>
+        </div> 
+      </footer>
     </div> <!-- End Wrapper -->
 		
     <!-- Scripts -->

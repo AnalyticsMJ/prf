@@ -4,10 +4,10 @@
   * border:0;
 }
 html, body { 
-	font-family:'Ubuntu', 'Titillium Web', cursive;
-	background: #FFFFFF; 
-	color: #2B718c;
-	height:90%;
+  font-family:'Ubuntu', 'Titillium Web', cursive;
+  background: #FFFFFF; 
+  color: #2B718c;
+  height:90%;
   width:100%;
   min-width:600px;
 }
@@ -32,9 +32,9 @@ header, nav, section {
 }
 .title{
   font-family: 'Titillium Web','Poiret One';
-	font-size:35px;	
-	text-align:right;
-	margin-right: 30px;
+  font-size:35px; 
+  text-align:right;
+  margin-right: 30px;
 }
 
 .nomeEstado {
@@ -44,7 +44,7 @@ header, nav, section {
 }
 /*---Area de conteudo---*/
 #main {
-	position: relative;
+  position: relative;
   width: 100%;
 //  padding: 0 0 100px;
   clear:both;
@@ -113,22 +113,22 @@ header, nav, section {
 }
 
 .statesList {
-	float:left;
-	height:475px;
-	line-height:1.9em;
-	border-left:0;
-	position:relative;
+  float:left;
+  height:475px;
+  line-height:1.9em;
+  border-left:0;
+  position:relative;
 
-	margin-left:-20px;
-	text-align:left;
-	font-size:15px;
-	font-family: 'Titillium Web', sans-serif;
-	overflow-y: scroll;
-	
+  margin-left:-20px;
+  text-align:left;
+  font-size:15px;
+  font-family: 'Titillium Web', sans-serif;
+  overflow-y: scroll;
+  
 }
 
 .statesList a {
-	text-decoration:none;
+  text-decoration:none;
   color: #2B718c;
 }
 .statesList a:hover, .statesList a.selected {
@@ -139,20 +139,20 @@ header, nav, section {
   //font-weight: bold;
 }
 .statesList ul { 
-	list-style:none;
+  list-style:none;
 }
 .statesList li { 
-	border-top: 1px solid #eee;
-	width: 150px;
+  border-top: 1px solid #eee;
+  width: 150px;
 }
 
 .stateInfo { 
-	font-weight:none;
-	margin-left: 340px;
-	margin-top: 0px;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
+  font-weight:none;
+  margin-left: 340px;
+  margin-top: 0px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 
 .customSB::-webkit-scrollbar {
@@ -206,35 +206,45 @@ header, nav, section {
 }
 
 #histograma {
-  width: 70%;
-  height: 230px;
-  position: absolute;
-  left: 130px;
-  top: 54px;
+  width: 68%;
+  height: 205px;
+  margin-left: 125px;
 }
 
 #quadroDados {
   font-size:16px;
   display:inline-block;
 }
+#hour>div {
+  top: -15px;
+}
 #pie {
-  width:150px;
-  position:absolute;
-  top: 255px;
-  left:200px;
+  width: 68%;
+  margin-left: 125px;
 }
 .pieContainer {
-  width:140px;
+  margin: 0 auto;
+  width: 140px;
+  height: 170px;
+  overflow: hidden;
+}
+.pieContainer>div {
+  top: -20px;  
+}
+
+.pieContainer>div>div:first {
+  top: -20px;
 }
 #graficos nav ul {
   padding: 0;
-  line-height: .5em;
-  height: .5em;
+  line-height: .7em;
+  height: .7em;
+  margin: 0;
 }
 #graficos nav li {
   list-style-type: none;
   display: block;
-  margin: 0 .8em;
+  margin-right: 1.6em;
   width: 2.3em;
   float: left;
 }
@@ -274,7 +284,7 @@ header, nav, section {
 #informationPorTipoDeVeiculo {
   width:33%;
   height:360px;
-  position:relative;
+  float: left;
 }
 
 #informationPorTipoDeVeiculo .titulo {
@@ -321,15 +331,16 @@ header, nav, section {
 #rankingInformation .dado{
   color:#DF5A3E;
 }
-
+#severity>div {
+  margin: 0 auto;
+}
 #yearsSelector {
-  position: absolute;
-  float: left;
-  margin-top: 15px;
+  margin: 0;
 }
 
 .yearDataList label {
   cursor: pointer;
+  font-size: .7em
 }
 
 .yearDataList input:checked+label {
@@ -360,27 +371,29 @@ footer {
   height: 25px;
 }
 
+footer p {
+  float: left;
+}
+
 footer a {
   text-decoration: none;
   color: #DF5A3E;
 }
 
-#slider {
-  width: 350px;
-  height: 17px;
+#slider, .yearDataList {
   position: relative;
-  //  background: #10171D;
-  margin-left: auto;
-  margin-right: auto;
+  left: 20px;
+}
+
+#slider {
+  width: 340px;
+  height: 17px;
+  padding-left: 5px;
 }
 
 #slider .bar {
-  width: 340px;
+  width: 325px;
   height: 5px;
-  background: #255368;
-  position: relative;
-  top: -4px;
-  left: 4px;position
 
   background: #DF5A3E;
   background: -moz-linear-gradient(left, #DF5A3E 0%, #DF5A3E 50%, #DF5A3E 100%);
@@ -400,7 +413,7 @@ input[type="range"] {
   -webkit-appearance: none;
   background-color: black;
   height: 2px;
-  cursor: ew-resize;
+  cursor: pointer;
 }
 
 input[type="range"]::-webkit-sliderer-thumb {
