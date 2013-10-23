@@ -1,6 +1,6 @@
 define(['kartograph', 'qtip', 'chroma'], function($K, qtip) {
     return function () {
-      var map = $K.map('#mapa', 600, 500);
+      var map = $K.map('#mapa');
       // initialize qtip tooltip class
       $.fn.qtip.defaults.style.classes = 'ui-tooltip-bootstrap';
       

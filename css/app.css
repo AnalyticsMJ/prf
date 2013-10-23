@@ -37,6 +37,8 @@ header, nav, section {
 /*---Area de conteudo---*/
 #main {
   width: 100%;
+  overflow:hidden;
+  position: relative;
 }
 
 #main:after {
@@ -45,46 +47,22 @@ header, nav, section {
   display:table;
 }
 
-#container {
-  width: 100%;
-  float: left;
-  overflow:hidden;
-  position:relative;
-}
-/*---Mapa--*/
-#mapa {
-  padding: 5px 250px 0 270px;
+.mapContainer {
+  position: relative;
+  min-width: 50%;
   height: 500px;
-  display:block;
-  position:relative;
 }
 
 .coluna {
   float:left;
-  position:relative;
 }
 
 .col1 {
   width:190px;
-//  left:102%;
-}
-
-.col2 {
-  text-align: center;
- // left:31%;
 }
 
 .col3 {
   width:21%;
-//  left:85%;
-}
-
-/*---Coluna esquerda---*/
-#sideLeft {
-  float: left;
-//  width:250px;
-//  margin-left: -100%;
-  position: relative;
 }
 
 .tituloEstado {
