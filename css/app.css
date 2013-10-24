@@ -9,25 +9,27 @@ html, body {
   background: #FFFFFF; 
   color: #2B718c;
 }
+ul {
+  padding: 0;
+}
 
 header, nav, section {
   display:block;
  }
 
 #wrapper {
-  height: 100%;
+  margin: 1%;
 }
 /*---Header---*/
 #header {
   height: 65px;
   width:100%;
 }
+
 .title{
   font-family: 'Titillium Web','Poiret One';
-  font-size:35px; 
   text-align:left;
-  margin-right: 30px;
-  padding-left: 15px;;
+  font-size:2.1875em;
 }
 
 .nomeEstado {
@@ -58,39 +60,28 @@ header, nav, section {
   float:left;
 }
 
-.col1 {
-  width:190px;
-}
-
-.col3 {
-  width:21%;
-}
-
 .tituloEstado {
   font-size:19px;
   color:#255368;
-  margin-left:17px;
 }
 
 .subtituloEstado {
   font-size: 10px;
-  margin-left: 17px;
   color:#DF5A3E;
 }
 
+#sideLeft {
+  width: 10em;
+}
+
 .statesList {
-  float:left;
   height:475px;
   line-height:1.9em;
   border-left:0;
-  position:relative;
-
-  margin-left:-20px;
   text-align:left;
   font-size:15px;
   font-family: 'Titillium Web', sans-serif;
   overflow-y: scroll;
-  
 }
 
 .statesList a {
@@ -108,7 +99,6 @@ header, nav, section {
 }
 .statesList li { 
   border-top: 1px solid #eee;
-  width: 150px;
 }
 
 .stateInfo { 
@@ -141,21 +131,9 @@ header, nav, section {
 
 /*---Coluna direita---*/
 #sideRight {
-  float:right;
-  margin-right: 25px;
-  width: 400px;
-  position:relative;
+  width: 33%;
   display: none;
-}
-
-.preload {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -25px;
-    margin-left: -25px;
+  float: right;
 }
 
 #graficos {
@@ -172,8 +150,8 @@ header, nav, section {
 
 #histograma {
   width: 68%;
-  height: 205px;
-  margin-left: 125px;
+  height: 195px;
+  margin-left: 33%;
 }
 
 #quadroDados {
@@ -185,7 +163,7 @@ header, nav, section {
 }
 #pie {
   width: 68%;
-  margin-left: 125px;
+  margin-left: 33%;
 }
 .pieContainer {
   margin: 0 auto;
@@ -200,28 +178,15 @@ header, nav, section {
 .pieContainer>div>div:first {
   top: -20px;
 }
-#graficos nav ul {
-  padding: 0;
-  line-height: .7em;
-  height: .7em;
-  margin: 0;
-}
-#graficos nav li {
-  list-style-type: none;
-  display: block;
-  margin-right: 1.6em;
-  width: 2.3em;
-  float: left;
-}
-#graficos nav li a {
-  text-decoration: none;
-}
+
 #porTipoDeVeiculo img {
-  margin-top:20px;
+  display: block;
+  margin: 20px auto 0;
 }
 
 #porTipoDeVeiculo ul {
   margin: 0;
+  padding: 0;
 }
 
 #porTipoDeVeiculo li {
@@ -233,9 +198,6 @@ header, nav, section {
   color: #255368;
   display:block;
   text-align:center;
-}
-.iconVeiculo {
-  float:left;
 }
 
 .dadoVeiculo {
@@ -283,7 +245,7 @@ header, nav, section {
 
 #rankingInformation description {
   float:left;
-  width:120px;
+  width:33%;
 }
 #rankingInformation .titulo{
   height:30px;
@@ -301,6 +263,23 @@ header, nav, section {
 }
 #yearsSelector {
   margin: 0;
+}
+
+.yearDataList ul {
+  padding: 0;
+  line-height: .7em;
+  height: .7em;
+  margin: 0;
+}
+.yearDataList li {
+  list-style-type: none;
+  display: block;
+  width: 16.6666667%;
+  float: left;
+  text-align: center;
+}
+.yearDataList li a {
+  text-decoration: none;
 }
 
 .yearDataList label {
@@ -343,31 +322,18 @@ footer a {
 
 #slider, .yearDataList {
   position: relative;
-  left: 20px;
 }
 
 #slider {
-  width: 340px;
   height: 17px;
-  padding-left: 5px;
+  text-align: center;
+  padding: 0 1em;
 }
 
 #slider .bar {
-  width: 325px;
+  width: 89.5%;
   height: 5px;
-
   background: #DF5A3E;
-  background: -moz-linear-gradient(left, #DF5A3E 0%, #DF5A3E 50%, #DF5A3E 100%);
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#DF5A3E), color-stop(50%,#DF5A3E), color-stop(100%,#DF5A3E));
-  background: -webkit-linear-gradient(left, #DF5A3E 0%,#DF5A3E 50%,#DF5A3E 100%);
-  background: -o-linear-gradient(left, #DF5A3E 0%,1d2e38#DF5A3E 50%,#DF5A3E 100%);
-  background: -ms-linear-gradient(left, #1d2e3838 0%,#DF5A3E 50%,#DF5A3E 100%);
-  background: linear-gradient(left, #1d2e38382e38 0%,#DF5A3E 50%,#DF5A3E 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DF5A3E', endColorstr='#DF5A3E',GradientType=1 );
-
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  border-radius:          40px;
 }
 
 input[type="range"] {

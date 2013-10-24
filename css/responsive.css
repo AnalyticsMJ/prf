@@ -1,19 +1,24 @@
-@media only screen  //tamanho iphone
-and (min-device-width : 320px) 
-and (max-device-width : 568px)
-and (orientation: portrait)
-{
-  #header {
-    height: 40px;  
-}
-}
+@media screen and (min-width : 751px) and (max-width : 1110px) {
+  .mapContainer {
+    min-width: 65%;
+  }
 
-@media only screen  //tamanho iphone
-and (min-device-width : 320px) 
-and (max-device-width : 480px)
-and (orientation: portrait)
-{  #header {
-    height: 40px;
-    background:black;  
+  #sideRight {
+    clear: both;
+    width: 100%;
+    margin-top: 1%; 
+  }
 }
+@media screen and (max-width : 750px) {
+  #header {
+    font-size: 60%;
+    line-height: 3.2em;
+  }
+  #sideRight {
+    width: 65%;
+  }
+
+  .mapContainer{
+    display: none;
+  }
 }
