@@ -54,10 +54,10 @@ a {
 .mapContainer {
   position: relative;
   min-width: 50%;
-  height: 500px;
+  height: 537px;
 }
 #mapa{
-  height: 500px;
+  height: 537px;
 }
 
 .coluna {
@@ -83,7 +83,7 @@ a {
 }
 
 .statesList {
-  height:475px;
+  height:503px;
   line-height:1.9em;
   border-left:0;
   text-align:left;
