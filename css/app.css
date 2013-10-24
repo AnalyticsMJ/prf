@@ -241,6 +241,7 @@ header, nav, section {
   border-bottom: thin solid #BBC2C5;
   height:50px; 
   margin-bottom:5px;
+  padding-bottom:5px;
 }
 
 #rankingInformation description {
@@ -313,6 +314,9 @@ header, nav, section {
 footer>div {
   float: right;
   padding: 5px 0;
+}
+footer .git {
+  float:right;  
 }
 
 footer a {
