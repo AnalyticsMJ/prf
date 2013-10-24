@@ -368,6 +368,10 @@ footer {
 
 footer .git {
   float:right;
+  margin: 1em 0;
+}
+footer p {
+  float: left;
 }
 
 footer a {
