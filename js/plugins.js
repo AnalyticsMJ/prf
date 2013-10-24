@@ -20,5 +20,22 @@
         }
     }
 }());
+(function(context) {
+    'use strict';
+    context.formatNumber = function(value) {
+        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    };
 
-// Place any jQuery/helper plugins in here.
+    context.formatPercentage = function(value) {
+        return value + '%';
+    };
+
+    context.iconsByVehicleType = {
+        qtd_ocorrencias_bicicleta: { icon: 'bike' },
+        qtd_ocorrencias_motocicleta: { icon: 'motorbike' },
+        qtd_ocorrencias_automovel: { icon: 'car' },
+        qtd_ocorrencias_onibus: { icon: 'bus'},
+        qtd_ocorrencias_caminhao: { icon: 'truck' }
+    }
+
+})(this);

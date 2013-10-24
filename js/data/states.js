@@ -41,7 +41,6 @@ define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand.json',
             .groupBy('ano')
             .value();
 
-
         state.by100Thousand = _.chain(by100Thousand)
             .filter(byStateAbbreviation(state))
             .indexBy('ano')

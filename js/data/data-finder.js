@@ -1,14 +1,7 @@
-define(['data/states', 'underscore'], function(states, _) {
+define(['data/states'], function(states) {
     return {
-        findState: function(abbreviation) {
-            return _.find(states, function(e) {
-                return e.abbreviation.toLowerCase() === abbreviation.toLocaleLowerCase();
-            })	
-        },
 		allStates: function(){
 			return states;
-		},
-		
-		
+		}
     };
 });

@@ -14,7 +14,6 @@ define(['ko', 'app/views/map-render', 'app/views/chart-render'], function(ko, Ma
     return self.selectedState().byVehicleType[self.selectedYear()];
   });
 
-
   self.currentRank = ko.computed(function(){
     if(!self.selectedState()) return ''
     return self.selectedState().by100Thousand[self.selectedYear()].rank;
@@ -28,14 +27,6 @@ define(['ko', 'app/views/map-render', 'app/views/chart-render'], function(ko, Ma
      self.yearChanged(newYear);
     });
   
-  self.formatNumber = function(value) {
-      return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-  };
-
-  self.formatPercentage = function(value) {
-      return value + '%';
-  };
-
   var stateOrYearClicked = function(state, year){
     $('.mapContainer > h3').fadeIn(500);
     $('#sideRight').fadeIn(1000);
@@ -53,14 +44,6 @@ define(['ko', 'app/views/map-render', 'app/views/chart-render'], function(ko, Ma
     stateOrYearClicked(selectedState(), year);
     mapRender.changeYear(year);
   };
-
-  self.iconsByVehicleType = {
-    qtd_ocorrencias_bicicleta: { icon: 'bike' },
-    qtd_ocorrencias_motocicleta: { icon: 'motorbike' },
-    qtd_ocorrencias_automovel: { icon: 'car' },
-    qtd_ocorrencias_onibus: { icon: 'bus'},
-    qtd_ocorrencias_caminhao: { icon: 'truck' }
-  }
 
   return self;
 });
