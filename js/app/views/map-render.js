@@ -5,7 +5,7 @@ define(['kartograph', 'qtip', 'app/models/corners', 'chroma'], function($K, qtip
       $.fn.qtip.defaults.style.classes = 'ui-tooltip-bootstrap';
       
       this.showMapOf = function (state, year) {
-        $('#mapa').empty();
+        map.clear();
         $('#legenda').css(corners[state.corner]); 
         map.loadCSS('css/map.css', function() {
           var mapPath = 'img/estados/'+ state.abbreviation +'.svg';
@@ -41,13 +41,11 @@ define(['kartograph', 'qtip', 'app/models/corners', 'chroma'], function($K, qtip
         });
         
         var colorscale = new chroma.scale('Reds').domain([0, 1, 50, 100, 300, 500, 1500]);
-        window.colorscale = colorscale;
 
         map.getLayer('rodovias').style('stroke', function(data) {
           return colorscale(getQuantity(data, year));
         });
         map.fadeIn();
-
       }
     };
 });
