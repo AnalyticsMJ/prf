@@ -258,6 +258,7 @@ header, nav, section {
 
 #rankingInformation .dado{
   color:#DF5A3E;
+  font-size: 17px;
 }
 #severity>div {
   margin: 0 auto;
