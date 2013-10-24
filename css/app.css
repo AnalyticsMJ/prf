@@ -92,20 +92,26 @@ a {
   overflow-y: scroll;
 }
 
-.statesList a {
-  color: #2B718c;
-}
-.statesList a:hover, .statesList a.selected {
-  color: #DF5A3E;
-}
-.statesList a.selected {
-  cursor: default;
-}
 .statesList ul { 
   list-style:none;
 }
+
 .statesList li { 
   border-top: 1px solid #eee;
+}
+
+.statesList a {
+  color: #2B718c;
+  width: 100%;
+  display: inline-block;
+}
+
+.statesList a:hover, .statesList a.selected {
+  color: #DF5A3E;
+}
+
+.statesList a.selected {
+  cursor: default;
 }
 
 .customSB::-webkit-scrollbar {
