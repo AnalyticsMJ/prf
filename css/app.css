@@ -214,7 +214,7 @@ header, nav, section {
   padding-bottom:5px;
 }
 
-#rankingInformation description {
+#rankingInformation .description {
   float:left;
   width:33%;
 }
