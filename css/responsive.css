@@ -22,7 +22,8 @@
     display: none;
   }
 }
-@media screen and (max-width: 470px) {
+
+@media screen and (max-width: 470px), print{
   #sideRight {
     margin-left: 0;
     clear: both;
@@ -48,5 +49,15 @@
   .nomeEstado {
     cursor: pointer;
   }
+}
 
+@media print {
+  #sideRight {
+    display: block;
+    page-break-before: always;
+    page-break-inside: avoid;
+  }
+  #yearsSelector {
+    display: none;
+  }
 }

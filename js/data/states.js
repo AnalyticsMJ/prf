@@ -1,4 +1,5 @@
 define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand.json', 'data/accidents-by-severity.json', 'data/accidents-by-hour.json', 'data/accidents-by-vehicle-type.json'], function(_, State, by100Thousand, bySeverity, byHour, byVehicleType) {
+    'use strict';
     var states = [];
     states.push(new State().withAbbreviation("AC").withName("Acre").withPopulation(707125));
     states.push(new State().withAbbreviation("AL").withName("Alagoas").withPopulation(3093994));

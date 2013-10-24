@@ -9,16 +9,14 @@ html, body {
   background: #FFFFFF; 
   color: #2B718c;
 }
+
 ul {
   padding: 0;
 }
+
 a {
   text-decoration: none;
 }
-
-header, nav, section {
-  display:block;
- }
 
 #wrapper {
   margin: 1%;
@@ -127,7 +125,6 @@ header, nav, section {
 .customSB::-webkit-scrollbar-corner {
   background-color: black;
 }
-
 
 /*---Coluna direita---*/
 #sideRight {
