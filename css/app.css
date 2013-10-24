@@ -149,12 +149,11 @@ header, nav, section {
   position:relative;
   margin:auto;
   font-family:'Ubuntu';
-  height:485px;
+  height:515px;
 }
 
 #histograma {
   width: 68%;
-  height: 195px;
   margin-left: 33%;
 }
 
@@ -162,21 +161,16 @@ header, nav, section {
   font-size:16px;
   display:inline-block;
 }
-#hour>div {
-  top: -15px;
-}
 #pie {
   width: 68%;
   margin-left: 33%;
 }
+
 .pieContainer {
   margin: 0 auto;
   width: 140px;
   height: 170px;
   overflow: hidden;
-}
-.pieContainer>div {
-  top: -20px;  
 }
 
 .pieContainer>div>div:first {
