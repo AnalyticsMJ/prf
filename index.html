@@ -5,7 +5,7 @@
     <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
       <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
       <meta name="description" content="Um projeto para o 2o Concurso de Aplicativos para Dados Abertos do Ministério da Justiça utilizando dados disponibilizados pelo Polícia Rodoviária Federal">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title data-bind="text: title"> Loading... </title>
@@ -59,22 +59,22 @@
           <aside id="sideRight" class="coluna col3">
             <div data-bind="with: selectedState" id="graficos">
               <section id="rankingInformation"> 
-                <description>
+                <div>
                   <div class="titulo">Ranking </div>
                   <div class ="dado" data-bind="text:currentRank" ></div>
-                </description> 
-                <description>
+                </div> 
+                <div>
                   <div class="titulo">Acidentes </div> 
                   <div class="subTitulo"> (100 mil hab.)</div>	
                   <div class="dado" data-bind="text: currentAcidentsByThousand"> </div>       
-             	  </description>
-                <description>
+             	  </div>
+                <div>
                 <div>
 
                   <div class="titulo">Ano </div>
                   <div class="dado" data-bind="text: selectedYear"></div>
                   </div>
-                </description>	
+                </div>	
               </section> <!-- End rankingInformation -->
               <section id="informationPorTipoDeVeiculo">
                 <div id="porTipoDeVeiculo" data-bind="visible: selectedState">
@@ -82,7 +82,7 @@
                   <div data-bind="with: currentByVehicleType">               
                     <ul data-bind="foreach: vehicleTypes">
                       <li>
-                        <div class="iconVeiculo">  <img data-bind="attr: { src: iconsByVehicleType[type].icon }" width="50px" />
+                        <div class="iconVeiculo">  <img data-bind="attr: { src: iconsByVehicleType[type].icon }" />
                           <div class="dadoVeiculo" data-bind="text: formatPercentage(percentage)"></div>
                         </div>
                       </li>

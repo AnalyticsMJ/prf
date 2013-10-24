@@ -200,6 +200,9 @@ header, nav, section {
   float: left;
 }
 
+.iconVeiculo img {
+  width: 50px;
+}
 #rankingInformation {
   width:100%;
   font-size: 0.9375em;
