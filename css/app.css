@@ -12,6 +12,9 @@ html, body {
 ul {
   padding: 0;
 }
+a {
+  text-decoration: none;
+}
 
 header, nav, section {
   display:block;
@@ -89,7 +92,6 @@ header, nav, section {
 }
 
 .statesList a {
-  text-decoration:none;
   color: #2B718c;
 }
 .statesList a:hover, .statesList a.selected {
@@ -171,10 +173,6 @@ header, nav, section {
   width: 140px;
   height: 170px;
   overflow: hidden;
-}
-
-.pieContainer>div>div:first {
-  top: -20px;
 }
 
 #porTipoDeVeiculo img {
@@ -296,18 +294,8 @@ header, nav, section {
 }
 
 .mapContainer>h3 {
-  -webkit-margin-before: 0;
-  -mz-margin-before: 0;
-  margin-before: 0;
+  margin-top: 0;
   display: none;
-}
-
-footer {
-  font-size: 11px;
-  border-top: solid;
-  border-width: 0.1em;
-  padding: 4px;
-  margin-top: 5px;
 }
 
 #slider, .yearDataList {
@@ -345,10 +333,9 @@ input[type="range"]::-webkit-sliderer-thumb {
   -webkit-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.6);
   -moz-box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.6);
   box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.6);
-  -widthebkit-border-radius: 40px;
+  -webkit-border-radius: 40px;
   -moz-border-radius: 40px;
   border-radius: 40px;
-  background-image: -webkit-gradient(linear, left top, left bottom,bottom color-stop(0%,#ebf1f6), color-stop(50%,#abd3ee), color-stop(51%,#89c3eb), color-stop(100%,#d5ebfb));
 }
 
 input[type="range"]:hover ~ #rangevalue,input[type="range"]:active ~ #rangevalue {
@@ -371,11 +358,7 @@ input[type="range"]:hover ~ #rangevalue,input[type="range"]:active ~ #rangevalue
   left: 44.5%;
   border: 1px solid black;
 
-  -webkit-box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px rgba(0,0,0,0.4);
-  -moz-box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px rgbaba(0,0,0,0.4);
-  box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0px.2), 0px 2px 4px 0px rgba(0,0,0,0.4);
-  background: -webkit-gradient(linearear, left top, left bottom, color-stop(0%,#222931), color-stop(100%,#181D21));
-
+  
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
@@ -392,16 +375,19 @@ input[type="range"]:hover ~ #rangevalue,input[type="range"]:active ~ #rangevalue
   top: -95px;
 }
 
-footer>div {
-  float: right;
-  padding: 5px 0;
+footer {
+  font-size: 11px;
+  border-top: solid;
+  border-width: 0.1em;
+  padding: 4px;
+  margin-top: 5px;
 }
+
 footer .git {
-  float:right;  
+  float:right;
 }
 
 footer a {
-  text-decoration: none;
   color: #DF5A3E;
 }
 
