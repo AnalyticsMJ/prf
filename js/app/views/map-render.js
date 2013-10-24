@@ -39,7 +39,8 @@ define(['kartograph', 'qtip', 'chroma'], function($K, qtip) {
           }
         });
         
-        var colorscale = new chroma.scale('Reds').domain([0, 500], 5);
+        var colorscale = new chroma.scale('Reds').domain([0, 1, 50, 100, 300, 500, 1500]);
+        window.colorscale = colorscale;
 
         map.getLayer('rodovias').style('stroke', function(data) {
           return colorscale(getQuantity(data, year));

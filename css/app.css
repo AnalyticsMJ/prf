@@ -58,6 +58,9 @@ header, nav, section {
   min-width: 50%;
   height: 500px;
 }
+#mapa{
+  height: 500px;
+}
 
 .coluna {
   float:left;
@@ -319,5 +322,48 @@ footer .git {
 
 footer a {
   color: #DF5A3E;
+}
+
+#legenda {
+  position: absolute;
+  bottom: 1.3em;
+  left: 1.3em;
+  border: 1px solid rgb(243, 243, 243);
+  padding: .9em;
+  font-size: .9em;
+  font-family: 'Titillium Web', sans-serif;
+  z-index: 1000;
+  background-color: rgba(230, 230, 230, .6);
+}
+#legenda ul {
+  list-style: none;
+  margin: 0;
+}
+.categoria{
+  display: inline-block;
+  width: .8em;
+  height: .8em;
+  border: 1px solid rgb(243, 243, 243);
+  background-color: red;
+  margin-right: .4em;
+}
+
+.categoria-0{
+  background-color: #fff5f0;
+}
+.categoria-1{
+  background-color: #fcc9b4;
+}
+.categoria-2{
+  background-color: #fb8a6a;
+}
+.categoria-3{
+  background-color: #f14432;
+}
+.categoria-4{
+  background-color: #bb1419;
+}
+.categoria-5{
+  background-color: #67000d;
 }
 

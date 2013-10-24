@@ -42,7 +42,19 @@
         			</ul>
             </div>    
           </aside> <!--coluna da esquerda -->
-          <div class="coluna col2 mapContainer" id="mapa">
+
+          <div class="coluna col2 mapContainer">
+            <div id="mapa"></div>
+            <div id="legenda">
+              <ul>
+                <li><span class="categoria categoria-0"></span>0 acidentes</li>
+                <li><span class="categoria categoria-1"></span>1-50 acidentes</li>
+                <li><span class="categoria categoria-2"></span>50-100 acidentes</li>
+                <li><span class="categoria categoria-3"></span>100-300 acidentes</li>
+                <li><span class="categoria categoria-4"></span>300-500 acidentes</li>
+                <li><span class="categoria categoria-5"></span>+500 acidentes</li>
+              </ul>
+            </div>
           </div>
           <aside id="sideRight" class="coluna col3">
             <div data-bind="with: selectedState" id="graficos">
