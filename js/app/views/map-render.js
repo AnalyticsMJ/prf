@@ -1,4 +1,4 @@
-define(['kartograph', 'qtip', 'chroma'], function($K, qtip) {
+define(['kartograph', 'qtip', 'app/models/corners', 'chroma'], function($K, qtip, corners) {
     return function () {
       var map = $K.map('#mapa');
       // initialize qtip tooltip class
@@ -6,6 +6,7 @@ define(['kartograph', 'qtip', 'chroma'], function($K, qtip) {
       
       this.showMapOf = function (state, year) {
         $('#mapa').empty();
+        $('#legenda').css(corners[state.corner]); 
         map.loadCSS('css/map.css', function() {
           var mapPath = 'img/estados/'+ state.abbreviation +'.svg';
           map.loadMap(mapPath, function() {
