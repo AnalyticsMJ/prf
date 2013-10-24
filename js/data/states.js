@@ -29,26 +29,28 @@ define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand.json',
     states.push(new State().withAbbreviation("SE").withName("Sergipe").withPopulation(2036277).withCorner("bottomright"));
     states.push(new State().withAbbreviation("TO").withName("Tocantins").withPopulation(1373551).withCorner("topleft"));
 
-
     _.each(states, function(state){
+        var currentState = byStateAbbreviation(state);
+
     	state.bySeverity = _.chain(bySeverity)
-            .filter(byStateAbbreviation(state))		
+            .filter(currentState)		
         	.groupBy('ano')
             .value();
 
         state.byHour = _.chain(byHour)
-            .filter(byStateAbbreviation(state))
+            .filter(currentState)
             .groupBy('ano')
             .value();
 
         state.by100Thousand = _.chain(by100Thousand)
-            .filter(byStateAbbreviation(state))
+            .filter(currentState)
             .indexBy('ano')
             .value();
         
 		state.byVehicleType = _.chain(byVehicleType)
-            .filter(byStateAbbreviation(state))
-            .indexBy('ano').value();
+            .filter(currentState)
+            .indexBy('ano')
+            .value();
 
         _.each(state.byVehicleType, generatePercentagesFor);
             
