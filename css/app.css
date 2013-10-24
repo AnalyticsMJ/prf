@@ -178,22 +178,6 @@ header, nav, section {
 .pieContainer>div>div:first {
   top: -20px;
 }
-#graficos nav ul {
-  padding: 0;
-  line-height: .7em;
-  height: .7em;
-  margin: 0;
-}
-#graficos nav li {
-  list-style-type: none;
-  display: block;
-  margin-right: 1.6em;
-  width: 2.3em;
-  float: left;
-}
-#graficos nav li a {
-  text-decoration: none;
-}
 
 #porTipoDeVeiculo img {
   display: block;
@@ -281,6 +265,23 @@ header, nav, section {
   margin: 0;
 }
 
+.yearDataList ul {
+  padding: 0;
+  line-height: .7em;
+  height: .7em;
+  margin: 0;
+}
+.yearDataList li {
+  list-style-type: none;
+  display: block;
+  width: 16.6666667%;
+  float: left;
+  text-align: center;
+}
+.yearDataList li a {
+  text-decoration: none;
+}
+
 .yearDataList label {
   cursor: pointer;
   font-size: .7em
@@ -321,31 +322,18 @@ footer a {
 
 #slider, .yearDataList {
   position: relative;
-  left: 20px;
 }
 
 #slider {
-  width: 340px;
   height: 17px;
-  padding-left: 5px;
+  text-align: center;
+  padding: 0 1em;
 }
 
 #slider .bar {
-  width: 325px;
+  width: 89.5%;
   height: 5px;
-
   background: #DF5A3E;
-  background: -moz-linear-gradient(left, #DF5A3E 0%, #DF5A3E 50%, #DF5A3E 100%);
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#DF5A3E), color-stop(50%,#DF5A3E), color-stop(100%,#DF5A3E));
-  background: -webkit-linear-gradient(left, #DF5A3E 0%,#DF5A3E 50%,#DF5A3E 100%);
-  background: -o-linear-gradient(left, #DF5A3E 0%,1d2e38#DF5A3E 50%,#DF5A3E 100%);
-  background: -ms-linear-gradient(left, #1d2e3838 0%,#DF5A3E 50%,#DF5A3E 100%);
-  background: linear-gradient(left, #1d2e38382e38 0%,#DF5A3E 50%,#DF5A3E 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DF5A3E', endColorstr='#DF5A3E',GradientType=1 );
-
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  border-radius:          40px;
 }
 
 input[type="range"] {
