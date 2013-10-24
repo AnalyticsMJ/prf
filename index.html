@@ -82,7 +82,7 @@
                   <div data-bind="with: currentByVehicleType">               
                     <ul data-bind="foreach: vehicleTypes">
                       <li>
-                        <div class="iconVeiculo">  <img data-bind="attr: { src: iconsByVehicleType[type].icon }" />
+                        <div class="iconVeiculo">  <img data-bind="attr: { src: iconsByVehicleType[type].icon, alt: iconsByVehicleType[type].alt}" alt='tipo do veiculo' src='img/car-w100.png' />
                           <div class="dadoVeiculo" data-bind="text: formatPercentage(percentage)"></div>
                         </div>
                       </li>
