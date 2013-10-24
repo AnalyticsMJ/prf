@@ -74,6 +74,10 @@ header, nav, section {
   width: 10em;
 }
 
+#isStateSelected {
+  display: none;
+}
+
 .statesList {
   height:475px;
   line-height:1.9em;
@@ -235,7 +239,7 @@ header, nav, section {
 
 #rankingInformation {
   width:100%;
-  font-size:15px;
+  font-size: 0.9375em;
   text-align:center;
   color:#255368;
   border-bottom: thin solid #BBC2C5;
@@ -252,13 +256,13 @@ header, nav, section {
   height:30px;
  }
 #rankingInformation .subTitulo{
-  font-size:10px;
+  font-size:0.66666667em;
   margin-top:-12px;
 }
 
 #rankingInformation .dado{
   color:#DF5A3E;
-  font-size: 17px;
+  font-size: 1.13333333em;
 }
 #severity>div {
   margin: 0 auto;
@@ -304,25 +308,12 @@ header, nav, section {
   display: none;
 }
 
-  footer {
+footer {
   font-size: 11px;
   border-top: solid;
   border-width: 0.1em;
   padding: 4px;
   margin-top: 5px;
-}
-
-footer>div {
-  float: right;
-  padding: 5px 0;
-}
-footer .git {
-  float:right;  
-}
-
-footer a {
-  text-decoration: none;
-  color: #DF5A3E;
 }
 
 #slider, .yearDataList {
@@ -405,5 +396,18 @@ input[type="range"]:hover ~ #rangevalue,input[type="range"]:active ~ #rangevalue
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease;
   top: -95px;
+}
+
+footer>div {
+  float: right;
+  padding: 5px 0;
+}
+footer .git {
+  float:right;  
+}
+
+footer a {
+  text-decoration: none;
+  color: #DF5A3E;
 }
 

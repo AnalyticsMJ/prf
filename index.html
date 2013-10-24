@@ -27,14 +27,15 @@
       <header id="header">
       <div data-bind="with: selectedState">
         <div class="title">Ocorrências nas Rodovias Federais 
-          <span class="nomeEstado" data-bind="text:name">Santa Catarina</span> 
+          <label class="nomeEstado" for="isStateSelected" data-bind="text:name">Santa Catarina</label> 
         </div>
         </div>
       </header> <!--header--> 
-      <section id="main" >
+      <section id="main">
           <aside id="sideLeft" class="coluna col1">
           <div class="tituloEstado" >Estados</div>
           <div class="subtituloEstado">Ordenados por Ranking</div>
+            <input type="checkbox" id="isStateSelected">
             <div class="statesList customSB" data-bind="visible: loaded">
         			<ul data-bind="foreach: states" id="navigation">
         				<li><a href="#" data-bind="text:name, click:stateClicked"></a></li>

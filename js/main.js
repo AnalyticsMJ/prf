@@ -46,6 +46,7 @@ require(['ko', 'app/views/main-view', 'data/data-finder', 'jquery'], function(ko
         var presentPageSelecting = function(state) {
             var stateListElements = $('.statesList li');
             stateListElements.on('click', 'a', _.debounce(function () {
+                $('#isStateSelected').removeAttr('checked');
                 stateListElements.find('.selected').removeClass('selected');
                 $(this).addClass('selected');
             }, 800));
