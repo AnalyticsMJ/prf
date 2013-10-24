@@ -80,10 +80,14 @@
               <section id="informationPorTipoDeVeiculo">
                 <div id="porTipoDeVeiculo" data-bind="visible: selectedState">
                   <div class="tituloGraficos">Tipo de Veiculo</div>
-                  <div data-bind="with: currentByVehicleType">               
+                  <div class="vehicleTypesData" data-bind="with: currentByVehicleType">               
                     <ul data-bind="foreach: vehicleTypes">
                       <li>
-                        <div class="iconVeiculo">  <img data-bind="attr: { src: iconsByVehicleType[type].icon, alt: iconsByVehicleType[type].alt}" alt='tipo do veiculo' src='img/car-w100.png' />
+                        <div class="vehicleTypeStats">
+                          <p data-bind="attr: { class: iconsByVehicleType[type].icon }">
+                            <img class="spacer" alt="" src="img/spacer.png">  
+                            <img class="vehicleIcon" alt='tipo do veiculo' src='img/vehicle-types.png' />
+                          </p>
                           <div class="dadoVeiculo" data-bind="text: formatPercentage(percentage)"></div>
                         </div>
                       </li>

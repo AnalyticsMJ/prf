@@ -162,9 +162,8 @@ a {
   overflow: hidden;
 }
 
-#porTipoDeVeiculo img {
-  display: block;
-  margin: 20px auto 0;
+#porTipoDeVeiculo .vehicleTypesData {
+  margin-top: 2em;
 }
 
 #porTipoDeVeiculo ul {
@@ -174,6 +173,54 @@ a {
 
 #porTipoDeVeiculo li {
   list-style: none;
+  margin-bottom: 0.3em;
+}
+
+#porTipoDeVeiculo li p {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: 81px;
+  margin: 0 auto;
+}
+
+#porTipoDeVeiculo li p img.spacer {
+  width: 60%;
+  height: auto;
+  display: block;
+  visibility: hidden;
+}
+
+#porTipoDeVeiculo li p img.vehicleIcon {
+  position:absolute;
+  top:0;
+  left:0;
+  max-width:none;
+  max-height:98%;
+}
+
+#porTipoDeVeiculo li p.bike img.vehicleIcon {
+  left:0%;
+}
+
+#porTipoDeVeiculo li p.bus img.vehicleIcon {
+  left:-110%;
+}
+
+#porTipoDeVeiculo li p.car {
+  height: 42px;
+}
+
+#porTipoDeVeiculo li p.car img.vehicleIcon {
+  left:-182%;
+}
+
+#porTipoDeVeiculo p.motorbike img.vehicleIcon {
+  left:-330%;
+}
+
+#porTipoDeVeiculo p.truck img.vehicleIcon {
+  left:-440%;
 }
 
 .tituloGraficos {
@@ -197,9 +244,6 @@ a {
   float: left;
 }
 
-.iconVeiculo img {
-  width: 50px;
-}
 #rankingInformation {
   width:100%;
   font-size: 0.9375em;
