@@ -234,6 +234,7 @@ a {
   color: #255368;
   display:block;
   text-align:center;
+  top:10px;
 }
 
 .dadoVeiculo {
@@ -300,7 +301,7 @@ a {
 
 .yearDataList label {
   cursor: pointer;
-  font-size: .7em
+  font-size: .8em
 }
 
 .yearDataList input:checked+label {
@@ -313,6 +314,7 @@ a {
 
 #slider, .yearDataList {
   position: relative;
+  top:12px;
 }
 
 #slider {
