@@ -20,10 +20,11 @@ a {
 
 #wrapper {
   margin: 1%;
+  margin-top: 0;
 }
 /*---Header---*/
 #header {
-  height: 65px;
+  height: 58px;
   width:100%;
 }
 
@@ -90,6 +91,7 @@ a {
   font-size:15px;
   font-family: 'Titillium Web', sans-serif;
   overflow-y: scroll;
+  margin-top: 10px;
 }
 
 .statesList ul { 
@@ -119,11 +121,12 @@ a {
 }
 
 .customSB::-webkit-scrollbar-track {
-  background-color: #b46868;
-  height:10px;
+  background-color: #E6E6E6;
+  height:5px;
 } /* the new scrollbar will have a flat appearance with the set background color */
 .customSB::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #35718C;
+  cursor: pointer;
 } /* this will style the thumb, ignoring the track */
 .customSB::-webkit-scrollbar-button {
   background-color: #2734C7;
