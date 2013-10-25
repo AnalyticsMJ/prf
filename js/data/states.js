@@ -56,7 +56,7 @@ define(['underscore', 'app/models/state', 'data/accidents-by-100-thousand.json',
             
     });
   
-    states = _.sortBy(states, function(state){ return state.by100Thousand[2012].rank; })
+    states = _.sortBy(states, function(state){ return state.by100Thousand[2012].rank; });
 
     return states;
 

@@ -34,7 +34,7 @@ require.config({
     waitSeconds: 10
 });
 
-require(['ko', 'app/views/main-view', 'data/data-finder', 'jquery'], function(ko, mainView, dataFinder, $) {
+require(['ko', 'app/views/main-view', 'data/data-finder', 'jquery', 'underscore'], function(ko, mainView, dataFinder, $, _) {
     var init = (function () {
         var loadStates = function() {
             ko.applyBindings(mainView, document.getElementsByTagName('html')[0]);
