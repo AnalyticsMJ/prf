@@ -158,6 +158,9 @@ a {
   width: 68%;
   margin-left: 33%;
 }
+#hour{
+  margin-top: -10px;
+}
 
 #pie {
   width: 68%;
@@ -170,7 +173,9 @@ a {
   height: 170px;
   overflow: hidden;
 }
-
+#severity{
+  margin-top: -20px;
+}
 #porTipoDeVeiculo .vehicleTypesData {
   margin-top: 2em;
 }
@@ -238,6 +243,11 @@ a {
   display:block;
   text-align:center;
   top:10px;
+}
+
+.subtituloGraficos{
+  font-size: .6em;
+  text-align: center;
 }
 
 .dadoVeiculo {

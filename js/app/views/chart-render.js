@@ -12,7 +12,9 @@ define(['underscore', 'goog!visualization,1,packages:[corechart]'], function(_) 
             width: '100%', height: '100%',
             animation: { duration: 1000 },
             backgroundColor: 'transparent',
-            chartArea:{width: '90%', height: '90%',},
+            chartArea:{ width: '90%', height: '90%', top: 5},
+            pieHole: 0.3,
+            tooltip: {text: 'percentage'},
             legend: { position: 'none'}                 
           };
           
@@ -36,17 +38,17 @@ define(['underscore', 'goog!visualization,1,packages:[corechart]'], function(_) 
             width: '100%', height: '100%',
             animation: { duration: 1000 },
             backgroundColor: 'transparent',
-            chartArea:{width: '80%', height: '80%',},
-            curveType: 'function',
+            chartArea:{width: '80%', height: '80%', top:0},
             hAxis: { 
-                  baselineColor: 'transparent',
+                baselineColor: 'transparent',
                 ticks: [0,6,12,18,23], 
-                gridlines: { count: 4, color: 'transparent'}
+                gridlines: { count: 4, color: 'transparent'},
+                format: '##h',
+                viewWindowMode: 'maximized'
             },
             vAxis:{ 
-               
-                textPosition :'none',
-                 gridlines: { color: 'transparent'}
+              textPosition :'none',
+              gridlines: { color: 'transparent'}
             },
             legend: { position: 'none'}                 
           };
