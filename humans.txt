@@ -7,8 +7,9 @@
     Gislene Pereira -- Developer -- gislene01@gmail.com
     Johann Arispe -- Business Analyst/Developer 
     Ricardo Cavalcanti -- Developer
+    Paolo Carrasco -- Developer
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
-    Normalize.css, KnockoutJS, RequireJS
+    Normalize.css, KnockoutJS, RequireJS, JQuery, Kartograph, Underscore
