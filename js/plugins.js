@@ -1,4 +1,3 @@
-// Avoid `console` errors in browsers that lack a console.
 (function() {
     var method;
     var noop = function () {};
@@ -13,11 +12,9 @@
 
     while (length--) {
         method = methods[length];
-
         // Only stub undefined methods.
-        if (!console[method]) {
+        if (!console[method]) 
             console[method] = noop;
-        }
     }
 }());
 (function(context) {
@@ -25,17 +22,14 @@
     context.formatNumber = function(value) {
         return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     };
-
     context.formatPercentage = function(value) {
         return value + '%';
     };
-
     context.iconsByVehicleType = {
         qtd_ocorrencias_bicicleta: { icon: 'bike' },
         qtd_ocorrencias_motocicleta: { icon: 'motorbike' },
         qtd_ocorrencias_automovel: { icon: 'car' },
         qtd_ocorrencias_onibus: { icon: 'bus'},
         qtd_ocorrencias_caminhao: { icon: 'truck' }
-    }
-
+    };
 })(this);
