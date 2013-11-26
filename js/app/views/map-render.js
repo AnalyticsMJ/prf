@@ -23,7 +23,9 @@ define(['kartograph', 'qtip', 'app/models/corners', 'chroma'], function($K, qtip
       function getQuantity(data, year){
         var qtd = data['qtd-acidentes-'+year] || 0;
         if (qtd === 'NULL') qtd = 0;
-        return qtd;
+
+        var km = data['km-final'] - data['km-inicial']
+        return  (qtd/km).toFixed(2);
       }
 
       function renderingOfMap(year) {
@@ -35,12 +37,12 @@ define(['kartograph', 'qtip', 'app/models/corners', 'chroma'], function($K, qtip
         map.addLayer('rodovias',{
           tooltips: function(d) {
             var title = d.rodovia + ' (km' + d['km-inicial'] + ' - km' + d['km-final'] + ')',
-              details = getQuantity(d, year).toString() + ' acidentes';
+              details = getQuantity(d, year).toString() + ' acidentes por km';
             return [title, details];
           }
         });
         
-        var colorscale = new chroma.scale('Reds').domain([0, 1, 50, 100, 300, 500, 1500]);
+        var colorscale = new chroma.scale('Reds').domain([0, .5, 1, 5, 10, 25, 50]);
 
         map.getLayer('rodovias').style('stroke', function(data) {
           return colorscale(getQuantity(data, year));
