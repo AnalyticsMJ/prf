@@ -66,10 +66,13 @@ a {
   text-align:left;
   font-size:2.1875em;
 }
-
-.nomeEstado {
-  float:right;
+.nomeEstadoContainer {
+  float: left;
+}
+.nomeEstado { 
   color: #DF5A3E;
+  margin-left: 15px;
+  font-size: 1.7em;
 }
 
 /*---Area de conteudo---*/

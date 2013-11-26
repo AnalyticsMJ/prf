@@ -10,14 +10,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title data-bind="text: title"> Loading... </title>
       <!-- minified version, uncomment the next line in production -->
-      <link rel="stylesheet" href="css/app.min.css">
+      <!--<link rel="stylesheet" href="css/app.min.css"> -->
       <!-- remove this in production! -->
-      <!-- 
+      
       <link rel="stylesheet" href="css/normalize.min.css">
       <link rel="stylesheet" href="css/app.css">
       <link rel="stylesheet" href="css/responsive.css">
       <link rel="stylesheet" href="css/jquery.qtip.min.css">
-      -->
+      
       <script src = "js/vendor/modernizr-2.6.2.min.js"></script>
   </head>
   <body>
@@ -25,12 +25,8 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div id="wrapper">           
-      <header id="header">
-      <div data-bind="with: selectedState">
-        <div class="title">Ocorrências nas Rodovias Federais 
-          <label class="nomeEstado" for="isStateSelected" data-bind="text:name">Santa Catarina</label> 
-        </div>
-        </div>
+      <header id="header">      
+        <div class="title">Ocorrências nas Rodovias Federais</div>
       </header> <!--header--> 
       <section id="main">
           <aside id="sideLeft" class="coluna col1">
@@ -46,6 +42,9 @@
           </aside> <!--coluna da esquerda -->
 
           <div class="coluna col2 mapContainer">
+           <div class="nomeEstadoContainer" data-bind="with: selectedState">
+            <label class="nomeEstado" for="isStateSelected" data-bind="text:name"></label> 
+          </div>
             <div id="mapa"></div>
             <div id="legenda">
               <ul>
