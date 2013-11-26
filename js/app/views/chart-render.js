@@ -12,13 +12,16 @@ define(['underscore', 'goog!visualization,1,packages:[corechart]'], function(_) 
             width: '100%', height: '100%',
             animation: { duration: 1000 },
             backgroundColor: 'transparent',
-            chartArea:{ width: '90%', height: '90%', top: 5},
-            pieHole: 0.3,
+            chartArea:{ width: '100%', height: '75%'},
             tooltip: {text: 'percentage'},
-            legend: { position: 'none'}                 
+            legend: { position: 'none'},
+            reverseCategories: true,
+            titlePosition: 'none', 
+            axisTitlesPosition: 'none',
+            hAxis: {textPosition: 'out'}, vAxis: {textPosition: 'in'}                 
           };
           
-      var chart = new google.visualization.PieChart(document.getElementById('severity')); 
+      var chart = new google.visualization.BarChart(document.getElementById('severity')); 
       chart.draw(data, options);
       $(window).resize(_.debounce(function() {
         chart.draw(data, options);
