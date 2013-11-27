@@ -44,9 +44,10 @@
           <div class="coluna col2 mapContainer">
            <div class="nomeEstadoContainer" data-bind="with: selectedState">
             <label class="nomeEstado" for="isStateSelected" data-bind="text:name"></label> 
+            <span class="nomeEstado" data-bind="visible: name">-</span><span class="nomeEstado"   data-bind="text:$parent.selectedYear"></span> 
           </div>
             <div id="mapa"></div>
-            <div id="legenda">
+            <div id="legenda" data-bind="visible: selectedState">
              <div>Acidentes por km</div>
               <ul>
                 <li><span class="categoria categoria-0"></span>Até 1 acidente a cada 2 km</li>

@@ -68,6 +68,8 @@ a {
 }
 .nomeEstadoContainer {
   float: left;
+  position: absolute;
+  z-index: 1000;
 }
 .nomeEstado { 
   color: #DF5A3E;
@@ -453,6 +455,7 @@ footer a {
   border: 1px solid rgb(243, 243, 243);
   bottom: 1.3em;
   left: 1.3em; 
+  cursor: pointer;
 }
 
 #thumbnail img { 
