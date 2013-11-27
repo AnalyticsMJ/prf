@@ -15,7 +15,7 @@ define(['underscore', 'goog!visualization,1,packages:[corechart]'], function(_) 
             chartArea:{ width: '100%', height: '75%'},
             tooltip: {text: 'percentage'},
             legend: { position: 'none'},
-            reverseCategories: true,
+            reverseCategories: false,
             titlePosition: 'none', 
             axisTitlesPosition: 'none',
             hAxis: {textPosition: 'out'}, vAxis: {textPosition: 'in'}                 
