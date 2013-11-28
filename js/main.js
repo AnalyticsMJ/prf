@@ -26,6 +26,9 @@ require.config({
         underscore: {
             exports: '_'
         },
+        jquery: {
+            exports: '$'
+        },
         kartograph: {
             deps: ['jquery', 'raphael','chroma'],
             exports: '$K'

@@ -1,29 +1,15 @@
-define(['kartograph', 'qtip', 'app/models/corners', 'chroma'], function($K, qtip, corners) {
+define(['kartograph', 'qtip', 'app/models/corners', 'app/views/thumbnail-view', 'chroma'], function($K, qtip, corners, thumbnail) {
     return function () {
       var map = $K.map('#mapa'); 
-      var thumbnail = $('#thumbnail');
-
-      thumbnail.on('click', 'img', function(){
-        var img = $(this);
-        if(img.hasClass('zoomed')) {
-          img.removeClass('zoomed');
-          img.animate( {width: '60px'}, 'slow');
-        } else {
-          img.addClass('zoomed');
-          img.animate( {width: '200px'}, 'slow');
-        }
-      });
 
       // initialize qtip tooltip class
       $.fn.qtip.defaults.style.classes = 'ui-tooltip-bootstrap';
       
       this.showMapOf = function (state, year) {
         map.clear();
-        $('#legenda').css(corners[state.corner]);
-        thumbnail.css(corners[thumbPositionFrom(state.corner)]) 
-        var img = $("<img/>", { src:'img/thumb/thumb-' + state.abbreviation +'.svg', alt: state.name});
-        thumbnail.empty().append(img); 
-
+        $('#legenda').css(corners.get(state.corner));
+ 
+        thumbnail.render(state)
         map.loadCSS('css/map.css', function() {
           var mapPath = 'img/estados/'+ state.abbreviation +'.svg';
           map.loadMap(mapPath, function() {
@@ -68,8 +54,5 @@ define(['kartograph', 'qtip', 'app/models/corners', 'chroma'], function($K, qtip
         map.fadeIn();
       }
 
-      function thumbPositionFrom(corner){
-        return corner == 'bottomleft'? 'bottomright' : 'bottomleft'
-      }
     };
 });
